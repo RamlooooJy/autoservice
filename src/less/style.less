@@ -1,12 +1,212 @@
+@import './libs/jquery.arcticmodal-0.3.css';
+@import '../assets/font/stylesheet.css';
 @import "mainStyles";
 
-@bodyBackground: #333;
+@fontFamily: 'Open Sans', sans-serif;
 
-body {
-  .addMargin();
-  cursor: pointer;
-  transition: 2s ease;
-  &:hover {
-    background: pink;
+@headerMobile: 40px;
+@headerHeight: 70px;
+
+.default();
+
+@bannerBackground: linear-gradient(247.03deg,
+  rgba(24, 24, 24, 0.6) -5.42%,
+rgba(108, 187, 244, 0) 99.3%),
+url(../assets/farras-naufal-cMj0ynTWlvc-unsplash.jpg);
+
+
+// blocks
+.flex() {
+  display: flex;
+}
+
+.flex-col() {
+  .flex();
+  flex-direction: column;
+}
+
+.flex-between() {
+  .flex();
+  justify-content: space-between;
+}
+
+.flex-between-align() {
+  .flex-between();
+  align-items: center;
+}
+
+header {
+  @padding-top: 21px;
+  background: transparent;
+  transition: 400ms ease-out;
+
+  &.header_scrolled {
+    background: #192430;
+  }
+
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+
+  .header {
+    padding-top: @padding-top;
+    padding-bottom: 2px;
+
+    height: calc(@headerHeight - @padding-top);
+    .container();
+    .flex-between-align();
+
+    &-logo {
+      width: 205px;
+      height: 41px;
+      background: url("../assets/img/logo.png") no-repeat center center/contain;
+    }
+
+    &-assets {
+      .flex-between-align();
+
+      &-call-button {
+        display: flex;
+      }
+
+      &-contacts {
+        font-size: 20px;
+        padding: 0 50px;
+        .flex-col();
+        align-items: flex-end;
+        color: @blue;
+
+        a {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .button {
+      @corner: 30px;
+      clip-path: polygon(@corner 0%, 100% 0%, calc(100% - @corner) 100%, 0% 100%);
+      //font-size: 4px;
+      //padding: 5px 15px;
+    }
+  }
+
+  .navigation {
+
+    transition: 100ms;
+    //position: absolute;
+    //z-index: 10;
+    //top: 0;
+    //right: 0;
+    overflow: hidden;
+    //white-space: nowrap;
+    //height: 100vh;
+    //width: 0;
+    background: rgba(23, 30, 37, 0.58);
+    .flex();
+    justify-content: center;
+
+    &_closed {
+      transition: 0s 200ms;
+    }
+
+    &-placeholder {
+      width: 100%;
+    }
+
+    &-container {
+      flex-grow: 1;
+      max-width: @container;
+      transition: 200ms ease-out;
+      //max-width: 153px;
+      //width: 0;
+      //background: #3B5262;
+      color: #fff;
+      //overflow: auto;
+      //padding: 30px 23px 30px 20px;
+      font-size: 18px;
+      font-weight: 400;
+      .flex-between-align();
+      padding: 0 @padding-inside;
+
+      &-item:not(:first-child) {
+        //padding-top: 9px;
+      }
+
+      &-item {
+        @space: 13px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:first-child {
+          justify-content: flex-start;
+        }
+
+        &:last-child {
+          justify-content: flex-end;
+        }
+
+        box-sizing: border-box;
+        position: relative;
+        height: 100%;
+
+        a {
+          padding: @space 0;
+          display: flex;
+          align-items: center;
+          flex-grow: 1;
+          text-decoration: none;
+          color: #fff;
+          height: 100%;
+          text-align: center;
+          white-space: pre-line;
+          box-sizing: border-box;
+        }
+
+        a:hover,
+        a.link_active {
+          color: @blue
+        }
+
+        a.link_active {
+          font-weight: 600;
+        }
+      }
+
+      &-divider {
+        background: @blue;
+        max-width: 1px;
+        width: 1px;
+        height: 35px;
+        top: 50% - 22px;
+        pointer-events: none;
+      }
+    }
+
+    &_active {
+      transition: 0s;
+
+      & .navigation-container {
+        width: calc(100vw - 40%);
+      }
+
+      width: 100vw;
+    }
   }
 }
+
+main {
+  * {
+  }
+
+  padding: 100px 0 0 0;
+}
+
+// pc
+
+
+
