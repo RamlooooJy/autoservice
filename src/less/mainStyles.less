@@ -15,7 +15,9 @@
 @Black10: rgba(11, 15, 16, 0.9);
 @footer: #2D4247;
 
-@gradient1: linear-gradient(228.74deg, #181818 -3.16%, rgba(108, 187, 244, 0) 101.82%), #242424;
+@space-around-block: 200px;
+
+@gradient1: linear-gradient(51.27deg, #181818 -2.95%, rgba(108, 187, 244, .2) 102.82%), #242424;
 @gradient2: linear-gradient(247.03deg, #181818 -5.42%, rgba(108, 187, 244, 0) 99.3%);
 
 .mobile () {
@@ -58,6 +60,13 @@
   max-width: @container;
 }
 
+
+.bgCover() {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .burger {
   @burger-size: 15px;
   cursor: pointer;
@@ -67,6 +76,7 @@
   height: 9px;
   transition: 300ms ease;
   padding: 5px;
+
   &-item {
     transition: 300ms ease;
     position: absolute;
@@ -75,20 +85,25 @@
     height: 1px;
     background: @blue;
   }
+
   &-item:first-child {
     top: 5px;
   }
+
   &-item:last-child {
     top: calc(100% - 4px);
   }
+
   &_active {
     .burger-item:nth-child(2) {
       opacity: 0;
     }
+
     .burger-item:first-child {
       transform: rotate(45deg);
       top: 50%;
     }
+
     .burger-item:last-child {
       transform: rotate(-45deg);
       top: 50%
@@ -108,7 +123,7 @@ a {
   color: #fff;
   font-weight: 600;
   font-size: 20px;
-  padding: 12px 61px 18px;
+  padding: 12px 37px 18px;
   clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
   border: none;
   cursor: pointer;
@@ -121,6 +136,7 @@ a {
   &-light {
     background: rgba(58, 57, 57, 0.38);
     overflow: hidden;
+
     &:hover {
       background: rgba(58, 57, 57, 0.58);
     }
@@ -252,8 +268,56 @@ a {
   }
 }
 
+.social-link {
+  width: 35px;
+  height: 35px;
+  background-color: @blue;
+  border-radius: 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &-whats {
+    background-image: url("../assets/img/whts.png");
+  }
+
+  &-viber {
+    background-image: url("../assets/img/viber.png");
+  }
+}
+
+// blocks
+.flex() {
+  display: flex;
+}
+
+.flex-col() {
+  .flex();
+  flex-direction: column;
+}
+
+.flex-between() {
+  .flex();
+  justify-content: space-between;
+}
+
+.flex-between-align() {
+  .flex-between();
+  align-items: center;
+}
+
+.banner {
+  margin-bottom: calc(@space-around-block / 2);
+}
 .section {
-  margin: 50px 0;
+  margin-bottom: @space-around-block;
+  &-title {
+    font-weight: 700;
+    font-size: 35px;
+    color: @fontColor;
+    text-align: center;
+    margin-bottom: 100px;
+  }
 }
 
 
