@@ -20,6 +20,13 @@
 @gradient1: linear-gradient(51.27deg, #181818 -2.95%, rgba(108, 187, 244, .2) 102.82%), #242424;
 @gradient2: linear-gradient(247.03deg, #181818 -5.42%, rgba(108, 187, 244, 0) 99.3%);
 
+
+@section-title-size: 35px;
+@banner-title-size: 43px;
+@banner-description-size: 22px;
+
+@h3: 25px;
+
 .mobile () {
   body {
     //font-size: 8px;
@@ -52,19 +59,30 @@
   }
 }
 
-.container() {
+.container(@m-width: @container) {
   box-sizing: content-box;
   margin: 0 auto;
   padding-left: @padding-inside;
   padding-right: @padding-inside;
-  max-width: @container;
+  max-width: @m-width;
 }
 
 
-.bgCover() {
+.bgDefault() {
   background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.bgCover(@cover: cover) {
+  .bgDefault();
+  background-size: @cover;
   background-position: center;
+
+}
+
+.bgContain(@pos: center) {
+  .bgDefault();
+  background-position: @pos;
+  background-size: contain;
 }
 
 .burger {
@@ -113,7 +131,7 @@
 
 a {
   color: @blue;
-
+  text-decoration: none;
 }
 
 .button {
@@ -309,12 +327,18 @@ a {
 .banner {
   margin-bottom: calc(@space-around-block / 2);
 }
+
+.h2() {
+  font-weight: 700;
+  font-size: @section-title-size;
+  color: @fontColor;
+}
+
 .section {
   margin-bottom: @space-around-block;
+
   &-title {
-    font-weight: 700;
-    font-size: 35px;
-    color: @fontColor;
+    .h2();
     text-align: center;
     margin-bottom: 100px;
   }
