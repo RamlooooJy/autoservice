@@ -25,7 +25,9 @@
 @banner-title-size: 43px;
 @banner-description-size: 22px;
 
-@h3: 25px;
+@h2: @section-title-size;
+@h3: 30px;
+@h4: 25px;
 
 .mobile () {
   body {
@@ -135,6 +137,7 @@ a {
 }
 
 .button {
+  @b-clip: 32px;
   height: 53px;
   display: inline-block;
   background: @blue;
@@ -142,7 +145,7 @@ a {
   font-weight: 600;
   font-size: 20px;
   padding: 12px 37px 18px;
-  clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+  clip-path: polygon(@b-clip 0%, 100% 0%, calc(100% - @b-clip) 100%, 0% 100%);
   border: none;
   cursor: pointer;
   transition: .2s ease;
@@ -168,11 +171,11 @@ a {
 .checkbox {
   label {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
 
   label > span {
-    padding-left: 8px;
+    padding-left: 14px;
     user-select: none;
     color: white;
   }
@@ -193,6 +196,8 @@ a {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
+    margin-top: 5px;
+
   }
 
   input[type='checkbox']::before {
@@ -324,20 +329,40 @@ a {
   align-items: center;
 }
 
+.flex-center() {
+  .flex();
+  justify-content: center;
+  align-items: center;
+}
+
 .banner {
   margin-bottom: calc(@space-around-block / 2);
 }
 
 .h2() {
   font-weight: 700;
-  font-size: @section-title-size;
+  font-size: @h2;
   color: @fontColor;
 }
 
+.h3() {
+  font-weight: 700;
+  font-size: @h3;
+  color: @fontColor;
+}
+
+.font(@color: @fontColor, @fsize: 20px, @fweight: 400) {
+  color: @color;
+  font-size: @fsize;
+  font-weight: @fweight;
+  line-height: 1.3em;
+}
+
 .section {
-  margin-bottom: @space-around-block;
+  margin-bottom: @space-around-block !important;
 
   &-title {
+    .container();
     .h2();
     text-align: center;
     margin-bottom: 100px;
