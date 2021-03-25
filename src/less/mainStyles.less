@@ -1,3 +1,5 @@
+@import "functions";
+
 @pc: 1200px;
 
 @bodyBackground: #cecece;
@@ -7,6 +9,8 @@
 @blue: #6EC8E6;
 @yandexBlue: #87CAD3;
 @dark: #334655;
+@black: #161818;
+@silver: #f6f6f6;
 @grey: rgba(66, 66, 66, 0.37);
 
 @fontColor: #012757;
@@ -29,12 +33,6 @@
 @h3: 30px;
 @h4: 25px;
 
-.mobile () {
-  body {
-    //font-size: 8px;
-    // bla bla bla
-  }
-}
 
 .default() {
   * {
@@ -42,6 +40,25 @@
     outline: none;
     margin: 0;
     padding: 0;
+  }
+
+  h1 {
+    .h1();
+  }
+  h2 {
+    .h2();
+  }
+  h3 {
+    .h3();
+  }
+  h4 {
+    .h4_or_custom();
+  }
+  h5 {
+    .h4_or_custom(22px, #fff)
+  }
+  h6 {
+    .h4_or_custom(18px, #fff)
   }
 
   body {
@@ -52,6 +69,9 @@
     color: @D40;
     width: 100vw;
     min-height: 100vh;
+    @media screen and (max-width: 320px) {
+      width: 100%;
+    }
   }
 
   ul {
@@ -211,31 +231,40 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: background-color 100ms ease;
+    background-size: 20px;
+    transition: 100ms ease;
+    background-position: 0 -100px;
   }
 
   input[type='checkbox']:checked::before {
-    background-image: url("../assets/img/checkbox.svg");
+    background-image: url("../assets/img/check.svg");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    background-color: @blue;
     border-color: @blue;
+    background-position: 50% 50%;
   }
 }
 
+textarea {
+  appearance: none;
+  resize: none;
+
+}
+
 .input {
+  @space-input: 10px;
   position: relative;
-  margin: 10px 0;
+  margin: @space-input 0;
   max-width: 400px;
 
-  input::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     transition: 100ms ease 100ms;
     color: red;
     opacity: 0;
   }
 
-  input {
+  input,
+  textarea {
     height: 61px;
     width: 100%;
     box-sizing: border-box;
@@ -249,13 +278,15 @@ a {
     transition: 100ms ease;
   }
 
-  input:hover {
+  input:hover,
+  textarea:hover {
     @media screen and (min-width: @pc) {
       background-color: rgba(11, 31, 53, 0.1);
     }
   }
 
-  input + span {
+  input + span,
+  textarea + span {
     color: #fff;
     position: absolute;
     pointer-events: none;
@@ -266,6 +297,11 @@ a {
     top: 50%;
     transform: translateY(-50%);
     transition: 300ms ease;
+  }
+
+  textarea + span {
+    top: 10px;
+    transform: translateY(10px);
   }
 
   // line
@@ -286,19 +322,61 @@ a {
     color: @blue;
   }
 
+  textarea:focus + span,
+  textarea:not(:placeholder-shown) + span {
+    top: 0;
+    transform: translateY(10px);
+    color: @blue;
+  }
+
+  textarea:focus ~ .line,
   input:focus ~ .line {
     filter: blur(2px);
   }
+
+  &.textarea {
+    @areaSize: calc(100% - @space-input * 2);
+
+    label {
+      height: 100%;
+      display: block;
+    }
+
+    textarea {
+      height: 100%;
+    }
+
+    height: @areaSize;
+  }
 }
 
-.social-link {
+.image() {
+  border-radius: 1px;
+  width: 100%;
+  .bgCover();
+}
+
+.utils {
+  position: absolute;
+
+  &-nav {
+    width: 200px;
+    height: 50px;
+    background: red;
+    position: absolute;
+  }
+}
+
+.social-link(@bg: @blue) {
   width: 35px;
   height: 35px;
-  background-color: @blue;
+  background-color: @bg;
   border-radius: 50%;
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
+  margin-left: 10px;
+  cursor: pointer;
 
   &-whats {
     background-image: url("../assets/img/whts.png");
@@ -307,6 +385,12 @@ a {
   &-viber {
     background-image: url("../assets/img/viber.png");
   }
+}
+
+.logo {
+  width: 205px;
+  height: 41px;
+  background: url("../assets/img/logo.png") no-repeat center center/contain;
 }
 
 // blocks
@@ -339,6 +423,14 @@ a {
   margin-bottom: calc(@space-around-block / 2);
 }
 
+.h1() {
+  line-height: 1.4em;
+  max-width: 686px;
+  font-size: @banner-title-size;
+  font-weight: 500;
+  color: #fff;
+}
+
 .h2() {
   font-weight: 700;
   font-size: @h2;
@@ -351,6 +443,12 @@ a {
   color: @fontColor;
 }
 
+.h4_or_custom(@font-size: @h3, @font-color: @fontColor) {
+  font-weight: 700;
+  font-size: @font-size;
+  color: @font-color;
+}
+
 .font(@color: @fontColor, @fsize: 20px, @fweight: 400) {
   color: @color;
   font-size: @fsize;
@@ -359,6 +457,7 @@ a {
 }
 
 .section {
+  width: 100vw;
   margin-bottom: @space-around-block !important;
 
   &-title {
@@ -367,6 +466,13 @@ a {
     text-align: center;
     margin-bottom: 100px;
   }
+}
+
+.yandex {
+  overflow: hidden;
+  width: 100vw;
+  height: 703px;
+  background: #f6f6f6;
 }
 
 

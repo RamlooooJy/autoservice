@@ -1,6 +1,6 @@
 import './less/style.less'
-import './less/www.css'
-import './less/www.css'
+import './less/functions.less'
+import './less/functions.less'
 
 const state = {
 	width: window.innerWidth,

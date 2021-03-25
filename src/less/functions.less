@@ -1,0 +1,18 @@
+//======================================
+// function for items in tab Works {
+.generate-column(@i: 1, @mSize: 0) when (@i < 4) {
+  @x: 1 + @i;
+  &:nth-child(@{x}) {
+    margin-right: @i * @mSize;
+  }
+  .generate-column(@i + 1, @mSize);
+}
+
+//=================================
+// function for icons in Yandex {
+.generate-icon(@i: 1) when (@i < 4) {
+  &-@{i} {
+    background-image: url("../assets/img/yicon@{i}.svg");
+  }
+  .generate-icon(@i + 1);
+}
