@@ -46,3 +46,31 @@ document.addEventListener( 'scroll', ( e ) => {
 if ( state.width >= 1000 ) {
 	// add when pc
 }
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+
+});
+
+window.onload = ()=>{}
+
+
+
+function bannerForm (e) {
+	e.preventDefault()
+
+	console.log(e.target[0].value)
+
+	$.arcticmodal('close')
+}
+
+
+//buttons
+$('.banner-item-content-button .button').on('click', (e)=>{
+	$('#global_modal').arcticmodal()
+})
+
+$('.modal-form-cost').on('submit', bannerForm)
+
+
+

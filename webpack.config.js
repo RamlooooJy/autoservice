@@ -1,8 +1,8 @@
 const path = require( 'path' );
 const MiniCss = require( "mini-css-extract-plugin" )
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' )
-const CopyWebPackPlugin = require("copy-webpack-plugin");
-const webpack = require('webpack')
+const CopyWebPackPlugin = require( "copy-webpack-plugin" );
+const webpack = require( 'webpack' )
 
 const arguments = process.argv.slice( 2 ).reduce( ( obj, item ) => {
 	obj[item.split( '=' )[0]] = item.split( '=' )[1]
@@ -10,6 +10,11 @@ const arguments = process.argv.slice( 2 ).reduce( ( obj, item ) => {
 }, {} )
 
 const mode = arguments['--mode'] || 'development'
+
+const imgPath = {}
+if ( mode === 'production' ) {
+	imgPath.name = '[name].[ext]'
+}
 
 module.exports = {
 	context: path.join( __dirname, 'src' ),
@@ -30,22 +35,26 @@ module.exports = {
 				use: [ MiniCss.loader, "css-loader", "less-loader" ]
 			},
 			{
-				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				test: /\.(woff(2)?|ttf|eot|ico)(\?v=\d+\.\d+\.\d+)?$/,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
 							name: '[name].[ext]',
-							outputPath: 'fonts/'
+							outputPath: 'assets/'
 						}
 					}
 				]
 			},
 			{
-				test: /\.(png|jpe?g|gif)$/i,
+				test: /\.(png|jpe?g|gif|svg)$/i,
 				use: [
 					{
 						loader: 'file-loader',
+						options: {
+							outputPath: 'img/',
+							...imgPath
+						}
 					},
 				],
 			},
@@ -53,22 +62,26 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCss(),
-		new HtmlWebpackPlugin( {  // Also generate a test.html
-			filename: 'index.html',
-			template: '../index.html'
-		} ),
-		new CopyWebPackPlugin(
-			{
-				patterns: [{ from: path.resolve(__dirname, "src", "js"), to: "js" }],
-
+		new CopyWebPackPlugin( {
+				patterns: [ { from: path.resolve( __dirname, "src", "js" ), to: "js" } ],
 			}
 		),
-		new webpack.ProvidePlugin({
+		new webpack.ProvidePlugin( {
 			$: "jquery",
 			jQuery: "jquery",
 			'window.$': "jquery",
 			'window.jQuery': "jquery"
-		})
+		} ),
+		new HtmlWebpackPlugin( {
+			minify: false,
+			filename: 'index.html',
+			template: '../index.html',
+		} ),
+		new HtmlWebpackPlugin( {
+			minify: false,
+			filename: 'type.html',
+			template: '../type.html'
+		} ),
 	],
 	externals: {
 		jquery: 'jQuery',
@@ -80,5 +93,5 @@ module.exports = {
 		port: 9000,
 		open: 'Google Chrome',
 	},
-	devtool: "source-map" // for debug with file names
+	devtool: mode === "development" && "source-map" // for debug with file names
 };

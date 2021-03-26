@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AUTOSERVICE</title>
 </head>
@@ -80,6 +79,11 @@
         <div class="utils banner-utils">
             <div class="utils-nav banner-utils-nav">
                 <!-- кнопки слайдера-->
+                <div class="utils-nav-btn utils-nav-btn_active"></div>
+                <div class="utils-nav-btn"></div>
+                <div class="utils-nav-btn"></div>
+                <div class="utils-nav-btn"></div>
+                <div class="utils-nav-btn"></div>
             </div>
             <!--    LINKS     -->
             <div class="social banner-utils-links">
@@ -342,6 +346,11 @@
                             <div class="works-container-content-photos-item"></div>
                         </div>
                         <div class="utils utils-nav works-utils">
+                            <div class="utils-nav-btn utils-nav-btn_active"></div>
+                            <div class="utils-nav-btn"></div>
+                            <div class="utils-nav-btn"></div>
+                            <div class="utils-nav-btn"></div>
+                            <div class="utils-nav-btn"></div>
                         </div>
                     </div>
                 </div>
@@ -476,57 +485,69 @@
         </div>
     </div>
 </footer>
+<!--<img src=<%=require("./src/assets/img/about-we.png").default%> alt="">-->
 
 <div style="display: none;" class="modal">
     <div class="box-modal" id="global_modal">
         <div class="box-modal_close arcticmodal-close"></div>
-        <div class="modal-conatiner">
-            <div class="modal-row">
-                <div class="input modal-input">
-                    <label>
-                        <input required name="type" type="text" placeholder="true">
-                        <span>Марка авто*</span>
-                        <span class="line"></span>
-                    </label>
+        <form class="modal-container modal-form-cost">
+            <div class="modal-rows">
+                <div class="modal-row">
+                    <div class="input modal-input">
+                        <label>
+                            <input required name="type" type="text" placeholder="true">
+                            <span>Марка авто*</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-row">
-                <div class="input modal-input">
-                    <label>
-                        <input required name="type" type="text" placeholder="true">
-                        <span>Марка авто*</span>
-                        <span class="line"></span>
-                    </label>
+                <div class="modal-row">
+                    <div class="input modal-input">
+                        <label>
+                            <input required name="type" type="text" placeholder="true">
+                            <span>Марка авто*</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-row">
-                <div class="input modal-input">
-                    <label>
-                        <input required name="type" type="text" placeholder="true">
-                        <span>Марка авто*</span>
-                        <span class="line"></span>
-                    </label>
+                <div class="modal-row">
+                    <div class="input modal-input">
+                        <label>
+                            <input required name="type" type="text" placeholder="true">
+                            <span>Марка авто*</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-row">
-                <div class="input modal-input">
-                    <label>
-                        <input required name="type" type="text" placeholder="true">
-                        <span>Марка авто*</span>
-                        <span class="line"></span>
-                    </label>
+                <div class="modal-row">
+                    <div class="input modal-input">
+                        <label>
+                            <input required name="type" type="text" placeholder="true">
+                            <span>Марка авто*</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="checkbox">
+                        <label>
+                            <input required type="checkbox" name="agree" checked hidden>
+                            <span>Прочитал и согласен на <a href="#">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="modal-row">
                 <div class="button-container">
-                    <button class="button"></button>
+                    <button type="submit" class="modal-button button">Заказать</button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
-<script src="./js/libraries.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
+
+
+<script id="libs" src="./js/libraries.js"></script>
 <script src="./js/slick.min.js"></script>
 </body>
 </html>

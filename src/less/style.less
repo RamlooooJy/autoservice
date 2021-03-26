@@ -29,12 +29,15 @@ header {
   width: 100%;
   z-index: 9;
 
+  .header,
+  .navigation {
+    .container();
+  }
   .header {
     padding-top: @padding-top;
     padding-bottom: 2px;
 
     height: calc(@headerHeight - @padding-top);
-    .container();
     .flex-between-align();
 
     &-assets {
@@ -172,7 +175,6 @@ header {
   }
 }
 
-
 @space-between-services: 50px;
 @heightItems: 333px;
 @clip: 75px;
@@ -275,9 +277,9 @@ header {
       margin-bottom: 145px;
 
       &-flex {
-        display: flex;
+        .flex();
         position: relative;
-        width: 100%;
+        width: 50%;
         transform: translateX(-@space-between-services);
 
         .services-block-row-container-item_dark {
@@ -368,8 +370,8 @@ header {
   }
 }
 
-@clip-image: 54px;
 .about {
+@clip-image: 54px;
   .bgContain(bottom center);
   background-image: url("../assets/img/about-we.png");
   min-height: 400px;
@@ -464,13 +466,14 @@ header {
 
     &-row {
       .flex-between();
-
+      .wrap();
       &:first-child {
         margin-bottom: @a-row-space;
       }
 
       &-item {
         width: 27%;
+        min-width: 300px;
 
         &-icon {
           .bgContain();
@@ -505,8 +508,8 @@ header {
   }
 }
 
-@f-inputs-space: 125px;
 .form {
+@f-inputs-space: 125px;
   width: auto;
   margin: 0 24px;
   box-shadow: -4px -3px 10px rgba(37, 37, 37, 0.85);
@@ -567,18 +570,20 @@ header {
   }
 }
 
-@people-card: 419px;
 .people {
+@people-card: 419px;
   .container();
 
   &-container {
     .flex-between();
+    .wrap();
     margin-bottom: 70px;
 
     &-card {
       height: @people-card;
       min-width: 282px;
       background: #252525;
+      margin: 20px;
 
       &-image {
         width: 100%;
@@ -727,7 +732,7 @@ header {
 
         &-container {
           .flex-between();
-          flex-wrap: wrap;
+          .wrap();
         }
 
         &-item {
@@ -753,7 +758,7 @@ header {
 }
 
 .clear-space {
-  margin: -@space-around-block 0 0 !important;
+  margin: -@space-around-section 0 0 !important;
   padding: 230px 0;
 }
 
@@ -772,7 +777,7 @@ header {
       @padding-vertical: 35px;
       box-sizing: border-box;
       max-width: 1130px;
-      background: rgba(11, 15, 16, 0.9);
+      background: @Black10;
       box-shadow: -10px -8px 7px -3px rgba(0, 0, 0, 0.14);
       padding: @padding-vertical 115px @padding-vertical 118px;
 
@@ -894,10 +899,6 @@ header {
   }
 }
 
-footer {
-  background: @footer;
-}
-
 .footer {
   .container();
   padding-top: 36px;
@@ -920,6 +921,7 @@ footer {
 
     &-hd {
       .flex-between-align();
+      .wrap();
       margin-top: 63px;
       width: 100%;
       padding-bottom: 25px;
