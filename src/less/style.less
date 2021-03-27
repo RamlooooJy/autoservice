@@ -15,19 +15,11 @@
 
 header {
   @padding-top: 21px;
-  background: transparent;
-  transition: 400ms ease-out;
 
   &.header_scrolled {
     background: #192430;
   }
 
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9;
 
   .header,
   .navigation {
@@ -400,6 +392,25 @@ header {
     }
 
     &-content {
+      /* width */
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #DDDEDE44;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: @scrollbar;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
       padding: 24px 53px 15px 0;
       width: 100% - @photo-width;
       overflow: auto;

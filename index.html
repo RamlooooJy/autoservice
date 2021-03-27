@@ -244,21 +244,21 @@
                 <div class="input form-container-inputs-input">
                     <label>
                         <input required name="type" type="text" placeholder="true">
-                        <span>Марка авто*</span>
+                        <span>Имя</span>
                         <span class="line"></span>
                     </label>
                 </div>
-                <div class="input form-container-inputs-input">
+                <div class="input form-container-inputs-input input-phone">
                     <label>
-                        <input required name="release" type="text" placeholder="true">
-                        <span>Год выпуска*</span>
+                        <input required name="release" type="tel" placeholder="true">
+                        <span>Телефон</span>
                         <span class="line"></span>
                     </label>
                 </div>
-                <div class="input form-container-inputs-input">
+                <div class="input form-container-inputs-input input-datepicker">
                     <label>
                         <input required name="services" type="text" placeholder="true">
-                        <span>Вид услуги*</span>
+                        <span>Выберите дату</span>
                         <span class="line"></span>
                     </label>
                 </div>
@@ -486,9 +486,67 @@
     </div>
 </footer>
 <!--<img src=<%=require("./src/assets/img/about-we.png").default%> alt="">-->
+<div style="display: none;" class="modal">
+    <div class="box-modal" id="call_form">
+        <div class="box-modal_close arcticmodal-close"></div>
+        <form class="modal-container modal-form-cost">
+            <div class="modal-rows">
+                <div class="modal-row">
+                    <div class="input modal-input">
+                        <label>
+                            <input required name="name" type="text" placeholder="true">
+                            <span>Имя</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="input modal-input">
+                        <label>
+                            <input required name="surname" type="text" placeholder="true">
+                            <span>Фамилия</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="input modal-input input-phone">
+                        <label>
+                            <input required name="Phone" type="text" placeholder="true">
+                            <span>Телефон</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="input modal-input">
+                        <label>
+                            <input required name="Email" type="text" placeholder="true">
+                            <span>Почта</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="checkbox">
+                        <label>
+                            <input required type="checkbox" name="agree" checked hidden>
+                            <span>Прочитал и согласен на <a href="#">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-row">
+                <div class="button-container">
+                    <button type="submit" class="modal-button button">Заказать</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 <div style="display: none;" class="modal">
-    <div class="box-modal" id="global_modal">
+    <div class="box-modal" id="banner_form">
         <div class="box-modal_close arcticmodal-close"></div>
         <form class="modal-container modal-form-cost">
             <div class="modal-rows">
@@ -496,7 +554,7 @@
                     <div class="input modal-input">
                         <label>
                             <input required name="type" type="text" placeholder="true">
-                            <span>Марка авто*</span>
+                            <span>Марка авто</span>
                             <span class="line"></span>
                         </label>
                     </div>
@@ -505,7 +563,7 @@
                     <div class="input modal-input">
                         <label>
                             <input required name="type" type="text" placeholder="true">
-                            <span>Марка авто*</span>
+                            <span>Год выпуска</span>
                             <span class="line"></span>
                         </label>
                     </div>
@@ -514,7 +572,7 @@
                     <div class="input modal-input">
                         <label>
                             <input required name="type" type="text" placeholder="true">
-                            <span>Марка авто*</span>
+                            <span>Вид услуги</span>
                             <span class="line"></span>
                         </label>
                     </div>
@@ -522,8 +580,26 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input required name="type" type="text" placeholder="true">
-                            <span>Марка авто*</span>
+                            <input required name="FIO" type="text" placeholder="true">
+                            <span>ФИО</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="input modal-input input-phone">
+                        <label>
+                            <input required name="phone" type="tel" placeholder="true">
+                            <span>Телефон</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="input modal-input">
+                        <label>
+                            <input required name="email" type="text" placeholder="true">
+                            <span>Почта</span>
                             <span class="line"></span>
                         </label>
                     </div>
@@ -547,7 +623,6 @@
 </div>
 
 
-<script id="libs" src="./js/libraries.js"></script>
-<script src="./js/slick.min.js"></script>
+<script id="libs" src="./js/libraries.min.js"></script>
 </body>
 </html>
