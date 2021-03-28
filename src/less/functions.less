@@ -16,3 +16,12 @@
   }
   .generate-icon(@i + 1);
 }
+
+//=================================
+// function for icons in Services {
+.generate-services(@i: 1) when (@i <= 4) {
+  &-@{i} {
+    background-image: url("../assets/img/services@{i}mini.png");
+  }
+  .generate-services(@i + 1);
+}

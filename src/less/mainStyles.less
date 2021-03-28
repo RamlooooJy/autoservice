@@ -1,7 +1,12 @@
-@import "functions";
+@import '../assets/font/stylesheet.css';
+@import './libs/jquery.arcticmodal-0.3.css';
+@import './libs/slick.css';
+@import './libs/slick-config.less';
+@import './libs/jquery-ui.min.css';
+@import 'functions';
 
 //dimensions
-@tabletFrom: 758px;
+@tabletFrom: 768px;
 @pcFrom: 1200px;
 
 @blue: #6EC8E6;
@@ -32,6 +37,7 @@
 @h2: @section-title-size;
 @h3: 30px;
 @h4: 25px;
+@p: 22px;
 
 @container: 1368px;
 @padding-inside: 20px;
@@ -99,7 +105,7 @@ header {
 
 //datepicker
 .ui-datepicker {
-  z-index: 9999999999999999!important;
+  z-index: 9999999999999999 !important;
   @date-color: rgba(0, 0, 0, 95);
   background: @date-color;
   color: #fff;
@@ -121,16 +127,20 @@ header {
   .ui-datepicker-prev,
   .ui-datepicker-next {
     cursor: pointer;
+
     span {
       display: none;
     }
+
     .bgCover(auto 18px);
     background-image: url("../assets/img/dateselector-arrow.svg");
+
     &:hover {
       background-color: transparent;
       border-color: transparent;
     }
   }
+
   &-next {
     transform: rotate(180deg);
   }
@@ -138,11 +148,13 @@ header {
   &-unselectable .ui-state-disabled {
     background-color: #fafafa;
   }
+
   &-calendar {
     td {
       padding: 7px;
     }
   }
+
   .ui-state-default {
     background: transparent;
     color: #fff;
@@ -154,13 +166,13 @@ header {
       color: @blue;
       border-radius: 50%;
     }
+
     &.ui-state-active {
       background: @blue;
       border-radius: 50%;
     }
   }
 }
-
 
 
 .container(@m-width: @container) {
@@ -191,20 +203,22 @@ header {
 }
 
 .burger {
-  @burger-size: 15px;
+  box-sizing: border-box;
+  @burger-size: 30px;
   cursor: pointer;
   position: relative;
   z-index: 11;
-  width: 15px;
-  height: 9px;
+  width: @burger-size;
+  height: @burger-size;
   transition: 300ms ease;
-  padding: 5px;
+  //padding: 5px;
+  margin-left: @burger-size;
 
   &-item {
     transition: 300ms ease;
     position: absolute;
     top: calc(50%);
-    width: 15px;
+    width: @burger-size;
     height: 1px;
     background: @blue;
   }
@@ -247,11 +261,22 @@ a {
   color: #fff;
   font-weight: 600;
   font-size: 20px;
-  padding: 12px 37px 18px;
+  padding: 12px 37px;
   clip-path: polygon(@b-clip 0%, 100% 0%, calc(100% - @b-clip) 100%, 0% 100%);
   border: none;
   cursor: pointer;
   transition: .2s ease;
+
+  .mediaFromTo({
+    @b-clip: 32px * 0.8;
+    clip-path: polygon(@b-clip 0%, 100% 0%, calc(100% - @b-clip) 100%, 0% 100%);
+    font-size: .9em;
+  }, @tabletFrom, @pcFrom);
+  .mediaFromTo({
+    @b-clip: 32px * 0.6;
+    clip-path: polygon(@b-clip 0%, 100% 0%, calc(100% - @b-clip) 100%, 0% 100%);
+    font-size: .9em;
+  }, 0, @tabletFrom);
 
   &:hover {
     background: darken(@blue, 10%);
@@ -407,7 +432,7 @@ textarea {
 
   textarea:focus + span,
   textarea:not(:placeholder-shown) + span {
-    top: 0;
+    top: -5px;
     transform: translateY(10px);
     color: @blue;
   }
@@ -426,11 +451,21 @@ textarea {
     }
 
     textarea {
-      height: 100%;
+      height: calc(100% - 24px);
+      padding-top: 6px;
+      margin-top: 20px;
     }
 
     height: @areaSize;
   }
+
+  .mediaMaxWidth({
+    max-width: none;
+    width: 100%;
+    textarea {
+      min-height: 150px;
+    }
+  })
 }
 
 .image() {
@@ -537,46 +572,93 @@ textarea {
 
 .h1() {
   line-height: 1.4em;
-  max-width: 686px;
   font-size: @banner-title-size;
   font-weight: 500;
   color: #fff;
+
+  .mediaMaxWidth({
+    font-size: @banner-title-size * .8;
+  });
 }
 
 .h2() {
   font-weight: 700;
   font-size: @h2;
   color: @fontColor;
+  .mediaMaxWidth({
+    font-size: @h2 * 0.8;
+  })
 }
 
 .h3() {
   font-weight: 700;
   font-size: @h3;
   color: @fontColor;
+  .mediaMaxWidth({
+    font-size: @h3 * 0.8;
+  })
 }
 
-.h4_or_custom(@font-size: @h3, @font-color: @fontColor) {
+.h4_or_custom(@font-size: @h4, @font-color: @fontColor) {
   font-weight: 700;
   font-size: @font-size;
   color: @font-color;
+  .mediaMaxWidth({
+    font-size: @font-size * 0.8;
+  })
 }
+
+.textCustom(@font-size: @p, @font-color: @fontColor) {
+
+}
+
+.mediaMaxWidth({
+  h2 {
+    font-size: @h2 * 0.7;
+  }
+  h3 {
+    font-size: @h3 * 0.7;
+  }
+  h4 {
+    font-size: @h4 * 0.7;
+  }
+  h5 {
+    font-size: 22px * 0.7;
+  }
+});
 
 .font(@color: @fontColor, @fsize: 20px, @fweight: 400) {
   color: @color;
   font-size: @fsize;
   font-weight: @fweight;
   line-height: 1.3em;
+
+  .mediaFromTo({
+    font-size: @fsize * .8;
+  }, @tabletFrom, @pcFrom);
+
+  .mediaMaxWidth({
+    font-size: @fsize * .8;
+  }, @tabletFrom);
 }
 
 .section {
   width: 100vw;
-  margin-bottom: @space-around-section !important;
+  .mediaFromTo({
+    margin-bottom: @space-around-section !important;
+  }, @pcFrom, 22000px);
+  .mediaMaxWidth({
+    margin-bottom: (@space-around-section / 4) !important;
+  }, @pcFrom);
 
   &-title {
     .container();
     .h2();
     text-align: center;
     margin-bottom: 100px;
+    .mediaMaxWidth({
+      margin-bottom: 50px;
+    });
   }
 }
 
@@ -624,6 +706,19 @@ footer {
 
 
 // !important
+
+.mediaMaxWidth(@style:{}, @to: @pcFrom) {
+  @media (max-width: @to) {
+    @style();
+  }
+}
+
+.mediaFromTo(@style: {}, @from: @pcFrom, @to: @pcFrom * 2) {
+  @media (min-width: @from) and (max-width: @to) {
+    @style();
+  }
+}
+
 @media (max-width: @tabletFrom) {
   .arcticmodal-container {
     background: rgba(12, 13, 16, 0.94);
@@ -637,6 +732,21 @@ footer {
   }
 }
 
+@media (max-width: @pcFrom) {
+  main .people {
+    box-sizing: border-box;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .banner {
+    margin-bottom: (@space-around-section / 4);
+  }
+
+  .section {
+    margin-bottom: @space-around-section / 2 !important;
+  }
+}
 
 @media screen and (min-width: @pcFrom) {
   .burger,
@@ -644,3 +754,4 @@ footer {
     display: none;
   }
 }
+

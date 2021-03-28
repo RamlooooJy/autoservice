@@ -1,20 +1,6 @@
+import './less/style.less'
 import './js/default.js'
-
-const state = {
-  width: window.innerWidth,
-  scrolled: false
-}
-
-const header = document.querySelector('header')
-const nav = document.querySelector('.navigation')
-const burger = document.querySelector('.burger')
-
-
-function burgerToggle() {
-  document.body.classList.toggle('stop-scroll')
-  nav.classList.toggle('navigation_active')
-  burger.classList.toggle('burger_active')
-}
+import {sendBannerForm, state, burgerToggle, setSlick} from './js/functions.js'
 
 // burger
 $('.burger').click(() => {
@@ -26,21 +12,7 @@ $('.navigation-placeholder').click((item) => {
 })
 
 
-// $$$scroll top
-document.addEventListener('scroll', (e) => {
-  const container = document.documentElement
-  if (container.scrollTop >= 20 && !state.scrolled) {
-    header.classList.add('header_scrolled')
-    state.scrolled = true
-  } else if (container.scrollTop < 20 && state.scrolled) {
-    header.classList.remove('header_scrolled')
-    state.scrolled = false
-  }
-})
-
-
-// init
-
+// ? APP init
 if (state.width >= 1000) {
   // add when pc
 }
@@ -53,7 +25,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     animated: true
   });
   $('.input-datepicker input').datepicker()
-  $('.input-phone input').mask('7(000) 000-00-00');
+  $('.input-phone input').mask('8 (000) 000-00-00');
+  setSlick($('.people-container'), {})
 });
 
 //buttons
