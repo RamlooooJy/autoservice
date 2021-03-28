@@ -9,6 +9,8 @@
       <option name="SPACES_WITHIN_INTERPOLATION_EXPRESSIONS" value="true" />
     </JSCodeStyleSettings>
     <LessCodeStyleSettings>
+      <option name="BLANK_LINES_BETWEEN_BLOCKS" value="0" />
+      <option name="BLANK_LINES_AROUND_NESTED_SELECTOR" value="0" />
       <option name="KEEP_SINGLE_LINE_BLOCKS" value="true" />
     </LessCodeStyleSettings>
     <TypeScriptCodeStyleSettings version="0">
@@ -20,15 +22,13 @@
       <option name="USE_PATH_MAPPING" value="NEVER" />
     </TypeScriptCodeStyleSettings>
     <codeStyleSettings language="JavaScript">
-      <option name="SPACE_WITHIN_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_METHOD_CALL_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_METHOD_PARENTHESES" value="true" />
       <option name="SPACE_WITHIN_IF_PARENTHESES" value="true" />
       <option name="SPACE_WITHIN_WHILE_PARENTHESES" value="true" />
       <option name="SPACE_WITHIN_FOR_PARENTHESES" value="true" />
       <option name="SPACE_WITHIN_CATCH_PARENTHESES" value="true" />
       <option name="SPACE_WITHIN_SWITCH_PARENTHESES" value="true" />
       <option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
+      <option name="SPACE_BEFORE_CATCH_PARENTHESES" value="false" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
         <option name="CONTINUATION_INDENT_SIZE" value="2" />

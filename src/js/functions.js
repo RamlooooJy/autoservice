@@ -1,5 +1,5 @@
-const pcFrom = 1200
-const tabletFrom = 768
+export const pcFrom = 1200
+export const tabletFrom = 768
 const nav = document.querySelector('.navigation')
 const burger = document.querySelector('.burger')
 const header = document.querySelector('header')
@@ -54,34 +54,29 @@ export function setSlick(block, params = {}) {
   }
   if (block) {
     block.slick(extra)
-    slickResize(block, extra)
   }
 }
-
-export function slickResize(block, params) {
-  window.onresize = (e) => {
-    // const currentWindowSize = window.innerWidth
-    //
-    // if (currentWindowSize < pcFrom && !state.slickPeopleExist) {
-    //   state.slickPeopleExist = true
-    //   block.not('.slick-initialized').slick(params)
-    // }
-    // if(currentWindowSize >= pcFrom && state.slickPeopleExist) {
-    //   state.slickPeopleExist = false
-    //   block.slick('unslick')
-    // }
-  }
-}
-
 
 // * $$$scroll top
-document.addEventListener('scroll', (e) => {
-  const container = document.documentElement
-  if (container.scrollTop >= 20 && !state.scrolled) {
-    header.classList.add('header_scrolled')
-    state.scrolled = true
-  } else if (container.scrollTop < 20 && state.scrolled) {
-    header.classList.remove('header_scrolled')
-    state.scrolled = false
-  }
-})
+document.addEventListener('scroll', onScroll)
+onScroll()
+
+function onScroll (e) {
+	const container = document.documentElement
+	if (container.scrollTop >= 20 && !state.scrolled) {
+		header.classList.add('header_scrolled')
+		state.scrolled = true
+	} else if (container.scrollTop < 20 && state.scrolled) {
+		header.classList.remove('header_scrolled')
+		state.scrolled = false
+	}
+}
+
+// works
+export function worksSelect (clicked) {
+	$('.dropdown-app-navigation').toggleClass('dropdown-app-navigation_active')
+	const SELECTED_CLASS = 'dropdown-app-navigation-menu-item_selected'
+	const active = document.querySelector(`.${SELECTED_CLASS}`)
+	clicked.classList.add(SELECTED_CLASS)
+	active.classList.remove(SELECTED_CLASS)
+}
