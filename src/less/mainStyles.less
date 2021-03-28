@@ -5,6 +5,7 @@
 @import './libs/jquery-ui.min.css';
 @import 'functions';
 
+@infinite: 22222px;
 //dimensions
 @tabletFrom: 768px;
 @pcFrom: 1200px;
@@ -44,55 +45,52 @@
 @padding-inside: 20px;
 @space-around-section: 200px;
 
-.default() {
-  * {
-    font-family: @fontFamily;
-    outline: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  h1 {
-    .h1();
-  }
-  h2 {
-    .h2();
-  }
-  h3 {
-    .h3();
-  }
-  h4 {
-    .h4_or_custom();
-  }
-  h5 {
-    .h4_or_custom(22px, #fff)
-  }
-  h6 {
-    .h4_or_custom(18px, #fff)
-  }
-
-  body {
-    background-color: @bodyBackground;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    color: @D40;
-    width: 100vw;
-    max-width: 100vw;
-    overflow-x: hidden;
-    min-height: 100vh;
-    @media screen and (max-width: 320px) {
-      width: 100%;
-    }
-  }
-
-  ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+* {
+  font-family: @fontFamily;
+  outline: none;
+  margin: 0;
+  padding: 0;
 }
 
+h1 {
+  .h1();
+}
+h2 {
+  .h2();
+}
+h3 {
+  .h3();
+}
+h4 {
+  .h4_or_custom();
+}
+h5 {
+  .h4_or_custom(22px, #fff)
+}
+h6 {
+  .h4_or_custom(18px, #fff)
+}
+
+body {
+  background-color: @bodyBackground;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: @D40;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.box-modal {
+  position: relative;
+}
 header {
   background: transparent;
   transition: 400ms ease-out;
@@ -254,8 +252,8 @@ a {
   text-decoration: none;
 }
 
+@b-clip: 32px;
 .button {
-  @b-clip: 32px;
   height: 53px;
   display: inline-block;
   background: @blue;
@@ -279,19 +277,24 @@ a {
     font-size: .9em;
   }, 0, @tabletFrom);
 
-  &:hover {
+  &:not(&-light):hover {
     background: darken(@blue, 10%);
   }
 
   &-light {
-    background: rgba(58, 57, 57, 0.38);
+    //background: rgba(58, 57, 57, 0.38);
+    background-image: url("../assets/img/light-button-bg.png");
+    background-color: transparent;
+    .bgCover(95%);
     overflow: hidden;
 
     &:hover {
-      background: rgba(58, 57, 57, 0.58);
+      background-color: @blue;
+      background-image: none;
     }
   }
 }
+
 
 .stop-scroll {
   overflow: hidden;
@@ -307,6 +310,9 @@ a {
     padding-left: 14px;
     user-select: none;
     color: white;
+    .mediaMaxWidth({
+      font-size: 8px;
+    }, @tabletFrom);
   }
 
   input[type='checkbox'],
@@ -326,9 +332,22 @@ a {
     -moz-appearance: none;
     -webkit-appearance: none;
     margin-top: 5px;
-
   }
-
+  .mediaMaxWidth({
+    label > span {
+      font-size: 8px;
+    }
+    input[type='checkbox'],
+    input[type='checkbox']::before {
+      min-width: 20px;
+      min-height: 20px;
+      max-width: 20px;
+      max-height: 20px;
+    }
+    input[type='checkbox'] {
+      margin-top: 2px;
+    }
+  }, @tabletFrom);
   input[type='checkbox']::before {
     box-sizing: border-box;
     background-color: transparent;
@@ -633,21 +652,13 @@ textarea {
   font-size: @fsize;
   font-weight: @fweight;
   line-height: 1.3em;
-
-  //.mediaFromTo({
-  //  font-size: @fsize * .8;
-  //}, @tabletFrom, @pcFrom);
-  //
-  //.mediaMaxWidth({
-  //  font-size: @fsize * .8;
-  //}, @tabletFrom);
 }
 
 .section {
   width: 100vw;
   .mediaFromTo({
     margin-bottom: @space-around-section !important;
-  }, @pcFrom, 22000px);
+  }, @pcFrom, @infinite);
   .mediaMaxWidth({
     margin-bottom: (@space-around-section / 4) !important;
   }, @pcFrom);
@@ -681,7 +692,7 @@ footer {
     box-sizing: border-box;
     width: 100vw;
     border-radius: 1px;
-    padding: @verticalPadding @horisontalPadding;
+    padding: @verticalPadding + 25px @horisontalPadding;
     .flex-col();
     justify-content: space-between;
     @media (min-width: @tabletFrom) {
@@ -690,7 +701,7 @@ footer {
       box-shadow: 0 4px 13px 6px rgba(0, 0, 0, 0.06);
     }
     .mediaMaxWidth({
-      height: 100vw;
+      height: 100vh;
     }, @tabletFrom);
   }
 
@@ -707,6 +718,19 @@ footer {
     height: 60px;
     margin-top: 20px;
   }
+}
+.arcticmodal-close {
+  .mediaFromTo({
+    display: none;
+  }, @tabletFrom, @infinite);
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-image: url("../assets/img/close-modal.svg");
+  .bgCover()
 }
 
 
@@ -757,6 +781,24 @@ footer {
   .burger,
   .navigation-placeholder {
     display: none;
+  }
+  .dropdown-app-container-preview,
+  .about-container-content {
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #DDDEDE44;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: @scrollbar;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
   }
 }
 

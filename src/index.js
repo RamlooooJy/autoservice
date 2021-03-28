@@ -1,6 +1,6 @@
 import './less/style.less'
-import './js/default.js'
-import { sendBannerForm, state, burgerToggle, setSlick, pcFrom, worksSelect } from './js/functions.js'
+import './default.js'
+import { sendBannerForm, state, burgerToggle, setSlick, pcFrom, worksSelect, dropDownClicked } from './functions.js'
 
 // burger
 $('.burger').click(() => {
@@ -19,8 +19,8 @@ $('.navigation-placeholder').click((item) => {
 
 
 //   //  //  dropdown
-$('.dropdown-app-navigation-title').on('click', function() {
-	$('.dropdown-app-navigation').toggleClass('dropdown-app-navigation_active')
+$('.dropdown-app-navigation-title').on('click', function(event) {
+	dropDownClicked(this, event)
 });
 $('.works .dropdown-app-navigation-menu-item').on('click', function() {
 	worksSelect(this)

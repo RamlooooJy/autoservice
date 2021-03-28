@@ -1,6 +1,6 @@
-import './ui.min.js'
-import './mask.min.js'
-import './slick.min.js'
+import './js/ui.min.js'
+import './js/mask.min.js'
+import './js/slick.min.js'
 /* Russian (UTF-8) initialisation for the jQuery UI date picker plugin. */
 /* Written by Andrew Stromnov (stromnov@gmail.com). */
 (function (factory) {
