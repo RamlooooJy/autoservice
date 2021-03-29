@@ -342,6 +342,15 @@
 .services {
   &-block {
     &-row {
+      .mediaFromTo({
+        &-container-top {
+          transform: translateX(48px);
+        }
+        &-container-bottom {
+          transform: translateX(-48px);
+        }
+      }, @tabletFrom, @infinite);
+
       margin-bottom: 145px;
 
       &-flex {
@@ -376,6 +385,9 @@
 
       &-container {
         .container();
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
         .flex-between();
 
         &-item {
