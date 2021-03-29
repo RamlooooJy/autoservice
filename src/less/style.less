@@ -603,27 +603,27 @@
           height: @icon-size;
 
           &-1 {
-            background-image: url("../assets/img/adv1.png")
+            background-image: url("../assets/img/advantage1.png")
           }
 
           &-2 {
-            background-image: url("../assets/img/adv2.png")
+            background-image: url("../assets/img/advantage2.png")
           }
 
           &-3 {
-            background-image: url("../assets/img/adv3.png")
+            background-image: url("../assets/img/advantage3.png")
           }
 
           &-4 {
-            background-image: url("../assets/img/adv4.png")
+            background-image: url("../assets/img/advantage4.png")
           }
 
           &-5 {
-            background-image: url("../assets/img/adv5.png")
+            background-image: url("../assets/img/advantage5.png")
           }
 
           &-6 {
-            background-image: url("../assets/img/adv6.png")
+            background-image: url("../assets/img/advantage6.png")
           }
         }
 
@@ -877,7 +877,7 @@
     }
   }
 }
-
+//works and
 .works {
   .mediaFromTo({
     .dropdown-app-navigation-title,
@@ -1020,84 +1020,7 @@
   }
   .dropdown-app {
     position: relative;
-    &-navigation {
-      width: 100%;
-      position: relative;
-      @paddingInBlockMenu: 32px;
-      @maxWidth: 380px;
-
-      &-title {
-        position: relative;
-        z-index: 2;
-        @paddingVert: 24px;
-        //background: linear-gradient(269.76deg, #6EC8E6 -10.33%, #BBCDD3 112.2%);
-        .bgCover(100% 123%);
-        background-image: url("../assets/img/select-bg.png");
-        //clip-path: polygon(0 0, 100% 0%, calc(100% - 55px) 100%, 0% 100%);
-        box-sizing: border-box;
-        padding-right: 55px;
-        .font(#fff, 38px, 600);
-        &-label {
-          font-size: 30px;
-          line-height: 31px;
-          padding: @paddingVert 10px @paddingVert 0;
-          box-sizing: border-box;
-        }
-        .flex();
-        justify-content: flex-end;
-        align-items: center;
-
-        &-btn {
-          cursor: pointer;
-          .bgCover();
-          background-image: url("../assets/img/works_drop.svg");
-          @size: 33px;
-          min-width: @size;
-          min-height: @size;
-          transition: 100ms ease;
-        }
-      }
-
-      &-menu {
-        transition: 200ms ease;
-        z-index: 1;
-        overflow: hidden;
-        height: 0;
-        width: calc(100% - 20px);
-        position: absolute;
-        background: @dropdownColor;
-        max-width: 405px;
-        right: 0;
-        top: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        &-item {
-          cursor: pointer;
-          max-width: @maxWidth;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          padding: 16px 0;
-          .font(#fff, 22px, 600);
-          &_selected {
-            color: @fontColor;
-          }
-        }
-      }
-
-      &_active {
-        .dropdown-app-navigation-title-btn {
-          transform: rotateX(180deg);
-        }
-        .dropdown-app-navigation-menu {
-          overflow: auto;
-          height: 400px;
-          width: calc(100% - 20px);
-          display: block;
-          padding: 102px 0 @paddingInBlockMenu 17px;
-        }
-      }
-    }
+    .dropdownSelectHeader();
     @contentheight: 704px;
     @photosTopSpace: 102px;
     &-container {
@@ -1168,7 +1091,6 @@
         width: 100%;
         overflow: auto;
 
-        //  0 -> @contentheight
         &-box {
           display: flex;
           justify-content: space-between;
@@ -1189,7 +1111,95 @@
       }
     }
   }
+}
 
+//!ДОДЕЛАТЬ//
+//?ДОДЕЛАТЬ//
+//+ДОДЕЛАТЬ//
+//+ДОДЕЛАТЬ//
+//+ДОДЕЛАТЬ//
+//+ДОДЕЛАТЬ//
+//?ДОДЕЛАТЬ//
+//!ДОДЕЛАТЬ//
+.dropdownSelectHeader() {
+  &-navigation {
+    width: 100%;
+    position: relative;
+    @paddingInBlockMenu: 32px;
+    @maxWidth: 380px;
+
+    &-title {
+      position: relative;
+      z-index: 2;
+      @paddingVert: 24px;
+      //background: linear-gradient(269.76deg, #6EC8E6 -10.33%, #BBCDD3 112.2%);
+      .bgCover(100% 123%);
+      background-image: url("../assets/img/select-bg.png");
+      //clip-path: polygon(0 0, 100% 0%, calc(100% - 55px) 100%, 0% 100%);
+      box-sizing: border-box;
+      padding-right: 55px;
+      .font(#fff, 38px, 600);
+      &-label {
+        font-size: 30px;
+        line-height: 31px;
+        padding: @paddingVert 10px @paddingVert 0;
+        box-sizing: border-box;
+      }
+      .flex();
+      justify-content: flex-end;
+      align-items: center;
+
+      &-btn {
+        cursor: pointer;
+        .bgCover();
+        background-image: url("../assets/img/works_drop.svg");
+        @size: 33px;
+        min-width: @size;
+        min-height: @size;
+        transition: 100ms ease;
+      }
+    }
+
+    &-menu {
+      transition: 200ms ease;
+      z-index: 1;
+      overflow: hidden;
+      height: 0;
+      width: calc(100% - 20px);
+      position: absolute;
+      background: @dropdownColor;
+      max-width: 405px;
+      right: 0;
+      top: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      &-item {
+        cursor: pointer;
+        max-width: @maxWidth;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 16px 0;
+        .font(#fff, 22px, 600);
+        &_selected {
+          color: @fontColor;
+        }
+      }
+    }
+
+    &_active {
+      .dropdown-app-navigation-title-btn {
+        transform: rotateX(180deg);
+      }
+      .dropdown-app-navigation-menu {
+        overflow: auto;
+        height: 400px;
+        width: calc(100% - 20px);
+        display: block;
+        padding: 102px 0 @paddingInBlockMenu 17px;
+      }
+    }
+  }
 }
 
 .clear-space {
@@ -1595,7 +1605,16 @@
   }
 
   //works
+
   .dropdown-app {
+    //!ДОДЕЛАТЬ//
+    //?ДОДЕЛАТЬ//
+    //+ДОДЕЛАТЬ//
+    //+ДОДЕЛАТЬ//
+    //+ДОДЕЛАТЬ//
+    //+ДОДЕЛАТЬ//
+    //?ДОДЕЛАТЬ//
+    //!ДОДЕЛАТЬ//
     &-navigation-title {
       &-label {
         font-size: 18px;
@@ -1605,6 +1624,7 @@
         min-height: 24px;
       }
     }
+    //
     &-container {
       &-box {
         padding: 20px;
