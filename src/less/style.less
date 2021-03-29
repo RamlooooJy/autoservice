@@ -316,6 +316,23 @@
     }
   });
 
+  .littlePc({
+    &-item {
+      .height(@pcHeight - @paddingTop);
+      &-content {
+        padding-top: 10px;
+        overflow: visible;
+        &:before {
+          bottom: -54px;
+          width: 420px;
+        }
+        &:after {
+          top: 10px;
+          height: 359px;
+        }
+      }
+    }
+  });
 }
 
 .social-link {
@@ -348,7 +365,7 @@
         }
       }
 
-      height: @heightItems;
+      //height: @heightItems;
 
       &:first-child {
         background: @black;
@@ -445,6 +462,7 @@
         padding: 0;
         width: 100%;
         &-item {
+          padding: 0;
           background: none !important;
           &-title {
             font-size: 20px;
@@ -470,6 +488,15 @@
         }
       }
     }, @tabletFrom);
+
+    .littlePc({
+      &-row-container-item {
+        height: 228px;
+      }
+      &-row:first-child {
+        margin-bottom: 85px;
+      }
+    });
   }
 }
 
@@ -479,9 +506,7 @@
   .bgContain(bottom center);
   background-image: url("../assets/img/about-we.png");
   min-height: 400px;
-  @media screen and (max-width: 1920px) {
-    background-size: 1920px;
-  }
+  background-size: 1920px;
 
   &-container {
     .container();
@@ -555,6 +580,18 @@
       }
     })
   }
+
+  .littlePc({
+    &-container {
+      padding-bottom: 94px;
+      &-flex {
+        height: 532px;
+      }
+      &-content-text p {
+        font-size: 20px;
+      }
+    }
+  });
 }
 
 .advantages {
@@ -783,31 +820,17 @@
 
   &-container {
     margin-bottom: 35px;
-
-    @media (min-width: @pcFrom) {
-      width: 100%;
-      .flex-between();
-      .wrap();
-      margin-bottom: 70px;
-    }
-
     &-card {
       width: 100%;
       height: @people-card;
       max-width: @people-card-width;
+      min-width: 282px;
       background: #252525;
       margin: 0 auto;
       .mediaFromTo({
         height: @people-card;
         min-width: 282px;
         background: #252525;
-        margin: 0 5px;
-        &:first-child {
-          margin-left: 0;
-        }
-        &:last-child {
-          margin-right: 0;
-        }
       }, @pcFrom, @infinite);
 
       &-image {
@@ -851,22 +874,36 @@
 
     .mediaMaxWidth({
       &-card {
-        min-width: 350px;
+        //min-width: 350px;
         height: @people-card;
         margin: 0 10px;
         transition: 200ms ease;
-        transform: scale(0.85);
         position: relative;
-        z-index: 4;
-        margin: 0 -20px;
+        //transform: scale(0.85);
+        //z-index: 4;
+        //margin: 0 -20px;
         &.slick-center {
-          z-index: 5;
-          transform: scale(1);
+          //z-index: 5;
+          //transform: scale(1);
         }
       }
     }, @pcFrom);
   }
-
+  @media (min-width: @pcFrom + 1) {
+    &-container {
+      width: 100%;
+      margin-bottom: 70px;
+      box-sizing: border-box;
+    }
+    padding: 0;
+    width: 100%;
+    max-width: 1440px;
+  }
+  .littlePc({
+    &-container {
+      margin-bottom: 35px;
+    }
+  });
   &-button {
     .flex-center();
 
@@ -1012,6 +1049,46 @@
       transform: translateX(-50%);
     }
   }, @pcFrom, @infinite);
+  .littlePc({
+    &-container {
+      &-content-photos {
+        padding: 10px;
+        overflow: auto;
+        &-item {
+          height: 135px;
+        }
+        .works-utils {
+          bottom: 10px;
+        }
+      }
+      &-content-preview {
+        padding: 10px;
+        &-title {
+          margin: 5px 0;
+        }
+        &-text {
+          font-size: 1.2rem;
+        }
+        &-image {
+          height: 208px;
+        }
+      }
+      & > .works-container-navigation {
+        width: 20%;
+      }
+      height: 473px;
+      &-content:before {
+        content: none;
+      }
+      &-navigation {
+        &-item {
+          width: 100%;
+          max-width: none;
+          margin-right: 0 !important;
+        }
+      }
+    }
+  });
 }
 
 @media (max-width: @pcFrom) {
@@ -1208,6 +1285,11 @@
 
   .mediaMaxWidth({
     padding-bottom: 50px;
+  });
+
+  .littlePc({
+    margin: 0px 0 0 !important;
+    padding: 0px 0;
   });
 }
 
@@ -1435,6 +1517,21 @@
       font-size: 12px;
     }
   }, @tabletFrom);
+
+  .littlePc({
+    &.section {
+      margin-bottom: 0 !important;
+    }
+    height: 471px;
+    padding: 0;
+    &-content {
+      padding: 10px 15px;
+      margin-top: 50px;
+    }
+    &-data {
+      margin-bottom: 5px;
+    }
+  });
 }
 
 .footer {
@@ -1599,13 +1696,12 @@
     padding: 0;
     &-container {
       &-card {
-        min-width: 200px;
+        //min-width: 200px;
       }
     }
   }
 
   //works
-
   .dropdown-app {
     //!ДОДЕЛАТЬ//
     //?ДОДЕЛАТЬ//
@@ -1736,3 +1832,9 @@
   }
 
 }
+
+.littlePc({
+  .section {
+    margin-bottom: 100px !important;
+  }
+});

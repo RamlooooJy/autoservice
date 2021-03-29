@@ -9,7 +9,9 @@
 <body>
 <header>
     <div class="header">
-        <a href="/"><div class="logo header-logo"></div></a>
+        <a href="/">
+            <div class="logo header-logo"></div>
+        </a>
         <div class="header-assets">
             <div class="header-assets-contacts">
                 <span class="header-assets-contacts-address">
@@ -109,7 +111,7 @@
                 <div class="services-block-row-container">
                     <div class="services-block-row-flex">
                         <div class="services-block-row-container-item">
-                            <img class="services-block-row-container-item-photo" src=<%=require("./src/assets/img/services1-custom.png").default%> alt="Ремонт тюнинг фар">
+                            <div class="services-block-row-container-item-photo"></div>
                         </div>
                         <div class="services-block-row-container-info">
                             <h3 class="services-block-row-container-item-title">Ремонт
@@ -119,7 +121,8 @@
                     </div>
                     <div class="services-block-row-flex">
                         <div class="services-block-row-container-item">
-                            <img class="services-block-row-container-item-photo" src=<%=require("./src/assets/img/services2-custom.png").default%> alt="Ремонт тюнинг фар">
+                            <div class="services-block-row-container-item-photo"
+                            style="background-image: url(<%=require('./src/assets/img/services2-custom.png').default%>)"></div>
                         </div>
                         <div class="services-block-row-container-info">
 
@@ -135,7 +138,8 @@
                 <div class="services-block-row-container">
                     <div class="services-block-row-flex">
                         <div class="services-block-row-container-item services-block-row-container-item_dark">
-                            <img class="services-block-row-container-item-photo" src=<%=require("./src/assets/img/services3-custom.png").default%> alt="Ремонт тюнинг фар">
+                            <div class="services-block-row-container-item-photo"
+                                 style="background-image: url(<%=require('./src/assets/img/services3-custom.png').default%>)"></div>
                         </div>
                         <div class="services-block-row-container-info">
                             <h3 class="services-block-row-container-item-title">Дооснащение
@@ -145,7 +149,10 @@
                     </div>
                     <div class="services-block-row-flex">
                         <div class="services-block-row-container-item services-block-row-container-item_dark">
-                            <img class="services-block-row-container-item-photo" src=<%=require("./src/assets/img/services4-custom.png").default%> alt="Ремонт тюнинг фар">
+<!--                            <img class="services-block-row-container-item-photo"-->
+<!--                                 src=<%=require("./src/assets/img/services4-custom.png").default%> alt="Ремонт тюнинг фар">-->
+                            <div class="services-block-row-container-item-photo"
+                                 style="background-image: url(<%=require('./src/assets/img/services4-custom.png').default%>)"></div>
                         </div>
                         <div class="services-block-row-container-info">
                             <h3 class="services-block-row-container-item-title">Установка
@@ -304,26 +311,40 @@
     <div class="section people">
         <h2 class="section-title">Наши специалисты</h2>
         <div class="people-container">
-            <div class="people-container-card">
-                <div class="people-container-card-image people-container-card-image-1"></div>
-                <div class="people-container-card-title">Андрей</div>
-                <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-1"></div>
+                    <div class="people-container-card-title">Андрей</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
             </div>
-
-            <div class="people-container-card">
-                <div class="people-container-card-image people-container-card-image-2"></div>
-                <div class="people-container-card-title">Сергей</div>
-                <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-1"></div>
+                    <div class="people-container-card-title">Андрей</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
             </div>
-            <div class="people-container-card">
-                <div class="people-container-card-image people-container-card-image-3"></div>
-                <div class="people-container-card-title">Станислав</div>
-                <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-2"></div>
+                    <div class="people-container-card-title">Сергей</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
             </div>
-            <div class="people-container-card">
-                <div class="people-container-card-image people-container-card-image-4"></div>
-                <div class="people-container-card-title">Максим</div>
-                <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-3"></div>
+                    <div class="people-container-card-title">Станислав</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
+            </div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-4"></div>
+                    <div class="people-container-card-title">Максим</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
             </div>
         </div>
         <div class="button-container people-button">
@@ -365,8 +386,10 @@
                     <div class="dropdown-app-container-all-photos-btn"></div>
                     <div class="dropdown-app-container-preview works-container-content-preview">
                         <div class="dropdown-app-container-preview-image works-container-content-preview-image"></div>
-                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Дооснащение автомобиля</h3>
-                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">Установлен
+                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">
+                            Дооснащение автомобиля</h3>
+                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+                            Установлен
                             мультимедийный навигационный блок на
                             базе Android 8.1. и подключены экраны для задних
                             пассажиров</p>
@@ -469,7 +492,8 @@
                     </div>
                 </div>
                 <div class="yandex-data2">
-                    <div class="yandex-description">Вы всегда можете связаться с нами по телефону во Владимире:</div>
+                    <div class="yandex-description">Вы всегда можете связаться с нами по телефону во Владимире:
+                    </div>
                     <div class="yandex-phones">
                         <a class="yandex-phones-item" href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
                         <a class="yandex-phones-item" href="tel:+7 (920) 620-42-35">+7 (920) 620-42-35</a>
@@ -482,8 +506,7 @@
             </div>
         </div>
         <div id="map">
-            <script type="text/javascript" charset="utf-8" async
-                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A73c62efb9f1f8d5525533731ab43d8be99194a8a9270c19aac3abde131da8909&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad8c1332490e3ce011279d297c7e0be3d3864aa210f581fbc2372fd2bd34905f3&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </div>
     <!--  КАРТА -->

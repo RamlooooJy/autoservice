@@ -6,6 +6,7 @@
 @import 'functions';
 
 @infinite: 22222px;
+@pcHeight: 626px;
 //dimensions
 @tabletFrom: 768px;
 @pcFrom: 1200px;
@@ -94,7 +95,7 @@ ul, li {
 }
 header {
   background: transparent;
-  transition: 400ms ease-out;
+  transition: 100ms ease-out;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -292,6 +293,10 @@ a {
   }
 }
 
+.height (@height: auto) {
+  min-height: @height;
+  height: @height;
+}
 
 .stop-scroll {
   overflow: hidden;
@@ -405,7 +410,7 @@ textarea {
 
   input:hover,
   textarea:hover {
-    @media screen and (min-width: @pcFrom) {
+    @media screen and (min-width: @pcFrom + 1) {
       background-color: rgba(11, 31, 53, 0.1);
     }
   }
@@ -509,7 +514,7 @@ textarea {
         margin-left: -(@btnClip - 3);
       }
 
-      @media (min-width: 1000px) {
+      @media (min-width: 1000px + 1) {
         &:hover {
           background: @blue;
         }
@@ -692,7 +697,7 @@ footer {
     padding: @verticalPadding + 25px @horisontalPadding;
     .flex-col();
     justify-content: space-between;
-    @media (min-width: @tabletFrom) {
+    @media (min-width: @tabletFrom + 1) {
       max-width: 440px;
       background: rgba(12, 13, 16, 0.94);
       box-shadow: 0 4px 13px 6px rgba(0, 0, 0, 0.06);
@@ -740,7 +745,7 @@ footer {
 }
 
 .mediaFromTo(@style: {}, @from: @pcFrom, @to: @pcFrom * 2) {
-  @media (min-width: @from) and (max-width: @to) {
+  @media (min-width: @from + 1) and (max-width: @to) {
     @style();
   }
 }
@@ -752,7 +757,7 @@ footer {
   }
 }
 
-@media (min-width: @tabletFrom) {
+@media (min-width: @tabletFrom + 1) {
   .arcticmodal-container {
     background: rgba(17, 15, 15, 0.58);
   }
@@ -774,7 +779,11 @@ footer {
   }
 }
 
-@media screen and (min-width: @pcFrom) {
+@media screen and (min-width: @pcFrom + 1) {
+  //.navigation-transparent {
+  //  transition: 100ms ease;
+  //  opacity: 0;
+  //}
   .burger,
   .navigation-placeholder {
     display: none;
@@ -798,4 +807,11 @@ footer {
     }
   }
 }
+
+.littlePc(@style: {}) {
+  @media screen and (min-width: @pcFrom + 1) and (max-width: @fullHDFrom) and (max-height: 700px) {
+    @style();
+  }
+}
+
 
