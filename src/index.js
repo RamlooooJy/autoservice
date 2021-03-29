@@ -61,8 +61,3 @@ $('.banner-item-content-button .button').on('click', (e) => {
 })
 
 $('.modal-form-cost').on('submit', sendBannerForm)
-
-
-
-
-

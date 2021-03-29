@@ -110,3 +110,9 @@ document.addEventListener('click', (e)=>{
 		dropDownClicked()
 	}
 })
+
+
+export function goTo (e, element) {
+	e.preventDefault()
+	console.log(element)
+}

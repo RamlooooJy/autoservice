@@ -266,16 +266,12 @@ a {
   cursor: pointer;
   transition: .2s ease;
 
-  .mediaFromTo({
-    @b-clip: 32px * 0.8;
+  .mediaMaxWidth({
+    @b-clip: 20px;
     clip-path: polygon(@b-clip 0%, 100% 0%, calc(100% - @b-clip) 100%, 0% 100%);
     font-size: .9em;
-  }, @tabletFrom, @pcFrom);
-  .mediaFromTo({
-    @b-clip: 32px * 0.6;
-    clip-path: polygon(@b-clip 0%, 100% 0%, calc(100% - @b-clip) 100%, 0% 100%);
-    font-size: .9em;
-  }, 0, @tabletFrom);
+  }, @pcFrom);
+
 
   &:not(&-light):hover {
     background: darken(@blue, 10%);
