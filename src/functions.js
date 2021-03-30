@@ -112,15 +112,16 @@ onScroll()
 // + works +  //
 export function dropDownClicked (item, event) {
 	event && event.stopPropagation()
+	if (window.innerWidth >= pcFrom) return
+	const nav = $('.dropdown-app-navigation')
 	const dropdownNavActive = 'dropdown-app-navigation_active'
-	$('.dropdown-app-navigation').toggleClass(dropdownNavActive)
-	const isOpened = $('.dropdown-app-navigation').hasClass(dropdownNavActive)
-	state.worksState.selectActive = isOpened
+	nav.toggleClass(dropdownNavActive)
+	state.worksState.selectActive = nav.hasClass(dropdownNavActive)
 }
 export function worksSelect (clicked) {
-	$('.dropdown-app-navigation').toggleClass('dropdown-app-navigation_active')
-	const SELECTED_CLASS = 'dropdown-app-navigation-menu-item_selected'
-	const active = document.querySelector(`.${ SELECTED_CLASS }`)
+	const works = $('.works')[0]
+	const SELECTED_CLASS = 'works-container-navigation-item_selected'
+	const active = works.querySelector(`.${ SELECTED_CLASS }`)
 	if (clicked === active) return
 	clicked.classList.add(SELECTED_CLASS)
 	active && active.classList.remove(SELECTED_CLASS)

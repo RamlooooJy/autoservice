@@ -18,7 +18,7 @@ $('.navigation-placeholder').click((item) => {
 
 
 
-//   //  //  dropdown
+//?   //  //  dropdown
 $('.dropdown-app-navigation-title').on('click', function(event) {
 	dropDownClicked(this, event)
 });
@@ -28,6 +28,8 @@ $('.works .dropdown-app-navigation-menu-item').on('click', function() {
 $('.dropdown-app-container-all-photos-btn').on('click', function() {
 	$('.dropdown-app-container-box').toggleClass('dropdown-app-container-box_enabled')
 })
+//?	//	// works
+
 
 
 
