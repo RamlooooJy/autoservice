@@ -9,7 +9,7 @@
 <body>
 <header>
     <div class="header">
-        <a href="/">
+        <a class="logo-link" href="/">
             <div class="logo header-logo"></div>
         </a>
         <div class="header-assets">
@@ -39,27 +39,27 @@
                 <a href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
             </div>
             <li class="navigation-container-item">
-                <a class="" href="#">Ремонт
+                <a class="simple-link" href="#">Ремонт
                     Тюнинг фар</a>
             </li>
             <li class="navigation-container-divider"></li>
             <li class="navigation-container-item link_active">
-                <a href="#auto-page">Автоэлектрика Автоэлектроника</a></li>
+                <a class="simple-link simple-link" href="#auto-page">Автоэлектрика Автоэлектроника</a></li>
             <li class="navigation-container-divider"></li>
             <li class="navigation-container-item">
-                <a href="#alert-page">Установка сигнализаций</a>
+                <a class="simple-link" href="#alert-page">Установка сигнализаций</a>
             </li>
             <li class="navigation-container-divider"></li>
             <li class="navigation-container-item">
-                <a href="#additional-page">Дооснащение автомобилей</a>
+                <a class="simple-link" href="#additional-page">Дооснащение автомобилей</a>
             </li>
             <li class="navigation-container-divider"></li>
             <li class="navigation-container-item">
-                <a href="#works">Наши работы</a>
+                <a class="simple-link" href="#works">Наши работы</a>
             </li>
             <li class="navigation-container-divider"></li>
             <li class="navigation-container-item">
-                <a href="#contacts">Контакты</a>
+                <a class="simple-link" href="#contacts">Контакты</a>
             </li>
         </ul>
     </div>
@@ -67,9 +67,39 @@
 <main>
     <div class="banner">
         <!--    BANNER SLIDER     -->
-        <div class="slider">
+        <div class="js-banner-slide">
             <div class="banner-item">
                 <div class="banner-item-content">
+                    <h1 class="banner-item-content-title">
+                        Единственный во Владимире сертифицированный
+                        <span>сервис по установке и ремонту автооптики</span>
+                    </h1>
+                    <div class="banner-item-content-description">
+                        Ремонт, тюнинг фар, дооснащение авто.
+                    </div>
+                    <div class="button-container banner-item-content-button">
+                        <button class="button">Рассчитать стоимость</button>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-item"
+                 style="background-image: url(<%=require('./src/assets/img/banner2.jpg').default%>)">
+                <div class="banner-item-content">
+                    <h1 class="banner-item-content-title">
+                        Единственный во Владимире сертифицированный
+                        <span>сервис по установке и ремонту автооптики</span>
+                    </h1>
+                    <div class="banner-item-content-description">
+                        Ремонт, тюнинг фар, дооснащение авто.
+                    </div>
+                    <div class="button-container banner-item-content-button">
+                        <button class="button">Рассчитать стоимость</button>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-item"
+                 style="background-image: url(<%=require('./src/assets/img/team.jpg').default%>)">
+                <div class="banner-item-content" style="text-shadow: -1px 10px 10px #000000;">
                     <h1 class="banner-item-content-title">
                         Единственный во Владимире сертифицированный
                         <span>сервис по установке и ремонту автооптики</span>
@@ -87,11 +117,7 @@
         <div class="utils banner-utils">
             <div class="utils-nav banner-utils-nav">
                 <!-- кнопки слайдера-->
-                <div class="utils-nav-btn utils-nav-btn_active"></div>
-                <div class="utils-nav-btn"></div>
-                <div class="utils-nav-btn"></div>
-                <div class="utils-nav-btn"></div>
-                <div class="utils-nav-btn"></div>
+                <!--                utils-nav-btn_active-->
             </div>
             <!--    LINKS     -->
             <div class="social banner-utils-links">
@@ -122,7 +148,7 @@
                     <div class="services-block-row-flex">
                         <div class="services-block-row-container-item">
                             <div class="services-block-row-container-item-photo"
-                            style="background-image: url(<%=require('./src/assets/img/services2-custom.png').default%>)"></div>
+                                 style="background-image: url(<%=require('./src/assets/img/services2-custom.png').default%>)"></div>
                         </div>
                         <div class="services-block-row-container-info">
 
@@ -149,8 +175,8 @@
                     </div>
                     <div class="services-block-row-flex">
                         <div class="services-block-row-container-item services-block-row-container-item_dark">
-<!--                            <img class="services-block-row-container-item-photo"-->
-<!--                                 src=<%=require("./src/assets/img/services4-custom.png").default%> alt="Ремонт тюнинг фар">-->
+                            <!--                            <img class="services-block-row-container-item-photo"-->
+                            <!--                                 src=<%=require("./src/assets/img/services4-custom.png").default%> alt="Ремонт тюнинг фар">-->
                             <div class="services-block-row-container-item-photo"
                                  style="background-image: url(<%=require('./src/assets/img/services4-custom.png').default%>)"></div>
                         </div>
@@ -163,7 +189,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!--    КОНЕЦ БЛОК УСЛУГ     -->
 
@@ -299,7 +324,7 @@
                 <div class="checkbox">
                     <label>
                         <input required type="checkbox" name="agree" checked hidden>
-                        <span>Прочитал и согласен на <a href="#">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
+                        <span>Прочитал и согласен на <a href="">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
                     </label>
                 </div>
             </div>
@@ -347,6 +372,9 @@
                 </div>
             </div>
         </div>
+        <div class="slick-arrows">
+            <div class="slick-arrows-container"></div>
+        </div>
         <div class="button-container people-button">
             <button class="button">Присоединиться к команде</button>
         </div>
@@ -358,34 +386,160 @@
         <h2 class="section-title">Наши работы</h2>
 
         <div class="works-container dropdown-app">
-            <!--            dropdown-app-navigation_active-->
             <div class="works-container-navigation dropdown-app-navigation">
                 <div class="dropdown-app-navigation-title">
                     <span class="dropdown-app-navigation-title-label">Ремонт Тюнинг фар</span>
                     <div class="dropdown-app-navigation-title-btn"></div>
                 </div>
                 <div class="dropdown-app-navigation-menu works-container-navigation">
-                    <div class="dropdown-app-navigation-menu-item works-container-navigation-item works-container-navigation-item_selected">
-                        Ремонт
+                    <div data-nav="1"
+                         class="dropdown-app-navigation-menu-item works-container-navigation-item works-container-navigation-item_selected">Ремонт
                         Тюнинг фар
                     </div>
-                    <div class="dropdown-app-navigation-menu-item works-container-navigation-item">Автоэлектрика
+                    <div data-nav="2" class="dropdown-app-navigation-menu-item works-container-navigation-item">
+                        Автоэлектрика
                         Автоэлектроника
                     </div>
-                    <div class="dropdown-app-navigation-menu-item works-container-navigation-item">Дооснащение
+                    <div data-nav="3" class="dropdown-app-navigation-menu-item works-container-navigation-item">
+                        Дооснащение
                         автомобилей
                     </div>
-                    <div class="dropdown-app-navigation-menu-item works-container-navigation-item">Установка
+                    <div data-nav="4" class="dropdown-app-navigation-menu-item works-container-navigation-item">
+                        Установка
                         сигнализаций
                     </div>
                 </div>
             </div>
             <div class="dropdown-app-container dropdown-app-container_enabled works-container-content">
-                <!--                dropdown-app-container-box_enabled-->
-                <div class="dropdown-app-container-box works-container-content-box works-container-content-box_enabled">
+                <!-- + slider 1 +-->
+                <div data-box="1"
+                     class="dropdown-app-container-box works-container-content-box works-container-content-box_enabled">
                     <div class="dropdown-app-container-all-photos-btn"></div>
                     <div class="dropdown-app-container-preview works-container-content-preview">
-                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"></div>
+                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+                             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+                            Тюнинг фар</h3>
+                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+                            Установлен
+                            мультимедийный навигационный блок на
+                            базе Android 8.1. и подключены экраны для задних
+                            пассажиров</p>
+                    </div>
+                    <div class="dropdown-app-container-photos works-container-content-photos">
+                        <!--         slider            -->
+                        <div class="js-slick-photos">
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="utils utils-nav works-utils">
+
+                        </div>
+                    </div>
+                </div>
+                <!-- + slider 2 +-->
+                <div data-box="2" class="dropdown-app-container-box works-container-content-box ">
+                    <div class="dropdown-app-container-all-photos-btn"></div>
+                    <div class="dropdown-app-container-preview works-container-content-preview">
+                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+                             style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">
+                            Автоэлектрика Автоэлектроника</h3>
+                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+                            Установлен
+                            мультимедийный навигационный блок на
+                            базе Android 8.1. и подключены экраны для задних
+                            пассажиров</p>
+                    </div>
+                    <div class="dropdown-app-container-photos works-container-content-photos">
+                        <!--         slider            -->
+                        <div class="js-slick-photos">
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="utils utils-nav works-utils">
+
+                        </div>
+                    </div>
+                </div>
+                <!-- + slider 3 +-->
+                <div data-box="3" class="dropdown-app-container-box works-container-content-box ">
+                    <div class="dropdown-app-container-all-photos-btn"></div>
+                    <div class="dropdown-app-container-preview works-container-content-preview">
+                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+                             style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
                         <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">
                             Дооснащение автомобиля</h3>
                         <p class="dropdown-app-container-preview-text works-container-content-preview-text">
@@ -396,20 +550,96 @@
                     </div>
                     <div class="dropdown-app-container-photos works-container-content-photos">
                         <!--         slider            -->
-                        <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                            <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"></div>
-                            <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"></div>
-                            <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"></div>
-                            <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"></div>
-                            <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"></div>
-                            <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"></div>
+                        <div class="js-slick-photos">
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="utils utils-nav works-utils">
-                            <div class="utils-nav-btn utils-nav-btn_active"></div>
-                            <div class="utils-nav-btn"></div>
-                            <div class="utils-nav-btn"></div>
-                            <div class="utils-nav-btn"></div>
-                            <div class="utils-nav-btn"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- + slider 4 +-->
+                <div data-box="4" class="dropdown-app-container-box works-container-content-box ">
+                    <div class="dropdown-app-container-all-photos-btn"></div>
+                    <div class="dropdown-app-container-preview works-container-content-preview">
+                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+                             style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Установка
+                            сигнализаций</h3>
+                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+                            Установлен
+                            мультимедийный навигационный блок на
+                            базе Android 8.1. и подключены экраны для задних
+                            пассажиров</p>
+                    </div>
+                    <div class="dropdown-app-container-photos works-container-content-photos">
+                        <!--         slider            -->
+                        <div class="js-slick-photos">
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="utils utils-nav works-utils">
                         </div>
                     </div>
                 </div>
@@ -461,7 +691,7 @@
                     <div class="checkbox">
                         <label>
                             <input required type="checkbox" name="agree" checked hidden>
-                            <span>Прочитал и согласен на <a href="#">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
+                            <span>Прочитал и согласен на <a href="">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
                         </label>
                     </div>
                     <div class="button-container">
@@ -506,7 +736,8 @@
             </div>
         </div>
         <div id="map">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad8c1332490e3ce011279d297c7e0be3d3864aa210f581fbc2372fd2bd34905f3&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+            <script type="text/javascript" charset="utf-8" async
+                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad8c1332490e3ce011279d297c7e0be3d3864aa210f581fbc2372fd2bd34905f3&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </div>
     <!--  КАРТА -->
@@ -523,23 +754,23 @@
         </div>
         <div class="footer-row">
             <div class="footer-navigation-hd">
-                <a class="link_active" href="#">Ремонт Тюнинг фар</a>
-                <a href="#">Автоэлектрика Автоэлектроника</a>
-                <a href="#">Установка сигнализаций</a>
-                <a href="#">Дооснащение автомобилей</a>
-                <a href="#">Наши работы</a>
-                <a href="#">Контакты</a>
+                <a class="simple-link link_active" href="#">Ремонт Тюнинг фар</a>
+                <a class="simple-link" href="#">Автоэлектрика Автоэлектроника</a>
+                <a class="simple-link" href="#">Установка сигнализаций</a>
+                <a class="simple-link" href="#">Дооснащение автомобилей</a>
+                <a class="simple-link" href="#works">Наши работы</a>
+                <a class="simple-link" href="#contacts">Контакты</a>
             </div>
             <ul class="footer-navigation">
                 <li class="footer-navigation-block">
-                    <a class="link_active" href="#">Ремонт Тюнинг фар</a>
-                    <a href="#">Автоэлектрика Автоэлектроника</a>
-                    <a href="#">Установка сигнализаций</a>
+                    <a class="simple-link link_active" href="#">Ремонт Тюнинг фар</a>
+                    <a class="simple-link" href="#">Автоэлектрика Автоэлектроника</a>
+                    <a class="simple-link" href="#">Установка сигнализаций</a>
                 </li>
                 <li class="footer-navigation-block">
-                    <a href="#">Наши работы</a>
-                    <a href="#">Металлизация</a>
-                    <a href="#">Дооснащение авто</a>
+                    <a class="simple-link" href="#works">Наши работы</a>
+                    <a class="simple-link" href="#">Металлизация</a>
+                    <a class="simple-link" href="#">Дооснащение авто</a>
                 </li>
                 <div class="social footer-navigation-block">
                     <a href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
@@ -599,7 +830,7 @@
                     <div class="checkbox">
                         <label>
                             <input required type="checkbox" name="agree" checked hidden>
-                            <span>Прочитал и согласен на <a href="#">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
+                            <span>Прочитал и согласен на <a href="">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
                         </label>
                     </div>
                 </div>
@@ -673,7 +904,7 @@
                     <div class="checkbox">
                         <label>
                             <input required type="checkbox" name="agree" checked hidden>
-                            <span>Прочитал и согласен на <a href="#">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
+                            <span>Прочитал и согласен на <a href="">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
                         </label>
                     </div>
                 </div>

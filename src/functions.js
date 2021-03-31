@@ -5,19 +5,19 @@ const burger = document.querySelector('.burger')
 const header = document.querySelector('header')
 // * global state
 export const state = {
-	width: window.innerWidth,
+	isWide: window.innerWidth >= pcFrom,
 	scrolled: false,
-	slickPeopleExist: true,
-	// headerHide: {
-	// 	isHidden: false,
-	// 	lastScroll: -1,
-	// },
+	headerHide: {
+		isHidden: false,
+		lastScroll: -1,
+	},
 	// + works * * * * * * * * * * * * *
 	worksState: {
 		selectActive: false,
+		activeItem: 1,
+		mountedIds: [],
 	},
 }
-
 
 
 // +  Form banner
@@ -25,18 +25,18 @@ export function sendBannerForm (e) {
 	e.preventDefault()
 	$.arcticmodal('close')
 }
-
-
-
-// +  toggle
+// +  toggle menu
 export function burgerToggle () {
 	document.body.classList.toggle('stop-scroll')
 	nav.classList.toggle('navigation_active')
 	burger.classList.toggle('burger_active')
 }
+// + slick
 export function setSlick (block, params = {}) {
 	const extra = {
 		infinite: false,
+		arrows: false,
+
 		responsive: [
 			{
 				breakpoint: 999999,
@@ -67,7 +67,7 @@ export function setSlick (block, params = {}) {
 		],
 		...params,
 	}
-	if (block) {
+	if (block.length) {
 		block.slick(extra)
 	}
 }
@@ -75,6 +75,7 @@ export function setSlick (block, params = {}) {
 document.addEventListener('scroll', onScroll)
 // * scroll for title function
 function onScroll (e) {
+	if(!header) return
 	const container = document.documentElement
 	if (container.scrollTop >= 20 && !state.scrolled) {
 		header.classList.add('header_scrolled')
@@ -83,20 +84,21 @@ function onScroll (e) {
 		header.classList.remove('header_scrolled')
 		state.scrolled = false
 	}
-	// if (state.headerHide.lastScroll < container.scrollTop && !state.headerHide.isHidden) {
-	// 	if (container.scrollTop - state.headerHide.lastScroll >= 10) {
-	// 		$('header').addClass('navigation-transparent')
-	// 		state.headerHide.isHidden = true
-	// 	}
-	// }
-	// if ((state.headerHide.lastScroll > container.scrollTop && state.headerHide.isHidden)
-	// 	|| container.scrollTop === 0) {
-	// 	if (container.scrollTop - state.headerHide.lastScroll <= -10 || container.scrollTop === 0) {
-	// 		$('header').removeClass('navigation-transparent')
-	// 		state.headerHide.isHidden = false
-	// 	}
-	// }
-	// state.headerHide.lastScroll = container.scrollTop
+
+	if (state.headerHide.lastScroll < container.scrollTop && !state.headerHide.isHidden) {
+		if (container.scrollTop - state.headerHide.lastScroll >= 10) {
+			$('header').addClass('navigation-transparent')
+			state.headerHide.isHidden = true
+		}
+	}
+	if ((state.headerHide.lastScroll > container.scrollTop && state.headerHide.isHidden)
+		|| container.scrollTop === 0) {
+		if (container.scrollTop - state.headerHide.lastScroll <= -10 || container.scrollTop === 0) {
+			$('header').removeClass('navigation-transparent')
+			state.headerHide.isHidden = false
+		}
+	}
+	state.headerHide.lastScroll = container.scrollTop
 }
 
 // header.addEventListener('mouseenter', () => {
@@ -110,7 +112,8 @@ onScroll()
 
 
 // + works +  //
-export function dropDownClicked (item, event) {
+export function dropdownMenuToggle (elem, event) {
+	// * close dropdown
 	event && event.stopPropagation()
 	if (window.innerWidth >= pcFrom) return
 	const nav = $('.dropdown-app-navigation')
@@ -118,7 +121,7 @@ export function dropDownClicked (item, event) {
 	nav.toggleClass(dropdownNavActive)
 	state.worksState.selectActive = nav.hasClass(dropdownNavActive)
 }
-export function worksSelect (clicked) {
+export function worksSelect (clicked, e) {
 	const works = $('.works')[0]
 	const SELECTED_CLASS = 'works-container-navigation-item_selected'
 	const active = works.querySelector(`.${ SELECTED_CLASS }`)
@@ -126,17 +129,71 @@ export function worksSelect (clicked) {
 	clicked.classList.add(SELECTED_CLASS)
 	active && active.classList.remove(SELECTED_CLASS)
 	$('.dropdown-app-navigation-title-label').html(clicked.innerHTML)
+	setActiveWorksBox(Number(clicked.dataset.nav))
 }
+function setActiveWorksBox (index) {
+	const ENABLED_CLASS = 'works-container-content-box_enabled'
+	const current = $(`.${ENABLED_CLASS}`)
+	if(!current.length || current.data().box === index) return
+	const box = $(`[data-box="${index}"]`)
+	if( !box.length ) return
+	current.removeClass(ENABLED_CLASS)
+	box.addClass(ENABLED_CLASS)
+	state.worksState.activeItem = index
+	window.requestAnimationFrame(()=>{
+		setSlickToTab(index)
+	});
+}
+export function setSlickToTab (index) {
+	if(!state.worksState.mountedIds.includes(index)) {
+		setSlick($(`.works-container-content-box[data-box=${index}] .js-slick-photos`), {
+			responsive: [],
+			slidesToShow: 1,
+			dots: true,
+			dotsClass: 'utils-nav-container',
+			appendDots: $(`.works-container-content-box[data-box=${index}] .works-utils`)
+		})
+		state.worksState.mountedIds.push(Number(index))
+	}
+}
+
 // ! works ! //
+
+
 // ? event click on document
 document.addEventListener('click', (e) => {
 	if (!state.worksState.selectActive) return
 	const select = $('.works .dropdown-app-navigation')[0]
 	if (!select.contains(e.target)) {
-		dropDownClicked()
+		dropdownMenuToggle()
 	}
 })
-export function goTo (e, element) {
-	e.preventDefault()
-	console.log(element)
+
+export function goTo (e) {
+	const link = e.currentTarget
+	if (link && link.href.indexOf('/#') !== -1) {
+		e.preventDefault()
+		const index = link.href.indexOf('/#') + 2
+		const blockId = link.href.slice(index)
+		blockId && scrollToTarget($(`#${ blockId }`))
+	}
+}
+function scrollToTarget (target) {
+	const headerHeight = $('header').height()
+	if (target.length) {
+		if ($('.navigation_active').length) burgerToggle()
+		const section = target[0]
+		if (!section) return
+		const boundTop = section.getBoundingClientRect().top
+		const documentScrolledHeight = document.documentElement.scrollTop
+		if (window.innerWidth >= 1200 && window.innerHeight <= 700) {
+			if(boundTop - headerHeight >= 0) {
+				document.documentElement.scrollTop = boundTop + documentScrolledHeight
+			}else {
+				document.documentElement.scrollTop = boundTop + documentScrolledHeight - headerHeight
+			}
+		} else {
+			document.documentElement.scrollTop = boundTop + documentScrolledHeight - headerHeight
+		}
+	}
 }
