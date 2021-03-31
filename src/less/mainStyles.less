@@ -15,7 +15,9 @@
 @blue: #6EC8E6;
 @yandexBlue: #87CAD3;
 @dark: #334655;
-@black: #161818;
+@blackColor: #161818;
+@black: url('../assets/img/black.png') no-repeat center center/cover;
+
 @silver: #f6f6f6;
 @grey: rgba(66, 66, 66, 0.37);
 @dropdownColor: #d4dde8;
@@ -88,6 +90,22 @@ body {
   min-height: 100vh;
 }
 
+.without-banner {
+  .mediaMaxWidth({
+    padding-top: 50px;
+  }, @tabletFrom);
+  .mediaFromTo({
+    padding-top: 82.5px;
+  }, @tabletFrom, @pcFrom);
+  .mediaFromTo({
+    header {
+      .bgCover();
+      background: @black;
+    }
+    padding-top: 146px;
+  })
+}
+
 ul, li {
   list-style: none;
   margin: 0;
@@ -98,7 +116,7 @@ ul, li {
 }
 header {
   background: transparent;
-  transition: 100ms ease-out;
+  //transition: 100ms ease-out;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -173,6 +191,7 @@ header {
 
     &.ui-state-active {
       background: @blue;
+      color: #fff;
       border-radius: 50%;
     }
   }

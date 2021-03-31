@@ -75,7 +75,7 @@ export function setSlick (block, params = {}) {
 document.addEventListener('scroll', onScroll)
 // * scroll for title function
 function onScroll (e) {
-	if(!header) return
+	if (!header) return
 	const container = document.documentElement
 	if (container.scrollTop >= 20 && !state.scrolled) {
 		header.classList.add('header_scrolled')
@@ -92,7 +92,7 @@ function onScroll (e) {
 		}
 	}
 	if ((state.headerHide.lastScroll > container.scrollTop && state.headerHide.isHidden)
-		|| container.scrollTop === 0) {
+		 || container.scrollTop === 0) {
 		if (container.scrollTop - state.headerHide.lastScroll <= -10 || container.scrollTop === 0) {
 			$('header').removeClass('navigation-transparent')
 			state.headerHide.isHidden = false
@@ -133,26 +133,30 @@ export function worksSelect (clicked, e) {
 }
 function setActiveWorksBox (index) {
 	const ENABLED_CLASS = 'works-container-content-box_enabled'
-	const current = $(`.${ENABLED_CLASS}`)
-	if(!current.length || current.data().box === index) return
-	const box = $(`[data-box="${index}"]`)
-	if( !box.length ) return
+	const current = $(`.${ ENABLED_CLASS }`)
+	if (!current.length || current.data().box === index) return
+	const box = $(`[data-box="${ index }"]`)
+	if (!box.length) return
 	current.removeClass(ENABLED_CLASS)
 	box.addClass(ENABLED_CLASS)
 	state.worksState.activeItem = index
-	window.requestAnimationFrame(()=>{
+	window.requestAnimationFrame(() => {
 		setSlickToTab(index)
 	});
 }
 export function setSlickToTab (index) {
-	if(!state.worksState.mountedIds.includes(index)) {
-		setSlick($(`.works-container-content-box[data-box=${index}] .js-slick-photos`), {
-			responsive: [],
-			slidesToShow: 1,
-			dots: true,
-			dotsClass: 'utils-nav-container',
-			appendDots: $(`.works-container-content-box[data-box=${index}] .works-utils`)
-		})
+	if (!state.worksState.mountedIds.includes(index)) {
+		// const tabContent = $(`.works-container-content-box[data-box=${ index }]`)
+		if(window.innerWidth > pcFrom) {
+			setSlick($(`.works-container-content-box[data-box=${ index }] .js-slick-photos`), {
+				responsive: [],
+				slidesToShow: 1,
+				dots: true,
+				dotsClass: 'utils-nav-container',
+				appendDots: $(`.works-container-content-box[data-box=${ index }] .works-utils`),
+			})
+		}
+
 		state.worksState.mountedIds.push(Number(index))
 	}
 }
@@ -187,9 +191,9 @@ function scrollToTarget (target) {
 		const boundTop = section.getBoundingClientRect().top
 		const documentScrolledHeight = document.documentElement.scrollTop
 		if (window.innerWidth >= 1200 && window.innerHeight <= 700) {
-			if(boundTop - headerHeight >= 0) {
+			if (boundTop - headerHeight >= 0) {
 				document.documentElement.scrollTop = boundTop + documentScrolledHeight
-			}else {
+			} else {
 				document.documentElement.scrollTop = boundTop + documentScrolledHeight - headerHeight
 			}
 		} else {

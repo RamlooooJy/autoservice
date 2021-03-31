@@ -1,14 +1,6 @@
 import { setSlick, setSlickToTab } from "./functions";
 
 export function initAll () {
-
-	$.datepicker.setDefaults({
-		dateFormat: "dd.mm.yy",
-		showAnim: "slideDown",
-		minDate: new Date(),
-		animated: true,
-	});
-
 	$('.input-datepicker input').datepicker()
 
 	$('.input-phone input').mask('8 (000) 000-00-00');

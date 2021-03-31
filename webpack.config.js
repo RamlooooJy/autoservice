@@ -2,6 +2,7 @@ const path = require( 'path' );
 const MiniCss = require( "mini-css-extract-plugin" )
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' )
 const CopyWebPackPlugin = require( "copy-webpack-plugin" );
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const webpack = require( 'webpack' )
 
 const arguments = process.argv.slice( 2 ).reduce( ( obj, item ) => {
@@ -71,6 +72,7 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new FaviconsWebpackPlugin('./assets/img/logo.png'),
 		new MiniCss(),
 		new CopyWebPackPlugin( {
 				patterns: [ { from: path.resolve( __dirname, "src", "js" ), to: "js" } ],
@@ -89,8 +91,13 @@ module.exports = {
 		} ),
 		new HtmlWebpackPlugin( {
 			minify: false,
-			filename: 'type.html',
-			template: '../type.html'
+			filename: 'politic.html',
+			template: '../politic.html'
+		} ),
+		new HtmlWebpackPlugin( {
+			minify: false,
+			filename: 'page.html',
+			template: '../page.html'
 		} ),
 	],
 	externals: {

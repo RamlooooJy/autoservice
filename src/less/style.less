@@ -1,4 +1,5 @@
 @import "mainStyles";
+@import "additional";
 
 @fontFamily: 'Open Sans', sans-serif;
 
@@ -6,7 +7,6 @@
 @headerHeight: 70px;
 
 
-@black: url('../assets/img/black.png') no-repeat center center/cover;
 @bannerBg1: url('../assets/img/Bg.jpg');
 
 .header_scrolled {
@@ -480,8 +480,13 @@
         padding: 0;
         width: 100%;
         &-item {
+          clip-path: none;
           padding: 0;
           background: none !important;
+          height: 243px;
+          &-photo {
+            clip-path: none;
+          }
           &-title {
             font-size: 20px;
           }
@@ -1027,7 +1032,7 @@
           }
 
           &-text {
-            .font(@black, 30px);
+            .font(@blackColor, 30px);
           }
         }
 
@@ -1188,7 +1193,7 @@
         overflow: auto;
 
         &-box {
-          .flex-between()!important;
+          .flex-between() !important;
           flex-wrap: wrap;
           &-item {
             height: 195px;
@@ -1251,7 +1256,6 @@
           padding-left: 10px;
         }
       }, @tabletFrom);
-
       &-btn {
         cursor: pointer;
         .bgCover();
@@ -1530,7 +1534,7 @@
   });
 
   .mediaMaxWidth({
-    &-icon {
+    &-data-icon {
       @iconSize: 25px;
       min-width: @iconSize;
       max-width: @iconSize;
@@ -1541,8 +1545,25 @@
     &-description,
     &-phones-item {
       font-size: 12px;
+      word-break: break-word;
     }
   }, @tabletFrom);
+
+  .mediaMaxWidth({
+    &-data-icon {
+      @iconSize: 18px;
+      min-width: @iconSize;
+      max-width: @iconSize;
+      min-height: @iconSize;
+      max-height: @iconSize;
+    }
+    &-data-text,
+    &-description,
+    &-phones-item {
+      font-size: 8px;
+      word-break: break-word;
+    }
+  }, 450px);
 
   .littlePc({
     &.section {
@@ -1709,6 +1730,7 @@
         overflow: visible;
         max-height: 500px;
         box-sizing: border-box;
+        padding: 12px 20px;
       }
 
     }
@@ -1827,7 +1849,6 @@
       height: 13px;
     }
   }
-
   .navigation-placeholder {
     width: 10%;
   }
@@ -1846,6 +1867,18 @@
   }
   .burger {
     margin-left: 0;
+  }
+  .dropdown-app-navigation-title-label,
+  .dropdown-app-navigation-menu-item {
+    font-size: 14px;
+    text-align: right;
+  }
+  .dropdown-app-navigation_active {
+    .dropdown-app-navigation-menu {
+      width: calc(100% - 79px);
+      height: 236px;
+      padding: 102px 20px 32px 17px;
+    }
   }
 }
 

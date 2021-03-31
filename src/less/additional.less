@@ -1,0 +1,21 @@
+.Docs {
+  .container(760px);
+  white-space: pre-line;
+  .fontSize(1.2rem);
+  line-height: 1.5em;
+  color: @fontColor;
+  &-header {
+    font-weight: bold;
+    .fontSize(1.2rem);
+    color: @fontColor;
+  }
+  .mediaMaxWidth({
+    .fontSize(1rem);
+  }, @tabletFrom);
+}
+
+.fontSize(@size: 0px){
+  font-size: @size;
+}
+
+
