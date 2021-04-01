@@ -33,7 +33,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(le|c)ss$/i,
-				use: [ MiniCss.loader, "css-loader", "less-loader" ]
+				use: [ MiniCss.loader, "css-loader", "less-loader" ],
 			},
 			{
 				test: /\.(woff(2)?|ttf|eot|ico)(\?v=\d+\.\d+\.\d+)?$/,
@@ -72,12 +72,13 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new FaviconsWebpackPlugin('./assets/img/logo.png'),
+		//<link href="assets/css/style.css?ver=1.1"
 		new MiniCss(),
 		new CopyWebPackPlugin( {
 				patterns: [ { from: path.resolve( __dirname, "src", "js" ), to: "js" } ],
 			}
 		),
+		new FaviconsWebpackPlugin('./assets/img/logo.png'),
 		new webpack.ProvidePlugin( {
 			$: "jquery",
 			jQuery: "jquery",

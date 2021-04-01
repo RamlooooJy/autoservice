@@ -1,6 +1,7 @@
 import './js/ui.min.js'
 import './js/mask.min.js'
 import './js/slick.min.js'
+import './worksClick.js'
 const minDate = Date.now();
 
 	/* Russian (UTF-8) initialisation for the jQuery UI date picker plugin. */

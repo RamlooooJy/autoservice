@@ -1,14 +1,12 @@
 import './less/style.less'
 import './default.js'
 import {
-	sendBannerForm,
-	state,
+	sendAnyForm,
 	burgerToggle,
-	setSlick,
-	pcFrom,
 	worksSelect,
 	dropdownMenuToggle,
-	goTo, setSlickToTab, onResizeWindowUpdate, tabletFrom,
+	allPhotoContainerToggle,
+	goTo,
 } from './functions.js'
 import { initAll } from "./init";
 
@@ -47,7 +45,7 @@ worksNavItem && worksNavItem.on('click', function(ev) {
 //!show/hide photos on low dimensions
 const allPhoto = $('.dropdown-app-container-all-photos-btn')
 allPhoto && allPhoto.on('click', function() {
-	$('.dropdown-app-container-box').toggleClass('dropdown-app-container-box_enabled')
+	allPhotoContainerToggle()
 })
 //?	//	// works
 
@@ -67,8 +65,10 @@ $('.people-button .button').on('click', (e) => {
 $('.banner-item-content-button .button').on('click', (e) => {
 	$('#banner_form').arcticmodal()
 })
-//!const form
-$('.modal-form-cost').on('submit', sendBannerForm)
+//? submit banner form
+$('.modal-form-cost').on('submit', sendAnyForm)
+$('#сostAssessment').on('submit', sendAnyForm)
+$('#enroll').on('submit', sendAnyForm)
 
 
 //! smooth go to section

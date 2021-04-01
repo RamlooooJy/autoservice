@@ -1,4 +1,5 @@
 import { setSlick, setSlickToTab } from "./functions";
+import { worksInit } from "./worksClick";
 
 export function initAll () {
 	$('.input-datepicker input').datepicker()
@@ -24,4 +25,6 @@ export function initAll () {
 	})
 
 	setSlickToTab(1)
+
+	worksInit()
 }

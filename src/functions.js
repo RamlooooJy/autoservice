@@ -14,15 +14,28 @@ export const state = {
 	// + works * * * * * * * * * * * * *
 	worksState: {
 		selectActive: false,
-		activeItem: 1,
+		allPhotosActive: false,
+		selectedMenuItem: 1,
 		mountedIds: [],
+		selectedWork: '1.1',
 	},
 }
 
 
 // +  Form banner
-export function sendBannerForm (e) {
+export function sendAnyForm (e) {
 	e.preventDefault()
+	const inputs = Array.from(this.elements).filter(a => a.tagName.toLowerCase() !== 'button')
+	const fields = inputs.reduce((acc, a) => {
+		acc[a.name] = a.value;
+		return acc
+	}, {})
+
+	console.log(fields)
+
+	inputs.forEach(a => {
+		if (a.type.toLowerCase() !== 'checkbox') a.value = ''
+	})
 	$.arcticmodal('close')
 }
 // +  toggle menu
@@ -131,6 +144,10 @@ export function worksSelect (clicked, e) {
 	$('.dropdown-app-navigation-title-label').html(clicked.innerHTML)
 	setActiveWorksBox(Number(clicked.dataset.nav))
 }
+export function allPhotoContainerToggle (e) {
+	state.worksState.allPhotosActive = !state.worksState.allPhotosActive
+	$('.dropdown-app-container-box').toggleClass('dropdown-app-container-box_enabled')
+}
 function setActiveWorksBox (index) {
 	const ENABLED_CLASS = 'works-container-content-box_enabled'
 	const current = $(`.${ ENABLED_CLASS }`)
@@ -139,7 +156,7 @@ function setActiveWorksBox (index) {
 	if (!box.length) return
 	current.removeClass(ENABLED_CLASS)
 	box.addClass(ENABLED_CLASS)
-	state.worksState.activeItem = index
+	state.worksState.selectedMenuItem = index
 	window.requestAnimationFrame(() => {
 		setSlickToTab(index)
 	});
@@ -147,7 +164,7 @@ function setActiveWorksBox (index) {
 export function setSlickToTab (index) {
 	if (!state.worksState.mountedIds.includes(index)) {
 		// const tabContent = $(`.works-container-content-box[data-box=${ index }]`)
-		if(window.innerWidth > pcFrom) {
+		if (window.innerWidth > pcFrom) {
 			setSlick($(`.works-container-content-box[data-box=${ index }] .js-slick-photos`), {
 				responsive: [],
 				slidesToShow: 1,
