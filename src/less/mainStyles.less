@@ -603,6 +603,24 @@ textarea {
   }
 }
 
+.scrollConfig() {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #DDDEDE44;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: @scrollbar;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
 .social-link(@bg: @blue) {
   display: block;
   width: 35px;
@@ -873,21 +891,7 @@ footer {
   }
   .dropdown-app-container-preview,
   .about-container-content {
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: #DDDEDE44;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: @scrollbar;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
+    .scrollConfig();
   }
 }
 
