@@ -89,6 +89,9 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 }
+main {
+  min-height: 200vh;
+}
 
 .without-banner {
   .mediaMaxWidth({
@@ -601,6 +604,7 @@ textarea {
 }
 
 .social-link(@bg: @blue) {
+  display: block;
   width: 35px;
   height: 35px;
   background-color: @bg;
@@ -624,6 +628,11 @@ textarea {
   width: 205px;
   height: 41px;
   background: url("../assets/img/logo.png") no-repeat center center/contain;
+}
+
+.rectange(@size: 0) {
+  width: @size;
+  height: @size;
 }
 
 // blocks
@@ -849,7 +858,7 @@ footer {
   }
 
   .section {
-    margin-bottom: @space-around-section / 2 !important;
+    margin-bottom: (@space-around-section / 2) !important;
   }
 }
 

@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--    <link rel="icon" href="/icon.svg" type="image/svg+xml">-->
-<!--    <link rel="apple-touch-icon" href="/apple-touch-icon.png">&lt;!&ndash; 180×180 &ndash;&gt;-->
-<!--    <link rel="manifest" href="/manifest.webmanifest">-->
-    <title>PAGE TEMPLATE</title>
+    <title>AUTOSERVICE</title>
 </head>
 <body>
 <header>
@@ -69,681 +66,138 @@
 </header>
 <main>
     <div class="banner">
-        <!--    BANNER SLIDER     -->
-        <div class="js-banner-slide">
-            <div class="banner-item">
-                <div class="banner-item-content">
-                    <h1 class="banner-item-content-title">
-                        Единственный во Владимире сертифицированный
-                        <span>сервис по установке и ремонту автооптики</span>
-                    </h1>
-                    <div class="banner-item-content-description">
-                        Ремонт, тюнинг фар, дооснащение авто.
-                    </div>
-                    <div class="button-container banner-item-content-button">
-                        <button class="button">Рассчитать стоимость</button>
-                    </div>
+        <div class="banner-item"
+             style="background-image: url(<%=require('./src/assets/img/banner2.jpg').default%>)">
+            <div class="banner-item-content">
+                <h1 class="banner-item-content-title">
+                    Единственный во Владимире сертифицированный
+                    <span>сервис по установке и ремонту автооптики</span>
+                </h1>
+                <div class="banner-item-content-description">
+                    Ремонт, тюнинг фар, дооснащение авто.
                 </div>
-            </div>
-            <div class="banner-item"
-                 style="background-image: url(<%=require('./src/assets/img/banner2.jpg').default%>)">
-                <div class="banner-item-content">
-                    <h1 class="banner-item-content-title">
-                        Единственный во Владимире сертифицированный
-                        <span>сервис по установке и ремонту автооптики</span>
-                    </h1>
-                    <div class="banner-item-content-description">
-                        Ремонт, тюнинг фар, дооснащение авто.
-                    </div>
-                    <div class="button-container banner-item-content-button">
-                        <button class="button">Рассчитать стоимость</button>
-                    </div>
-                </div>
-            </div>
-            <div class="banner-item"
-                 style="background-image: url(<%=require('./src/assets/img/team.jpg').default%>)">
-                <div class="banner-item-content" style="text-shadow: -1px 10px 10px #000000;">
-                    <h1 class="banner-item-content-title">
-                        Единственный во Владимире сертифицированный
-                        <span>сервис по установке и ремонту автооптики</span>
-                    </h1>
-                    <div class="banner-item-content-description">
-                        Ремонт, тюнинг фар, дооснащение авто.
-                    </div>
-                    <div class="button-container banner-item-content-button">
-                        <button class="button">Рассчитать стоимость</button>
-                    </div>
+                <div class="button-container banner-item-content-button">
+                    <button class="button">Рассчитать стоимость</button>
                 </div>
             </div>
         </div>
         <!--    END OF BANNER SLIDER     -->
         <div class="utils banner-utils">
-            <div class="utils-nav banner-utils-nav">
-                <!-- кнопки слайдера-->
-                <!--                utils-nav-btn_active-->
-            </div>
             <!--    LINKS     -->
             <div class="social banner-utils-links">
-                <div class="social-link social-link-whats banner-utils-links-item"></div>
-                <div class="social-link social-link-viber banner-utils-links-item"></div>
+                <a href="https://api.whatsapp.com/send?phone=79206204235&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D1%8F%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83..."
+                   class="social-link social-link-whats banner-utils-links-item"></a>
+                <a href="viber://chat?number=%2B79206204235"
+                   class="social-link social-link-viber banner-utils-links-item"></a>
             </div>
             <!--    END OF LINKS     -->
         </div>
-
     </div>
 
-    <!--    БЛОК УСЛУГ     -->
-    <div class="section services">
-        <h2 class="section-title">Наши услуги</h2>
-        <div class="services-block">
-            <div class="services-block-row">
-                <div class="services-block-row-container services-block-row-container-top">
-                    <div class="services-block-row-flex">
-                        <div class="services-block-row-container-item">
-                            <div class="services-block-row-container-item-photo"></div>
-                        </div>
-                        <div class="services-block-row-container-info">
-                            <h3 class="services-block-row-container-item-title">Ремонт
-                                Тюнинг фар</h3>
-                            <div class="services-block-row-container-item-mini services-block-row-container-item-mini-1"></div>
-                        </div>
-                    </div>
-                    <div class="services-block-row-flex">
-                        <div class="services-block-row-container-item">
-                            <div class="services-block-row-container-item-photo"
-                                 style="background-image: url(<%=require('./src/assets/img/services2-custom.png').default%>)"></div>
-                        </div>
-                        <div class="services-block-row-container-info">
-
-                            <h3 class="services-block-row-container-item-title">Автоэлектрика
-                                Автоэлектроника</h3>
-                            <div class="services-block-row-container-item-mini services-block-row-container-item-mini-2"></div>
-                        </div>
-                    </div>
+    <div class="section description">
+        <h2 class="section-title description-title">Качественная автомобильная оптика</h2>
+        <div class="description-container">
+            <div class="description-container--box">
+                <div class="description-content">
+                    <p class="description-content-text">
+                        залог вашей безопасности на дороге. Следить за состоянием света не менее важно, чем за
+                        состоянием любых других агрегатов автомобиля. При грамотном подходе в 90% случаев сломанную фару
+                        можно отремонтировать, и обычно ремонт намного дешевле замены. Но для этого «лечением»
+                        автомобильной оптики должны заниматься профессионалы.
+                        В команде ФантомАвто работают специалисты с большим опытом ремонта автооптики. Мы используем
+                        комплектующие только проверенных производителей. На все модули и элементы фар, который мы
+                        устанавливаем, действует заводская гарантия.
+                        Являемся официальным партнером компании ГАЛОГЕНУ NET. Наши мастера регулярно проходят обучение в
+                        партнерском образовательном центре.
+                    </p>
                 </div>
             </div>
-
-            <div class="services-block-row">
-                <div class="services-block-row-container services-block-row-container-bottom">
-                    <div class="services-block-row-flex">
-                        <div class="services-block-row-container-item services-block-row-container-item_dark">
-                            <div class="services-block-row-container-item-photo"
-                                 style="background-image: url(<%=require('./src/assets/img/services3-custom.png').default%>)"></div>
-                        </div>
-                        <div class="services-block-row-container-info">
-                            <h3 class="services-block-row-container-item-title">Дооснащение
-                                автомобилей</h3>
-                            <div class="services-block-row-container-item-mini services-block-row-container-item-mini-3"></div>
-                        </div>
-                    </div>
-                    <div class="services-block-row-flex">
-                        <div class="services-block-row-container-item services-block-row-container-item_dark">
-                            <!--                            <img class="services-block-row-container-item-photo"-->
-                            <!--                                 src=<%=require("./src/assets/img/services4-custom.png").default%> alt="Ремонт тюнинг фар">-->
-                            <div class="services-block-row-container-item-photo"
-                                 style="background-image: url(<%=require('./src/assets/img/services4-custom.png').default%>)"></div>
-                        </div>
-                        <div class="services-block-row-container-info">
-                            <h3 class="services-block-row-container-item-title">Установка
-                                сигнализаций</h3>
-                            <div class="services-block-row-container-item-mini services-block-row-container-item-mini-4"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="description-background">
+                <div class="description-background-image"
+                     style="background-image: url(<%=require('./src/assets/img/1617022269601896.jpg').default%>)"></div>
             </div>
         </div>
     </div>
-    <!--    КОНЕЦ БЛОК УСЛУГ     -->
 
-    <!--    БЛОК КТО МЫ     -->
-    <div class="section about">
-        <div class="about-container">
-            <div class="about-container-flex">
-                <div class="about-container-photo"></div>
-                <div class="about-container-content">
-                    <div class="about-container-content-title">Кто мы?</div>
-                    <div class="about-container-content-text">
-                        <p>Наша техническая база позволяет в кратчайшие сроки выполнять точную диагностику и ремонт
-                            любых систем Mercedes. Мы официальный партнер программы </p>
-                        <p>Автосервис Мерседес "MasterMB" специализируется на ремонте и техническом обслуживании
-                            исключительно автомобилей марки Mercedes-Benz. Мы выбрали этот бренд более 18 лет назад и до
-                            сих пор преданно считаем автомобили марки Mercedes самым лучшим и безальтернативным
-                            вариантом. </p>
-                        <p>Наша техническая база позволяет в кратчайшие сроки выполнять точную диагностику и ремонт
-                            любых систем Mercedes. Мы официальный партнер программы
-                            Автосервис Мерседес "MasterMB" специализируется на ремонте</p>
-                    </div>
+    <div class="section big-block">
+        <div class="section-title">
+            Виды услуг
+        </div>
+        <div class="types-app">
+            <div class="types-app-navigation">
+                <div class="types-app-navigation-title">
+                    <span class="types-app-navigation-title-label">Ремонт Тюнинг фар</span>
                 </div>
+            </div>
+            <div class="types-app-box-container">
+                <div class="types-app-box-navigation">
+                    <div class="types-app-box-navigation-item">Ремонт Тюнинг фар</div>
+                    <div class="types-app-box-navigation-item">Восстановление отражателей</div>
+                    <div class="types-app-box-navigation-item">Замена штатных линз и ламп</div>
+                    <div class="types-app-box-navigation-item">Очистка и окраска внутренних элементов фар</div>
+                    <div class="types-app-box-navigation-item">Восстановление отражателей</div>
+                    <div class="types-app-box-navigation-item">Замена штатных линз и ламп</div>
+                    <div class="types-app-box-navigation-item">Очистка и бла бла бла1</div>
+                    <div class="types-app-box-navigation-item">Очистка и бла бла бла2</div>
+                    <div class="types-app-box-navigation-item">Очистка и бла бла бла3</div>
+                    <div class="types-app-box-navigation-item">Очистка и бла бла бла4</div>
+                    <div class="types-app-box-navigation-item">Очистка и бла бла бла5</div>
+                </div>
+            </div>
+            <div class="types-app-block">
+                Данная процедура поможет избежать сколов от мелких камней и песка, царапин от веток, попадания
+                насекомых.
+                Специалисты нашего сервиса выполняют бронирование фар специальной пленкой устойчивой к воздействию
+                песка. При эксплуатации пленка не желтеет, и ее можно аккуратно полировать. Процедура по бронированию
+                фар займет всего несколько часов, а качественная пленка прослужит до 5 лет, сохранив оптику вашего
+                автомобиля в первозданном виде.
+                Записаться на процедуру бронирования можно уже сейчас.
             </div>
         </div>
-    </div>
-    <!--    КОНЕЦ БЛОК КТО МЫ     -->
-
-    <!--    БЛОК ПРЕИМУЩЕСТВА     -->
-    <div class="section advantages">
-        <h2 class="section-title">Наши преимущества</h2>
-        <div class="advantages-container">
-            <div class="advantages-container-row">
-                <div class="advantages-container-row-item">
-                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-1"></div>
-                    <div class="advantages-container-row-item-title">18 лет обслуживаем автомобили</div>
-                    <div class="advantages-container-row-item-content">Наша техническая база позволяет в кратчайшие
-                        сроки выполнять точную диагностику и ремонт любых систем
-                        Mercedes. Мы официальный партнер
-                        программы
+        <!--    БЛОК ФОРМА     -->
+        <div class="section form">
+            <form id="enroll" class="form-container">
+                <h2 class="form-container-title">Онлайн запись на <span>бесплатную</span> консультацию
+                </h2>
+                <div class="form-container-inputs">
+                    <div class="input form-container-inputs-input">
+                        <label>
+                            <input required name="Имя" type="text" placeholder="true">
+                            <span>Имя</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                    <div class="input form-container-inputs-input input-phone">
+                        <label>
+                            <input required name="Телефон" type="tel" placeholder="true">
+                            <span>Телефон</span>
+                            <span class="line"></span>
+                        </label>
+                    </div>
+                    <div class="input form-container-inputs-input input-datepicker">
+                        <label>
+                            <input readonly required name="Запись на" type="text" placeholder="true">
+                            <span>Выберите дату</span>
+                            <span class="line"></span>
+                        </label>
                     </div>
                 </div>
-                <div class="advantages-container-row-item">
-                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-2"></div>
-                    <div class="advantages-container-row-item-title">18 лет обслуживаем автомобили</div>
-                    <div class="advantages-container-row-item-content">Наша техническая база позволяет в кратчайшие
-                        сроки выполнять точную диагностику и ремонт любых систем
-                        Mercedes. Мы официальный партнер
-                        программы
+                <div class="form-container-buttons">
+                    <div class="space"></div>
+                    <div class="button-container form-container-buttons-button">
+                        <button class="button">Отправить</button>
                     </div>
-                </div>
-                <div class="advantages-container-row-item">
-                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-3"></div>
-                    <div class="advantages-container-row-item-title">18 лет обслуживаем автомобили</div>
-                    <div class="advantages-container-row-item-content">Наша техническая база позволяет в кратчайшие
-                        сроки выполнять точную диагностику и ремонт любых систем
-                        Mercedes. Мы официальный партнер
-                        программы
-                    </div>
-                </div>
-            </div>
-            <div class="advantages-container-separators">
-                <div class="advantages-container-separators-separator"></div>
-                <div class="advantages-container-separators-separator"></div>
-            </div>
-            <div class="advantages-container-row">
-                <div class="advantages-container-row-item">
-                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-4"></div>
-                    <div class="advantages-container-row-item-title">18 лет обслуживаем автомобили</div>
-                    <div class="advantages-container-row-item-content">Наша техническая база позволяет в кратчайшие
-                        сроки выполнять точную диагностику и ремонт любых систем
-                        Mercedes. Мы официальный партнер
-                        программы
-                    </div>
-                </div>
-                <div class="advantages-container-row-item">
-                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-5"></div>
-                    <div class="advantages-container-row-item-title">18 лет обслуживаем автомобили</div>
-                    <div class="advantages-container-row-item-content">Наша техническая база позволяет в кратчайшие
-                        сроки выполнять точную диагностику и ремонт любых систем
-                        Mercedes. Мы официальный партнер
-                        программы
-                    </div>
-                </div>
-                <div class="advantages-container-row-item">
-                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-6"></div>
-                    <div class="advantages-container-row-item-title">18 лет обслуживаем автомобили</div>
-                    <div class="advantages-container-row-item-content">Наша техническая база позволяет в кратчайшие
-                        сроки выполнять точную диагностику и ремонт любых систем
-                        Mercedes. Мы официальный партнер
-                        программы
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <!--    КОНЕЦ БЛОК ПРЕИМУЩЕСТВА     -->
-
-    <!--    БЛОК ФОРМА     -->
-    <div class="section form">
-        <div class="form-container">
-            <h2 class="form-container-title">Онлайн запись на <span>бесплатную</span> консультацию
-            </h2>
-            <div class="form-container-inputs">
-                <div class="input form-container-inputs-input">
-                    <label>
-                        <input required name="type" type="text" placeholder="true">
-                        <span>Имя</span>
-                        <span class="line"></span>
-                    </label>
-                </div>
-                <div class="input form-container-inputs-input input-phone">
-                    <label>
-                        <input required name="release" type="tel" placeholder="true">
-                        <span>Телефон</span>
-                        <span class="line"></span>
-                    </label>
-                </div>
-                <div class="input form-container-inputs-input input-datepicker">
-                    <label>
-                        <input readonly required name="services" type="text" placeholder="true">
-                        <span>Выберите дату</span>
-                        <span class="line"></span>
-                    </label>
-                </div>
-            </div>
-            <div class="form-container-buttons">
-                <div class="space"></div>
-                <div class="button-container form-container-buttons-button">
-                    <button class="button">Отправить</button>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input required type="checkbox" name="agree" checked hidden>
-                        <span>Прочитал и согласен на <a href="./politic.html">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--    КОНЕЦ БЛОК ФОРМА     -->
-
-    <!--    БЛОК СОТРУДНИКОВ     -->
-    <div class="section people">
-        <h2 class="section-title">Наши специалисты</h2>
-        <div class="people-container">
-            <div class="people-container-card-container">
-                <div class="people-container-card">
-                    <div class="people-container-card-image people-container-card-image-1"></div>
-                    <div class="people-container-card-title">Андрей</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
-                </div>
-            </div>
-            <div class="people-container-card-container">
-                <div class="people-container-card">
-                    <div class="people-container-card-image people-container-card-image-1"></div>
-                    <div class="people-container-card-title">Андрей</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
-                </div>
-            </div>
-            <div class="people-container-card-container">
-                <div class="people-container-card">
-                    <div class="people-container-card-image people-container-card-image-2"></div>
-                    <div class="people-container-card-title">Сергей</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
-                </div>
-            </div>
-            <div class="people-container-card-container">
-                <div class="people-container-card">
-                    <div class="people-container-card-image people-container-card-image-3"></div>
-                    <div class="people-container-card-title">Станислав</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
-                </div>
-            </div>
-            <div class="people-container-card-container">
-                <div class="people-container-card">
-                    <div class="people-container-card-image people-container-card-image-4"></div>
-                    <div class="people-container-card-title">Максим</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="slick-arrows">
-            <div class="slick-arrows-container"></div>
-        </div>
-        <div class="button-container people-button">
-            <button class="button">Присоединиться к команде</button>
-        </div>
-    </div>
-    <!--    КОНЕЦ БЛОК СОТРУДНИКОВ     -->
-
-    <!--    БЛОК РАБОТ     -->
-    <div id="works" class="section works">
-        <h2 class="section-title">Наши работы</h2>
-
-        <div class="works-container dropdown-app">
-            <div class="works-container-navigation dropdown-app-navigation">
-                <div class="dropdown-app-navigation-title">
-                    <span class="dropdown-app-navigation-title-label">Ремонт Тюнинг фар</span>
-                    <div class="dropdown-app-navigation-title-btn"></div>
-                </div>
-                <div class="dropdown-app-navigation-menu works-container-navigation">
-                    <div data-nav="1"
-                         class="dropdown-app-navigation-menu-item works-container-navigation-item works-container-navigation-item_selected">Ремонт
-                        Тюнинг фар
-                    </div>
-                    <div data-nav="2" class="dropdown-app-navigation-menu-item works-container-navigation-item">
-                        Автоэлектрика
-                        Автоэлектроника
-                    </div>
-                    <div data-nav="3" class="dropdown-app-navigation-menu-item works-container-navigation-item">
-                        Дооснащение
-                        автомобилей
-                    </div>
-                    <div data-nav="4" class="dropdown-app-navigation-menu-item works-container-navigation-item">
-                        Установка
-                        сигнализаций
-                    </div>
-                </div>
-            </div>
-            <div class="dropdown-app-container dropdown-app-container_enabled works-container-content">
-                <!-- + slider 1 +-->
-                <div data-box="1"
-                     class="dropdown-app-container-box works-container-content-box works-container-content-box_enabled">
-                    <div class="dropdown-app-container-all-photos-btn"></div>
-                    <div class="dropdown-app-container-preview works-container-content-preview">
-                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
-                             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
-                            Тюнинг фар</h3>
-                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
-                            Установлен
-                            мультимедийный навигационный блок на
-                            базе Android 8.1. и подключены экраны для задних
-                            пассажиров</p>
-                    </div>
-                    <div class="dropdown-app-container-photos works-container-content-photos">
-                        <!--         slider            -->
-                        <div class="js-slick-photos">
-                            <div>
-                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                </div>
-                            </div>
-                            <div>
-                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="utils utils-nav works-utils">
-
-                        </div>
-                    </div>
-                </div>
-                <!-- + slider 2 +-->
-                <div data-box="2" class="dropdown-app-container-box works-container-content-box ">
-                    <div class="dropdown-app-container-all-photos-btn"></div>
-                    <div class="dropdown-app-container-preview works-container-content-preview">
-                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
-                             style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">
-                            Автоэлектрика Автоэлектроника</h3>
-                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
-                            Установлен
-                            мультимедийный навигационный блок на
-                            базе Android 8.1. и подключены экраны для задних
-                            пассажиров</p>
-                    </div>
-                    <div class="dropdown-app-container-photos works-container-content-photos">
-                        <!--         slider            -->
-                        <div class="js-slick-photos">
-                            <div>
-                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works2.png').default%>)"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="utils utils-nav works-utils">
-
-                        </div>
-                    </div>
-                </div>
-                <!-- + slider 3 +-->
-                <div data-box="3" class="dropdown-app-container-box works-container-content-box ">
-                    <div class="dropdown-app-container-all-photos-btn"></div>
-                    <div class="dropdown-app-container-preview works-container-content-preview">
-                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
-                             style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">
-                            Дооснащение автомобиля</h3>
-                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
-                            Установлен
-                            мультимедийный навигационный блок на
-                            базе Android 8.1. и подключены экраны для задних
-                            пассажиров</p>
-                    </div>
-                    <div class="dropdown-app-container-photos works-container-content-photos">
-                        <!--         slider            -->
-                        <div class="js-slick-photos">
-                            <div>
-                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works3.png').default%>)"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="utils utils-nav works-utils">
-
-                        </div>
-                    </div>
-                </div>
-                <!-- + slider 4 +-->
-                <div data-box="4" class="dropdown-app-container-box works-container-content-box ">
-                    <div class="dropdown-app-container-all-photos-btn"></div>
-                    <div class="dropdown-app-container-preview works-container-content-preview">
-                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
-                             style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Установка
-                            сигнализаций</h3>
-                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
-                            Установлен
-                            мультимедийный навигационный блок на
-                            базе Android 8.1. и подключены экраны для задних
-                            пассажиров</p>
-                    </div>
-                    <div class="dropdown-app-container-photos works-container-content-photos">
-                        <!--         slider            -->
-                        <div class="js-slick-photos">
-                            <div>
-                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                    <div class="dropdown-app-container-photos-box-item works-container-content-photos-item"
-                                         style="background-image: url(<%=require('./src/assets/img/works4.png').default%>)"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="utils utils-nav works-utils">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--    КОНЕЦ БЛОК РАБОТ     -->
-
-    <!--    БЛОК СТОИМОСТЬ РАБОТ     -->
-    <div class="section cost clear-space">
-        <div class="cost-container">
-            <div class="box1130">
-                <h2 class="cost-container-title">Оценить стоимость работ </h2>
-                <div class="cost-container-inputs">
-                    <div class="cost-container-inputs-cell">
-                        <div class="input cost-container-inputs-cell-input">
-                            <label>
-                                <input required name="type" type="text" placeholder="true">
-                                <span>Марка авто</span>
-                                <span class="line"></span>
-                            </label>
-                        </div>
-                        <div class="input cost-container-inputs-cell-input">
-                            <label>
-                                <input required name="type" type="text" placeholder="true">
-                                <span>Год выпуска</span>
-                                <span class="line"></span>
-                            </label>
-                        </div>
-                        <div class="input cost-container-inputs-cell-input">
-                            <label>
-                                <input required name="type" type="text" placeholder="true">
-                                <span>Вид услуги</span>
-                                <span class="line"></span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="cost-container-inputs-cell">
-                        <div class="input textarea cost-container-inputs-cell-comment">
-                            <label>
-                                <textarea maxlength="300" placeholder="true"></textarea>
-                                <span>Комментарий</span>
-                                <span class="line"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="cost-container-buttons">
                     <div class="checkbox">
                         <label>
-                            <input required type="checkbox" name="agree" checked hidden>
+                            <input required type="checkbox" name="Соглашение" checked hidden>
                             <span>Прочитал и согласен на <a href="./politic.html">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
                         </label>
                     </div>
-                    <div class="button-container">
-                        <button class="button">Отправить</button>
-                    </div>
                 </div>
-            </div>
+            </form>
         </div>
+        <!--    КОНЕЦ БЛОК ФОРМА     -->
     </div>
-    <!--    КОНЕЦ БЛОК СТОИМОСТЬ РАБОТ     -->
-
-    <!--  КАРТА -->
-    <div class="section yandex" id="contacts">
-        <div class="yandex-container">
-            <div class="yandex-content">
-                <div class="yandex-data">
-                    <div class="yandex-data-row">
-                        <div class="yandex-data-icon yandex-data-icon-1"></div>
-                        <div class="yandex-data-text">г. Владимир, 2-й Почаевский проезд, дом 6</div>
-                    </div>
-                    <div class="yandex-data-row">
-                        <div class="yandex-data-icon yandex-data-icon-2"></div>
-                        <div class="yandex-data-text">fantom.service@yandex.ru</div>
-                    </div>
-                    <div class="yandex-data-row">
-                        <div class="yandex-data-icon yandex-data-icon-3"></div>
-                        <div class="yandex-data-text">Ежедневно, с 09.00 до 18.00.</div>
-                    </div>
-                </div>
-                <div class="yandex-data2">
-                    <div class="yandex-description">Вы всегда можете связаться с нами по телефону во Владимире:
-                    </div>
-                    <div class="yandex-phones">
-                        <a class="yandex-phones-item" href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
-                        <a class="yandex-phones-item" href="tel:+7 (920) 620-42-35">+7 (920) 620-42-35</a>
-                    </div>
-                    <div class="yandex-icons">
-                        <div class="social-link social-link-whats yandex-icons-link"></div>
-                        <div class="social-link social-link-viber yandex-icons-link"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="map">
-            <script type="text/javascript" charset="utf-8" async
-                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad8c1332490e3ce011279d297c7e0be3d3864aa210f581fbc2372fd2bd34905f3&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
-        </div>
-    </div>
-    <!--  КАРТА -->
 </main>
 
 <footer>
@@ -752,7 +206,7 @@
             <div class="logo footer-logo"></div>
             <div class="footer-contacts">
                 <a href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
-                <span>fantom.service@yandex.ru</span>
+                <a href="mailto:fantom.service@yandex.ru"><span>fantom.service@yandex.ru</span></a>
             </div>
         </div>
         <div class="footer-row">
@@ -776,10 +230,12 @@
                 </li>
                 <div class="social footer-navigation-block">
                     <a href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
-                    <span class="footer-address">fantom.service@yandex.ru</span>
+                    <a href="mailto:fantom.service@yandex.ru"><span>fantom.service@yandex.ru</span></a>
                     <div class="social-links">
-                        <div class="social-link social-link-whats"></div>
-                        <div class="social-link social-link-viber"></div>
+                        <a href="https://api.whatsapp.com/send?phone=79206204235&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D1%8F%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83..."
+                           class="social-link social-link-whats banner-utils-links-item"></a>
+                        <a href="viber://chat?number=%2B79206204235"
+                           class="social-link social-link-viber banner-utils-links-item"></a>
                     </div>
                 </div>
             </ul>
@@ -795,7 +251,7 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input required name="name" type="text" placeholder="true">
+                            <input required name="Имя" type="text" placeholder="true">
                             <span>Имя</span>
                             <span class="line"></span>
                         </label>
@@ -804,7 +260,7 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input required name="surname" type="text" placeholder="true">
+                            <input required name="Фамилия" type="text" placeholder="true">
                             <span>Фамилия</span>
                             <span class="line"></span>
                         </label>
@@ -813,7 +269,7 @@
                 <div class="modal-row">
                     <div class="input modal-input input-phone">
                         <label>
-                            <input required name="Phone" type="text" placeholder="true">
+                            <input required name="Телефон" type="text" placeholder="true">
                             <span>Телефон</span>
                             <span class="line"></span>
                         </label>
@@ -822,7 +278,7 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input name="Email" type="email" placeholder="true">
+                            <input name="Почта" type="email" placeholder="true">
                             <span>Почта</span>
                             <span class="line"></span>
                         </label>
@@ -831,7 +287,7 @@
                 <div class="modal-row">
                     <div class="checkbox">
                         <label>
-                            <input required type="checkbox" name="agree" checked hidden>
+                            <input required type="checkbox" name="Соглашение" checked hidden>
                             <span>Прочитал и согласен на <a href="./politic.html">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
                         </label>
                     </div>
@@ -851,7 +307,7 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input required name="type" type="text" placeholder="true">
+                            <input required name="Марка авто" type="text" placeholder="true">
                             <span>Марка авто</span>
                             <span class="line"></span>
                         </label>
@@ -860,7 +316,7 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input required name="type" type="text" placeholder="true">
+                            <input required name="Год выпуска" type="text" placeholder="true">
                             <span>Год выпуска</span>
                             <span class="line"></span>
                         </label>
@@ -869,7 +325,7 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input required name="type" type="text" placeholder="true">
+                            <input required name="Вид услуги" type="text" placeholder="true">
                             <span>Вид услуги</span>
                             <span class="line"></span>
                         </label>
@@ -878,7 +334,7 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input required name="FIO" type="text" placeholder="true">
+                            <input required name="ФИО" type="text" placeholder="true">
                             <span>ФИО</span>
                             <span class="line"></span>
                         </label>
@@ -887,7 +343,7 @@
                 <div class="modal-row">
                     <div class="input modal-input input-phone">
                         <label>
-                            <input required name="phone" type="tel" placeholder="true">
+                            <input required name="Телефон" type="tel" placeholder="true">
                             <span>Телефон</span>
                             <span class="line"></span>
                         </label>
@@ -896,7 +352,7 @@
                 <div class="modal-row">
                     <div class="input modal-input">
                         <label>
-                            <input name="email" type="email" placeholder="true">
+                            <input name="Почта" type="email" placeholder="true">
                             <span>Почта</span>
                             <span class="line"></span>
                         </label>
@@ -905,7 +361,7 @@
                 <div class="modal-row">
                     <div class="checkbox">
                         <label>
-                            <input required type="checkbox" name="agree" checked hidden>
+                            <input required type="checkbox" name="Соглашение" checked hidden>
                             <span>Прочитал и согласен на <a href="./politic.html">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
                         </label>
                     </div>
@@ -917,6 +373,140 @@
                 </div>
             </div>
         </form>
+    </div>
+</div>
+<div id="workStack" style="display: none">
+    <div data-work-item="1.1" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар 1</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.2" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар 2</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.3" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар3</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.4" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар4</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.5" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар5</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.6" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар6</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.7" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар7</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.8" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар8</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.9" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар9</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.10" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар10</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.11" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар11</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
+    </div>
+    <div data-work-item="1.12" class="dropdown-app-container-preview works-container-content-preview">
+        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+            Тюнинг фар12</h3>
+        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+            Установлен
+            мультимедийный навигационный блок на
+            базе Android 8.1. и подключены экраны для задних
+            пассажиров</p>
     </div>
 </div>
 

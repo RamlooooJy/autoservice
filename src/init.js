@@ -1,5 +1,6 @@
 import { setSlick, setSlickToTab } from "./functions";
 import { worksInit } from "./worksClick";
+import { typesInit } from "./typesScrollBehavior";
 
 export function initAll () {
 	$('.input-datepicker input').datepicker()
@@ -25,6 +26,8 @@ export function initAll () {
 	})
 
 	setSlickToTab(1)
+
+	typesInit()
 
 	worksInit()
 }

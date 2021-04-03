@@ -19,6 +19,9 @@ export const state = {
 		mountedIds: [],
 		selectedWork: '1.1',
 	},
+	typesApp: {
+		enabledId: 0
+	}
 }
 
 
