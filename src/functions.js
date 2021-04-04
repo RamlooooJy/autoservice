@@ -39,6 +39,10 @@ export function sendAnyForm (e) {
 	inputs.forEach(a => {
 		if (a.type.toLowerCase() !== 'checkbox') a.value = ''
 	})
+	document.body.classList.add('alert')
+	setTimeout(()=>{
+		document.body.classList.remove('alert')
+	}, 2000)
 	$.arcticmodal('close')
 }
 // +  toggle menu
@@ -192,10 +196,11 @@ document.addEventListener('click', (e) => {
 		dropdownMenuToggle()
 	}
 })
+console.log(location.href)
 
 export function goTo (e) {
 	const link = e.currentTarget
-	if (link && link.href.indexOf('/#') !== -1) {
+	if (link && link.href.indexOf('/#') !== -1 && location.pathname === '/') {
 		e.preventDefault()
 		const index = link.href.indexOf('/#') + 2
 		const blockId = link.href.slice(index)

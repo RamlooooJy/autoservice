@@ -88,6 +88,26 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
+  &:after {
+    display: block;
+    content: 'Отправлено';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(17, 208, 255, 0.4);
+    font-size: 8px;
+    color: #fff;
+    text-align: center;
+    pointer-events: none;
+    transition: 200ms ease-out;
+    transform: translateY(-50px);
+  }
+  &.alert {
+    &:after {
+      transform: translateY(0);
+    }
+  }
 }
 main {
   min-height: 200vh;
@@ -515,6 +535,13 @@ textarea {
     }
   })
 }
+//.input,
+//.textarea {
+//  input ~ .line,
+//  textarea:invalid ~ .line {
+//    background-color: #c30000;
+//  }
+//}
 
 .image() {
   border-radius: 1px;
@@ -622,7 +649,6 @@ textarea {
 }
 
 .social-link(@bg: @blue) {
-  display: block;
   width: 35px;
   height: 35px;
   background-color: @bg;
@@ -632,14 +658,16 @@ textarea {
   background-position: center;
   margin-left: 10px;
   cursor: pointer;
+  padding: 0!important;
+  .flex-center;
 
-  &-whats {
-    background-image: url("../assets/img/whts.png");
-  }
-
-  &-viber {
-    background-image: url("../assets/img/viber.png");
-  }
+  //&-whats {
+  //  background-image: url("../assets/img/whts.png");
+  //}
+  //
+  //&-viber {
+  //  background-image: url("../assets/img/viber.png");
+  //}
 }
 
 .logo {

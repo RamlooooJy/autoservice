@@ -1,25 +1,27 @@
-const path = require( 'path' );
-const MiniCss = require( "mini-css-extract-plugin" )
-const HtmlWebpackPlugin = require( 'html-webpack-plugin' )
-const CopyWebPackPlugin = require( "copy-webpack-plugin" );
+const path = require('path');
+const MiniCss = require("mini-css-extract-plugin")
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebPackPlugin = require("copy-webpack-plugin");
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const webpack = require( 'webpack' )
+const webpack = require('webpack')
 
-const arguments = process.argv.slice( 2 ).reduce( ( obj, item ) => {
-	obj[item.split( '=' )[0]] = item.split( '=' )[1]
+const arguments = process.argv.slice(2).reduce((obj, item) => {
+	obj[item.split('=')[0]] = item.split('=')[1]
 	return obj
-}, {} )
+}, {})
 
 const mode = arguments['--mode'] || 'development'
 
 const imgPath = {}
-if ( mode === 'production' ) {
+if (mode === 'production') {
 	imgPath.name = '[name].[ext]'
 }
 
 module.exports = {
-	context: path.join( __dirname, 'src' ),
+	context: path.join(__dirname, 'src'),
 	mode,
+	devtool:  mode === "development" ? "source-map": false, // for debug with file names
 	watchOptions: {
 		aggregateTimeout: 200,
 		poll: 1000,
@@ -27,7 +29,7 @@ module.exports = {
 	entry: './index.js',
 	output: {
 		filename: 'index.js',
-		path: path.resolve( __dirname, 'dist' ),
+		path: path.resolve(__dirname, 'dist'),
 	},
 	module: {
 		rules: [
@@ -42,10 +44,10 @@ module.exports = {
 						loader: 'file-loader',
 						options: {
 							name: '[name].[ext]',
-							outputPath: 'assets/'
-						}
-					}
-				]
+							outputPath: 'assets/',
+						},
+					},
+				],
 			},
 			{
 				test: /\.(png|jpe?g|gif|svg)$/i,
@@ -54,8 +56,8 @@ module.exports = {
 						loader: 'file-loader',
 						options: {
 							outputPath: 'img/',
-							...imgPath
-						}
+							...imgPath,
+						},
 					},
 				],
 			},
@@ -65,51 +67,53 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['@babel/preset-env']
-					}
-				}
-			}
-		]
+						presets: [ '@babel/preset-env' ],
+					},
+				},
+			},
+		],
+	},
+	optimization: {
+		minimize: mode === 'production',
+		minimizer: [ new CssMinimizerPlugin() ],
 	},
 	plugins: [
 		//<link href="assets/css/style.css?ver=1.1"
 		new MiniCss(),
-		new CopyWebPackPlugin( {
-				patterns: [ { from: path.resolve( __dirname, "src", "js" ), to: "js" } ],
-			}
+		new CopyWebPackPlugin({
+				patterns: [ { from: path.resolve(__dirname, "src", "js"), to: "js" } ],
+			},
 		),
 		new FaviconsWebpackPlugin('./assets/img/logo.png'),
-		new webpack.ProvidePlugin( {
+		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",
 			'window.$': "jquery",
-			'window.jQuery': "jquery"
-		} ),
-		new HtmlWebpackPlugin( {
+			'window.jQuery': "jquery",
+		}),
+		new HtmlWebpackPlugin({
 			minify: false,
 			filename: 'index.html',
 			template: '../index.html',
-		} ),
-		new HtmlWebpackPlugin( {
+		}),
+		new HtmlWebpackPlugin({
 			minify: false,
 			filename: 'politic.html',
-			template: '../politic.html'
-		} ),
-		new HtmlWebpackPlugin( {
+			template: '../politic.html',
+		}),
+		new HtmlWebpackPlugin({
 			minify: false,
 			filename: 'page.html',
-			template: '../page.html'
-		} ),
+			template: '../page.html',
+		}),
 	],
 	externals: {
 		jquery: 'jQuery',
 	},
-
 	devServer: {
-		contentBase: path.join( __dirname, 'dist' ),
+		contentBase: path.join(__dirname, 'dist'),
 		compress: true,
 		port: 9000,
 		open: 'Google Chrome',
 	},
-	devtool: mode === "development" && "source-map" // for debug with file names
 };

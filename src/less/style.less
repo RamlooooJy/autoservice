@@ -950,8 +950,27 @@
     }
     position: relative;
     background: url('../assets/img/black.png') no-repeat left calc(100% - 75px) / 100% 291px;
-
     &-container {
+      position: relative;
+      &:before {
+        z-index: 1;
+        content: '';
+        display: block;
+        position: absolute;
+        height: 545px;
+        width: 375px;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-image: url("../assets/img/master-single.png");
+        background-repeat: no-repeat;
+        bottom: 76px;
+        left: -230px;
+        pointer-events: none;
+        .mediaMaxWidth({
+          display: none;
+          content: none;
+        })
+      }
       @corner: 251px;
       @itemCorner: 32px;
       @itemSpaceAfter: (@itemCorner/2);
@@ -1069,13 +1088,20 @@
         }
       }
     }
-
+    &-single {
+      &-container:before {
+        left: -120px;
+      }
+    }
     &-utils {
       bottom: 46px;
       left: 50%;
       transform: translateX(-50%);
     }
   }, @pcFrom, @infinite);
+  &-single .dropdown-app-navigation {
+    pointer-events: none;
+  }
   .littlePc({
     &-container {
       &-content-photos {
@@ -1741,11 +1767,11 @@
 .big-block {
   padding: 24px 0;
   //min-height: 1629px;
-  background: linear-gradient(228.74deg, rgba(24, 24, 24, 0.27) -3.16%, rgba(108, 187, 244, 0) 101.82%),
-  url("../assets/img/car-types.png") no-repeat top left / 170%;
+  //background: linear-gradient(228.74deg, rgba(24, 24, 24, 0.27) -3.16%, rgba(108, 187, 244, 0) 101.82%), url("../assets/img/car-types.png") no-repeat top left / 170%;
+  background: url("../assets/img/car-transparent.png") no-repeat top left / cover;
   .mediaMaxWidth({
-    background-size: cover;
-  }, 1500px);
+    background-position: top center;
+  }, @tabletFrom);
 }
 .types-app {
   .container();
@@ -1784,6 +1810,7 @@
     z-index: 2;
     &-title {
       padding-right: 100px;
+      background-size: 101% 123%;
       &-label {
         min-width: 500px;
       }
@@ -2194,10 +2221,14 @@
     &-assets {
       .flex-between-align;
       flex-basis: 100%;
+      align-content: stretch;
+      &:before {
+        content: '';
+      }
 
     }
     &-logo {
-      width: 80px;
+      width: 65px;
       height: 13px;
     }
   }

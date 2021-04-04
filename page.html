@@ -55,11 +55,11 @@
             </li>
             <li class="navigation-container-divider"></li>
             <li class="navigation-container-item">
-                <a class="simple-link" href="#works">Наши работы</a>
+                <a class="simple-link" href="../#works">Наши работы</a>
             </li>
             <li class="navigation-container-divider"></li>
             <li class="navigation-container-item">
-                <a class="simple-link" href="#contacts">Контакты</a>
+                <a class="simple-link" href="../#contacts">Контакты</a>
             </li>
         </ul>
     </div>
@@ -67,7 +67,7 @@
 <main>
     <div class="banner">
         <div class="banner-item"
-             style="background-image: url(<%=require('./src/assets/img/banner2.jpg').default%>)">
+             style="background-image: url(<%=require('./src/assets/img/newBanner4.png').default%>)">
             <div class="banner-item-content">
                 <h1 class="banner-item-content-title">
                     Единственный во Владимире сертифицированный
@@ -85,10 +85,13 @@
         <div class="utils banner-utils">
             <!--    LINKS     -->
             <div class="social banner-utils-links">
-                <a href="https://api.whatsapp.com/send?phone=79206204235&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D1%8F%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83..."
-                   class="social-link social-link-whats banner-utils-links-item"></a>
+                <a href="https://api.whatsapp.com/send?phone=79206204235" class="social-link banner-utils-links-item">
+                    <img class="social-link-whats" src="<%=require('./src/assets/img/whts.png').default%>" title="WhatsApp">
+                </a>
                 <a href="viber://chat?number=%2B79206204235"
-                   class="social-link social-link-viber banner-utils-links-item"></a>
+                   class="social-link banner-utils-links-item">
+                    <img class="social-link-viber" src="<%=require('./src/assets/img/viber.png').default%>" title="Viber">
+                </a>
             </div>
             <!--    END OF LINKS     -->
         </div>
@@ -119,6 +122,54 @@
         </div>
     </div>
 
+    <!--    БЛОК ПРЕИМУЩЕСТВА     -->
+    <div class="section advantages">
+        <h2 class="section-title">Наши преимущества</h2>
+        <div class="advantages-container">
+            <div class="advantages-container-row">
+                <div class="advantages-container-row-item">
+                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-1"></div>
+                    <div class="advantages-container-row-item-title">17 лет на рынке</div>
+                    <div class="advantages-container-row-item-content">Большинство клиентов становятся постоянными, 65% обращений - по рекомендациям.</div>
+                </div>
+                <div class="advantages-container-row-item">
+                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-2"></div>
+                    <div class="advantages-container-row-item-title">Гарантия до 3 лет</div>
+                    <div class="advantages-container-row-item-content">Гарантия на все запчасти и проведенные работы.</div>
+                </div>
+                <div class="advantages-container-row-item">
+                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-3"></div>
+                    <div class="advantages-container-row-item-title">Только проверенные комплектующие</div>
+                    <div class="advantages-container-row-item-content">Сотрудничаем с ведущими компаниями производителями.</div>
+                </div>
+            </div>
+            <div class="advantages-container-separators">
+                <div class="advantages-container-separators-separator"></div>
+                <div class="advantages-container-separators-separator"></div>
+            </div>
+            <div class="advantages-container-row">
+                <div class="advantages-container-row-item">
+                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-4"></div>
+                    <div class="advantages-container-row-item-title">Сохраняем дилерскую гарантию</div>
+                    <div class="advantages-container-row-item-content">Регулярно проводим сертификацию всех услуг. Используем материалы и запчасти, рекомендованные автопроизводителями.</div>
+                </div>
+                <div class="advantages-container-row-item">
+                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-5"></div>
+                    <div class="advantages-container-row-item-title">Бесплатная диагностика</div>
+                    <div class="advantages-container-row-item-content">Не берем денег за первичную диагностику. Узнайте причину поломки, стоимость ремонта и принимайте решение.</div>
+                </div>
+                <div class="advantages-container-row-item">
+                    <div class="advantages-container-row-item-icon advantages-container-row-item-icon-6"></div>
+                    <div class="advantages-container-row-item-title">Точная стоимость работ</div>
+                    <div class="advantages-container-row-item-content">Заранее согласовываем объём работ и их бюджет. У нас не бывает «сюрпризов» и неожиданных удорожаний.</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!--    КОНЕЦ БЛОК ПРЕИМУЩЕСТВА     -->
+
     <div class="section big-block">
         <div class="section-title">
             Виды услуг
@@ -144,7 +195,7 @@
                     <div class="types-app-box-navigation-item">Очистка и бла бла бла5</div>
                 </div>
             </div>
-            <div class="types-app-block">
+            <p class="types-app-block">
                 Данная процедура поможет избежать сколов от мелких камней и песка, царапин от веток, попадания
                 насекомых.
                 Специалисты нашего сервиса выполняют бронирование фар специальной пленкой устойчивой к воздействию
@@ -152,10 +203,10 @@
                 фар займет всего несколько часов, а качественная пленка прослужит до 5 лет, сохранив оптику вашего
                 автомобиля в первозданном виде.
                 Записаться на процедуру бронирования можно уже сейчас.
-            </div>
+            </p>
         </div>
         <!--    БЛОК ФОРМА     -->
-        <div class="section form">
+        <div class=" form">
             <form id="enroll" class="form-container">
                 <h2 class="form-container-title">Онлайн запись на <span>бесплатную</span> консультацию
                 </h2>
@@ -198,6 +249,244 @@
         </div>
         <!--    КОНЕЦ БЛОК ФОРМА     -->
     </div>
+
+    <!--    БЛОК СОТРУДНИКОВ     -->
+    <div class="section people">
+        <h2 class="section-title">Наши специалисты</h2>
+        <div class="people-container">
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-1"></div>
+                    <div class="people-container-card-title">Андрей</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
+            </div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-1"></div>
+                    <div class="people-container-card-title">Андрей</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
+            </div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-2"></div>
+                    <div class="people-container-card-title">Сергей</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
+            </div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-3"></div>
+                    <div class="people-container-card-title">Станислав</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
+            </div>
+            <div class="people-container-card-container">
+                <div class="people-container-card">
+                    <div class="people-container-card-image people-container-card-image-4"></div>
+                    <div class="people-container-card-title">Максим</div>
+                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="slick-arrows">
+            <div class="slick-arrows-container"></div>
+        </div>
+        <div class="button-container people-button">
+            <button class="button">Присоединиться к команде</button>
+        </div>
+    </div>
+    <!--    КОНЕЦ БЛОК СОТРУДНИКОВ     -->
+
+    <!--    БЛОК РАБОТ     -->
+    <div id="works" class="section works works-single">
+        <h2 class="section-title">Наши работы</h2>
+
+        <div class="works-container works-single-container dropdown-app">
+            <div class="works-container-navigation dropdown-app-navigation">
+                <div class="dropdown-app-navigation-title">
+                    <span class="dropdown-app-navigation-title-label">Ремонт Тюнинг фар</span>
+                </div>
+            </div>
+            <div class="dropdown-app-container dropdown-app-container_enabled works-container-content">
+                <!-- + slider 1 +-->
+                <div data-box="1"
+                     class="dropdown-app-container-box works-container-content-box works-container-content-box_enabled">
+                    <div class="dropdown-app-container-all-photos-btn"></div>
+                    <div class="dropdown-app-container-preview works-container-content-preview">
+                        <div class="dropdown-app-container-preview-image works-container-content-preview-image"
+                             style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+                        <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
+                            Тюнинг фар</h3>
+                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
+                            Установлен
+                            мультимедийный навигационный блок на
+                            базе Android 8.1. и подключены экраны для задних
+                            пассажиров</p>
+                    </div>
+                    <div class="dropdown-app-container-photos works-container-content-photos">
+                        <!--         slider            -->
+                        <div class="js-slick-photos">
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div data-photo-id="1" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="2" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="3" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="4" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="5" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="6" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div class="dropdown-app-container-photos-box works-container-content-photos-container">
+                                    <div data-photo-id="7" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="8" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="9" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="10" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="11" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                    <div data-photo-id="12" class="dropdown-app-container-photos-box-item works-container-content-photos-item"
+                                         style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="utils utils-nav works-utils">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    КОНЕЦ БЛОК РАБОТ     -->
+
+    <!--    БЛОК СТОИМОСТЬ РАБОТ     -->
+    <div class="section cost clear-space">
+        <div class="cost-container">
+            <form id="сostAssessment" class="box1130">
+                <h2 class="cost-container-title">Оценить стоимость работ </h2>
+                <div class="cost-container-inputs">
+                    <div class="cost-container-inputs-cell">
+                        <div class="input cost-container-inputs-cell-input">
+                            <label>
+                                <input required name="Марка авто" type="text" placeholder="true">
+                                <span>Марка авто</span>
+                                <span class="line"></span>
+                            </label>
+                        </div>
+                        <div class="input cost-container-inputs-cell-input">
+                            <label>
+                                <input required name="Год выпуска" type="text" placeholder="true">
+                                <span>Год выпуска</span>
+                                <span class="line"></span>
+                            </label>
+                        </div>
+                        <div class="input cost-container-inputs-cell-input">
+                            <label>
+                                <input required name="Вид услуги" type="text" placeholder="true">
+                                <span>Вид услуги</span>
+                                <span class="line"></span>
+                            </label>
+                        </div>
+                        <div class="input input-phone cost-container-inputs-cell-input">
+                            <label>
+                                <input required name="Телефон" type="tel" placeholder="true">
+                                <span>Контактный номер</span>
+                                <span class="line"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="cost-container-inputs-cell">
+                        <div class="input textarea cost-container-inputs-cell-comment">
+                            <label>
+                                <textarea name="Комментарий" maxlength="300" placeholder="true"></textarea>
+                                <span>Комментарий</span>
+                                <span class="line"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="cost-container-buttons">
+                    <div class="checkbox">
+                        <label>
+                            <input required type="checkbox" name="Соглашение" checked hidden>
+                            <span>Прочитал и согласен на <a href="./politic.html">обработку персональных данных</a> в соответствии с политикой конфиденциальности</span>
+                        </label>
+                    </div>
+                    <div class="button-container">
+                        <button class="button costSend">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--    КОНЕЦ БЛОК СТОИМОСТЬ РАБОТ     -->
+
+    <!--  КАРТА -->
+    <div class="section yandex" id="contacts">
+        <div class="yandex-container">
+            <div class="yandex-content">
+                <div class="yandex-data">
+                    <div class="yandex-data-row">
+                        <div class="yandex-data-icon yandex-data-icon-1"></div>
+                        <div class="yandex-data-text">г. Владимир, 2-й Почаевский проезд, дом 6</div>
+                    </div>
+                    <div class="yandex-data-row">
+                        <div class="yandex-data-icon yandex-data-icon-2"></div>
+                        <div class="yandex-data-text">fantom.service@yandex.ru</div>
+                    </div>
+                    <div class="yandex-data-row">
+                        <div class="yandex-data-icon yandex-data-icon-3"></div>
+                        <div class="yandex-data-text">Ежедневно, с 09.00 до 18.00.</div>
+                    </div>
+                </div>
+                <div class="yandex-data2">
+                    <div class="yandex-description">Вы всегда можете связаться с нами по телефону во Владимире:
+                    </div>
+                    <div class="yandex-phones">
+                        <a class="yandex-phones-item" href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
+                        <a class="yandex-phones-item" href="tel:+7 (920) 620-42-35">+7 (920) 620-42-35</a>
+                    </div>
+                    <div class="yandex-icons">
+                        <a href="https://api.whatsapp.com/send?phone=79206204235" class="social-link social-link-whats yandex-icons-link">
+                            <img src="<%=require('./src/assets/img/whts.png').default%>" title="WhatsApp">
+                        </a>
+                        <a href="viber://chat?number=%2B79206204235" class="social-link social-link-viber yandex-icons-link">
+                            <img src="<%=require('./src/assets/img/viber.png').default%>" title="WhatsApp">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map">
+            <script type="text/javascript" charset="utf-8" async
+                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad8c1332490e3ce011279d297c7e0be3d3864aa210f581fbc2372fd2bd34905f3&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+    </div>
+    <!--  КАРТА -->
 </main>
 
 <footer>
@@ -215,8 +504,8 @@
                 <a class="simple-link" href="./page.html">Автоэлектрика Автоэлектроника</a>
                 <a class="simple-link" href="./page.html">Установка сигнализаций</a>
                 <a class="simple-link" href="./page.html">Дооснащение автомобилей</a>
-                <a class="simple-link" href="#works">Наши работы</a>
-                <a class="simple-link" href="#contacts">Контакты</a>
+                <a class="simple-link" href="../#works">Наши работы</a>
+                <a class="simple-link" href="../#contacts">Контакты</a>
             </div>
             <ul class="footer-navigation">
                 <li class="footer-navigation-block">
@@ -225,17 +514,20 @@
                     <a class="simple-link" href="./page.html">Установка сигнализаций</a>
                 </li>
                 <li class="footer-navigation-block">
-                    <a class="simple-link" href="#works">Наши работы</a>
+                    <a class="simple-link" href="../#works">Наши работы</a>
                     <a class="simple-link" href="./page.html">Дооснащение авто</a>
                 </li>
                 <div class="social footer-navigation-block">
                     <a href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
                     <a href="mailto:fantom.service@yandex.ru"><span>fantom.service@yandex.ru</span></a>
                     <div class="social-links">
-                        <a href="https://api.whatsapp.com/send?phone=79206204235&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D1%8F%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83..."
-                           class="social-link social-link-whats banner-utils-links-item"></a>
+                        <a href="https://api.whatsapp.com/send?phone=79206204235" class="social-link banner-utils-links-item">
+                            <img class="social-link-whats" src="<%=require('./src/assets/img/whts.png').default%>" title="WhatsApp">
+                        </a>
                         <a href="viber://chat?number=%2B79206204235"
-                           class="social-link social-link-viber banner-utils-links-item"></a>
+                           class="social-link banner-utils-links-item">
+                            <img class="social-link-viber" src="<%=require('./src/assets/img/viber.png').default%>" title="Viber">
+                        </a>
                     </div>
                 </div>
             </ul>
@@ -508,6 +800,47 @@
             базе Android 8.1. и подключены экраны для задних
             пассажиров</p>
     </div>
+</div>
+<div id="typesScrollStack" style="display: none;">
+    <p data-scroll-item="1" class="types-app-block">
+        Данная процедура поможет избежать сколов от мелких камней и песка, царапин от веток, попадания
+        насекомых.
+        Специалисты нашего сервиса выполняют бронирование фар специальной пленкой устойчивой к воздействию
+        песка. При эксплуатации пленка не желтеет, и ее можно аккуратно полировать. Процедура по бронированию
+        фар займет всего несколько часов, а качественная пленка прослужит до 5 лет, сохранив оптику вашего
+        автомобиля в первозданном виде.
+        Записаться на процедуру бронирования можно уже сейчас.
+    </p>
+    <p data-scroll-item="2" class="types-app-block">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </p>
+    <p data-scroll-item="3" class="types-app-block">
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    </p>
+    <p data-scroll-item="4" class="types-app-block">
+        Maecenas vitae tempus est, ac pulvinar turpis. Curabitur at porttitor nulla. Duis ullamcorper ut arcu ut laoreet. Nulla vehicula fermentum augue id placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras consequat vehicula interdum. In dignissim volutpat mi eu laoreet. Pellentesque placerat semper dui, a tincidunt metus bibendum et.
+    </p>
+    <p data-scroll-item="5" class="types-app-block">
+        Sed bibendum nisl et quam imperdiet, sit amet semper tellus lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec fermentum elit ac nibh faucibus pulvinar. Praesent malesuada dolor vitae justo varius, ac viverra purus condimentum. Maecenas porttitor arcu in mi tincidunt condimentum. Donec in porttitor elit. Aenean eu dolor vitae ante volutpat viverra. Sed laoreet eros eros. In quis turpis imperdiet, congue diam id, facilisis elit. Nunc suscipit suscipit magna, sit amet gravida massa tempus nec. Ut sed lectus ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+    </p>
+    <p data-scroll-item="6" class="types-app-block">
+        Integer erat tellus, congue quis rhoncus a, auctor ut est. Vestibulum ut dignissim eros, vel finibus neque. Vestibulum dapibus erat a feugiat consectetur. Etiam consequat molestie eros, vitae porta orci varius ut. Donec tempus purus a lectus bibendum, a faucibus ipsum gravida. Suspendisse luctus sit amet justo at viverra. Sed non lacinia nisi. In pharetra porta ultrices. Nullam nisi mi, cursus ut urna nec, finibus feugiat odio. Etiam viverra nec ante et suscipit.
+    </p>
+    <p data-scroll-item="7" class="types-app-block">
+        Donec varius, nisi id pretium ullamcorper, dui purus viverra metus, vel ullamcorper massa libero vitae mauris. Vivamus ac tempus justo. Mauris congue scelerisque ex, vel tincidunt ex blandit sit amet. Sed quis eros sapien. Vivamus id lectus augue. Nullam aliquam odio est. Cras tempor ipsum cursus magna tristique, vel varius ipsum bibendum.
+    </p>
+    <p data-scroll-item="8" class="types-app-block">
+        Nam vel quam euismod, ultricies diam id, dictum libero. In hac habitasse platea dictumst. Donec dignissim convallis nibh scelerisque aliquet. Sed turpis tellus, convallis eget tincidunt in, tristique id turpis. Nam sagittis eu nunc a facilisis. Donec non rutrum neque, non vestibulum nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas vitae quam ac odio feugiat semper. Praesent congue purus ac erat feugiat, et porttitor metus ornare. Maecenas eu quam non sem ullamcorper vehicula. Maecenas neque dui, convallis vel erat ut, aliquam luctus felis. Phasellus fermentum, leo pretium tempor dignissim, orci lectus sodales felis, in posuere eros ante et sem. Aenean vestibulum ac risus in dapibus. Cras faucibus feugiat nisl, quis placerat magna malesuada tristique. Donec vel quam et tortor maximus blandit quis ornare neque.
+    </p>
+    <p data-scroll-item="9" class="types-app-block">
+        Etiam ullamcorper pellentesque sapien, at accumsan purus hendrerit aliquam. Etiam nec neque fringilla nunc scelerisque dictum at vel nisl. Nunc tristique ex erat, a venenatis ligula molestie eget. Phasellus pellentesque ipsum tellus, sed lobortis lorem scelerisque sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et enim sit amet metus ullamcorper porttitor. Donec vel purus vel nisi consectetur ultrices non ut tortor. Quisque pulvinar, erat sit amet imperdiet porta, risus sapien sodales tortor, sit amet lacinia neque magna vitae ipsum.
+    </p>
+    <p data-scroll-item="10" class="types-app-block">
+        Phasellus a semper leo, sed viverra sapien. Sed eleifend sem eget erat consequat elementum. Phasellus mollis massa ac nibh auctor aliquam. Donec convallis interdum libero. Ut volutpat consequat lectus, ut posuere lacus. Cras tempor mi ut massa euismod tincidunt. Suspendisse potenti. Nunc feugiat eros sed tellus tincidunt, tristique fringilla dolor commodo. Donec mollis laoreet justo, non lobortis diam imperdiet ac. Morbi elit ex, facilisis nec pellentesque et, volutpat in libero. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+    </p>
+    <p data-scroll-item="11" class="types-app-block">
+        Nam ullamcorper est sed velit maximus auctor. Quisque vel nisi at orci imperdiet sollicitudin ut nec ligula. Maecenas tristique sagittis diam in luctus. Donec malesuada laoreet turpis, quis fringilla ipsum dapibus eget. Etiam pulvinar diam id varius bibendum. Cras ultrices faucibus nulla et tincidunt. Quisque sagittis nulla vel pretium facilisis. Donec commodo nibh orci, ac cursus nisl sagittis quis. Duis semper lorem eu nunc commodo scelerisque. Sed quis magna condimentum, iaculis nulla sit amet, blandit odio. Etiam congue odio et massa consectetur commodo.
+    </p>
 </div>
 
 
