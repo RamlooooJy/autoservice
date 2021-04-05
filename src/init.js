@@ -18,7 +18,7 @@ export function initAll () {
 		dots: true,
 		dotsClass: 'utils-nav-container',
 		appendDots: $('.banner .utils-nav'),
-		// autoplay: true,
+		autoplay: true,
 		autoplaySpeed: 5000,
 		infinite: true,
 		pauseOnHover: false,

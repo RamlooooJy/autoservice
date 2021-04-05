@@ -280,6 +280,7 @@
         font-weight: 400;
         padding: 10px 0 27px;
         max-width: 660px;
+        white-space: pre-line;
       }
     }
   }
@@ -1070,6 +1071,7 @@
           &-container {
             .flex-between();
             .wrap();
+            padding: 7px;
           }
 
           &-item {
@@ -1080,6 +1082,7 @@
             height: 160px;
             background-image: url("../assets/img/works1.png");
             margin-bottom: 20px;
+            outline-offset: 3px;
 
             &:nth-child(2n + 1) {
               margin-right: 19px;
@@ -1149,6 +1152,10 @@
 @media (max-width: @pcFrom) {
   .dropdownApp();
 }
+.works-container-content-photos-item.active-item {
+  outline: 3px solid @blue;
+}
+
 .works-container-content-photos-item:active {
   transition: 50ms ease-out;
   transform: scale(.95);
@@ -1822,6 +1829,7 @@
     font-size: 22px;
     line-height: 1.2em;
     color: @D2b;
+    pointer-events: none;
   }
   &-box-container {
     .scrollConfig();

@@ -16,13 +16,15 @@ export function worksInit () {
 
 		allPhotos.forEach(photo => photo.addEventListener('click', (e) => {
 			let element = e.currentTarget
-			changeActiveElement(element.dataset && Number((element.dataset.photoId || -1)))
+			changeActiveElement(element.dataset && Number((element.dataset.photoId || -1)), element)
 		}))
 	})
 }
 
-export function changeActiveElement (id) {
+export function changeActiveElement (id, clickedItem) {
 	const currentTab = state.worksState.selectedMenuItem
+	$(`.works .works-container-content-box[data-box="${ currentTab }"] .active-item`).removeClass('active-item')
+	clickedItem.classList.add('active-item')
 	const box = document.querySelector(`.works-container-content-box[data-box="${ currentTab }"]`)
 	const firstElement = box.children[0]
 	const searchContentBox = `${ currentTab }.${ id }`

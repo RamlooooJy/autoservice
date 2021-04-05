@@ -51,7 +51,6 @@ allPhoto && allPhoto.on('click', function() {
 
 //+ Mount behavior for JQuery
 window.addEventListener('DOMContentLoaded', (event) => {
-
 	initAll()
 });
 
