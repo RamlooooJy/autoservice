@@ -224,8 +224,8 @@
 .banner {
   @paddingTop: 150px;
   @paddingContentTop: 100px;
-  @SlideHeight: 949px - @paddingTop;
-  @sizeVert: 475px;
+  @SlideHeight: 749px - @paddingTop;
+  @sizeVert: 320px;
   @sizeHor: 270px;
   position: relative;
 
@@ -239,6 +239,10 @@
     &-content {
       overflow: hidden;
       position: relative;
+      .container();
+      padding-left: @padding-inside;
+      padding-top: @paddingContentTop;
+      height: calc(100% - @paddingContentTop);
       &:before {
         content: '';
         position: absolute;
@@ -258,11 +262,6 @@
         width: 1px;
         height: @sizeVert;
       }
-
-      .container();
-      padding-left: @padding-inside;
-      padding-top: @paddingContentTop;
-      height: calc(100% - @paddingContentTop);
 
       &-title {
         line-height: 1.4em;
@@ -576,7 +575,7 @@
 
       &-text {
         white-space: pre-line;
-        text-align: center;
+        text-align: justify;
         font-weight: 600;
         font-size: 18px;
         line-height: 1.1em;
@@ -585,7 +584,7 @@
         address {
           color: #222;
           font-weight: 700;
-          font-size: 12px;
+          font-size: 16px;
           text-align: right;
         }
       }
@@ -840,7 +839,7 @@
 }
 
 .people {
-  @people-card: 419px;
+  @people-card: 479px;
   @people-card-width: 282px;
   .container();
 
@@ -884,18 +883,19 @@
 
       &-title {
         .flex-center();
+        .textOverflow();
         background: #2F424F;
         .font(#fff, 22px, 400);
-        width: 215px;
+        width: 255px;
         height: 33px;
-        margin-bottom: 22px;
+        margin-bottom: 15px;
         clip-path: polygon(0% 0%, 100% 0%, calc(100% - 22px) 100%, 0% 100%);
       }
 
       &-text {
         padding: 0 11px;
         .flex-between();
-        .font(#f8f8f8, 19px, 300);
+        .font(#f8f8f8, 17px, 300);
       }
     }
 
@@ -941,7 +941,7 @@
     }
   }
 }
-//works and
+//+ works pc
 .works {
   .mediaFromTo({
     .dropdown-app-navigation-title,
@@ -1041,7 +1041,7 @@
           width: 60%;
           background: @silver;
           padding: 46px 28px 46px 1px;
-          overflow: auto;
+          overflow: hidden;
 
           &-image {
             .image();
@@ -1051,11 +1051,11 @@
 
           &-title {
             max-width: 325px;
-            margin: 15px 0;
+            margin: 10px 0;
           }
 
           &-text {
-            .font(@blackColor, 30px);
+            .font(@blackColor, 23px);
           }
         }
 
@@ -1145,20 +1145,18 @@
     }
   });
 }
+//+ works mobile
+@media (max-width: @pcFrom) {
+  .dropdownApp();
+}
 .works-container-content-photos-item:active {
   transition: 50ms ease-out;
   transform: scale(.95);
 }
 
-@media (max-width: @pcFrom) {
-  .works {
-    background: #fff;
-  }
-  .dropdownApp();
-}
-
 .dropdownApp() {
   .dropdown-app {
+    background: #fff;
     position: relative;
     .dropdownSelectHeader();
     @contentheight: 704px;
@@ -1181,9 +1179,7 @@
         }
       }
       &-photos {
-        height: 0;
-        overflow: hidden;
-        position: relative;
+
       }
 
 
@@ -1201,30 +1197,29 @@
       &-preview {
         margin-top: 32px;
         height: @contentheight;
-        overflow: auto;
+        overflow: hidden;
         &-image {
           width: 100%;
-          height: 458px;
+          height: 407px;
           .bgCover(100%);
           max-width: 700px;
           // * image * //
           background-image: url("../assets/img/works1.png");
         }
         &-title {
-          padding: 23px 0;
+          padding: 10px 0;
           white-space: pre-line;
           font-size: 30px;
         }
         &-text {
-          .font(#161818, 30px)
+          .font(#161818, 24px);
         }
       }
-
       &-photos {
+        height: 0;
         transition: height 100ms ease;
         box-sizing: border-box;
         padding: 0 60px;
-        height: 0;
         position: absolute;
         top: @photosTopSpace;
         left: 0;
@@ -1253,14 +1248,6 @@
   }
 }
 
-//!ДОДЕЛАТЬ//
-//?ДОДЕЛАТЬ//
-//+ДОДЕЛАТЬ//
-//+ДОДЕЛАТЬ//
-//+ДОДЕЛАТЬ//
-//+ДОДЕЛАТЬ//
-//?ДОДЕЛАТЬ//
-//!ДОДЕЛАТЬ//
 .dropdownSelectHeader() {
   &-navigation {
     width: 100%;
@@ -1271,10 +1258,8 @@
       position: relative;
       z-index: 2;
       @paddingVert: 24px;
-      //background: linear-gradient(269.76deg, #6EC8E6 -10.33%, #BBCDD3 112.2%);
-      .bgCover(100% 123%);
+      .bgCover(102% 123%);
       background-image: url("../assets/img/select-bg.png");
-      //clip-path: polygon(0 0, 100% 0%, calc(100% - 55px) 100%, 0% 100%);
       box-sizing: border-box;
       padding-right: 55px;
       .font(#fff, 38px, 600);
@@ -1622,6 +1607,8 @@
 }
 
 // pages
+//
+//
 
 
 .description {
@@ -1664,12 +1651,12 @@
       box-sizing: border-box;
       height: 100%;
       width: 100%;
-      padding: 124px 88px;
+      padding: 88px;
       min-height: 763px;
       display: block;
       background: linear-gradient(235.54deg, #C6D3E8 9.22%, #9FA5AD 99.98%);
       font-size: 26px;
-      line-height: 121.18%;
+      line-height: 150%;
       text-align: center;
       color: @D2b;
       .flex-center;
@@ -1752,7 +1739,7 @@
     }
     &-content-text {
       min-height: 440px;
-      font-size: 1rem;
+      font-size: 16px;
     }
   }, @tabletFrom);
 
@@ -1927,7 +1914,7 @@
         box-shadow: 0 4px 4px rgba(20, 83, 97, 0.2);
         clip-path: none;
         &-label {
-          padding: 0 34px 0px 30px;
+          padding: 0 20px;
           min-width: auto;
           font-size: 16px;
           text-overflow: ellipsis;
@@ -1938,13 +1925,16 @@
     }
     &-box-navigation {
       padding-bottom: 468px;
+
       &-item {
+        font-size: 14px;
+        padding: 0 12px;
+        display: block;
         width: 100%;
         clip-path: none;
-        font-size: 12px;
-        padding: 0 12px;
+        .textOverflow();
       }
-      width: 30%;
+      width: 10%;
     }
     &-navigation-title {
       width: 100%;
@@ -1952,8 +1942,10 @@
       background-size: cover;
     }
     &-block {
-      font-size: 14px;
-      width: 70%;
+      font-size: 16px;
+      line-height: 1.3em;
+      width: 90%;
+      pointer-events: none;
     }
   }, @tabletFrom);
 
@@ -2076,7 +2068,7 @@
     &-item-content {
       @paddingTop: 50px;
       padding: @paddingTop 20px 100px;
-      height: calc(100% - @paddingTop);
+      height: 249px;
       &:before {
         width: 30%;
       }
@@ -2136,14 +2128,6 @@
 
   //works
   .dropdown-app {
-    //!ДОДЕЛАТЬ//
-    //?ДОДЕЛАТЬ//
-    //+ДОДЕЛАТЬ//
-    //+ДОДЕЛАТЬ//
-    //+ДОДЕЛАТЬ//
-    //+ДОДЕЛАТЬ//
-    //?ДОДЕЛАТЬ//
-    //!ДОДЕЛАТЬ//
     &-navigation-title {
       &-label {
         font-size: 18px;
@@ -2153,13 +2137,12 @@
         min-height: 24px;
       }
     }
-    //
     &-container {
       &-box {
         padding: 20px;
       }
       &-preview {
-        height: 500px;
+        height: 572px;
         &-image {
           background-size: cover;
           height: 300px;
@@ -2232,6 +2215,11 @@
       height: 13px;
     }
   }
+  .banner {
+    &-item-content {
+      height: 349px;
+    }
+  }
   .navigation-placeholder {
     width: 10%;
   }
@@ -2253,7 +2241,7 @@
   }
   .dropdown-app-navigation-title-label,
   .dropdown-app-navigation-menu-item {
-    font-size: 14px;
+    font-size: 16px;
     text-align: right;
   }
   .dropdown-app-navigation_active {
@@ -2295,8 +2283,4 @@
       display: block;
     }, @pcFrom);
   }
-}
-
-.pointer_off {
-  pointer-events: none;
 }

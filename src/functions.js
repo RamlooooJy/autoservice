@@ -196,7 +196,6 @@ document.addEventListener('click', (e) => {
 		dropdownMenuToggle()
 	}
 })
-console.log(location.href)
 
 export function goTo (e) {
 	const link = e.currentTarget

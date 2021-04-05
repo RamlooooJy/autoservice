@@ -13,6 +13,9 @@ const arguments = process.argv.slice(2).reduce((obj, item) => {
 
 const mode = arguments['--mode'] || 'development'
 
+console.log(mode)
+console.log(mode === "development" ? "source-map": false)
+
 const imgPath = {}
 if (mode === 'production') {
 	imgPath.name = '[name].[ext]'
@@ -84,7 +87,7 @@ module.exports = {
 				patterns: [ { from: path.resolve(__dirname, "src", "js"), to: "js" } ],
 			},
 		),
-		new FaviconsWebpackPlugin('./assets/img/logo.png'),
+		new FaviconsWebpackPlugin('./assets/img/fav.png'),
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",

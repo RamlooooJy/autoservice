@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>-->
     <title>AUTOSERVICE</title>
 </head>
 <body>
@@ -74,6 +75,7 @@
                     <h1 class="banner-item-content-title">
                         Единственный во Владимире сертифицированный
                         <span>сервис по установке и ремонту автооптики</span>
+<!--                        Замена стекол всего <span>за 1 день</span>. Регулировка фар в подарок.-->
                     </h1>
                     <div class="banner-item-content-description">
                         Ремонт, тюнинг фар, дооснащение авто.
@@ -87,8 +89,7 @@
                  style="background-image: url(<%=require('./src/assets/img/newBanner4.png').default%>)">
                 <div class="banner-item-content">
                     <h1 class="banner-item-content-title">
-                        Единственный во Владимире сертифицированный
-                        <span>сервис по установке и ремонту автооптики</span>
+                        Ремонт фар, замена линз всего <span>за 2 дня</span>. Бесплатная полировка стекол при замене линз.
                     </h1>
                     <div class="banner-item-content-description">
                         Ремонт, тюнинг фар, дооснащение авто.
@@ -102,8 +103,7 @@
                  style="background-image: url(<%=require('./src/assets/img/newBanner1.png').default%>)">
                 <div class="banner-item-content">
                     <h1 class="banner-item-content-title">
-                        Единственный во Владимире сертифицированный
-                        <span>сервис по установке и ремонту автооптики</span>
+                        Установка сигнализации от 6990 р. всего <span>за 1 день</span>.
                     </h1>
                     <div class="banner-item-content-description">
                         Ремонт, тюнинг фар, дооснащение авто.
@@ -117,8 +117,21 @@
                  style="background-image: url(<%=require('./src/assets/img/newBanner2.png').default%>)">
                 <div class="banner-item-content">
                     <h1 class="banner-item-content-title">
-                        Единственный во Владимире сертифицированный
-                        <span>сервис по установке и ремонту автооптики</span>
+                        Прошивка ЭБУ.Увеличение мощности двигателя <span>до 35%</span>.
+                    </h1>
+                    <div class="banner-item-content-description">
+                        Ремонт, тюнинг фар, дооснащение авто.
+                    </div>
+                    <div class="button-container banner-item-content-button">
+                        <button class="button">Рассчитать стоимость</button>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-item"
+                 style="background-image: url(<%=require('./src/assets/img/Slider5.jpg').default%>)">
+                <div class="banner-item-content">
+                    <h1 class="banner-item-content-title">
+                        Расширение возможностей вашего автомобиля с <span>сохранение дилерской гарантии</span>.
                     </h1>
                     <div class="banner-item-content-description">
                         Ремонт, тюнинг фар, дооснащение авто.
@@ -156,7 +169,7 @@
         <div class="services-block">
             <div class="services-block-row">
                 <div class="services-block-row-container services-block-row-container-top">
-                    <div class="services-block-row-flex">
+                    <a href="./page.html" class="services-block-row-flex">
                         <div class="services-block-row-container-item">
                             <div class="services-block-row-container-item-photo"></div>
                         </div>
@@ -165,8 +178,8 @@
                                 Тюнинг фар</h3>
                             <div class="services-block-row-container-item-mini services-block-row-container-item-mini-1"></div>
                         </div>
-                    </div>
-                    <div class="services-block-row-flex">
+                    </a>
+                    <a href="./page.html" class="services-block-row-flex">
                         <div class="services-block-row-container-item">
                             <div class="services-block-row-container-item-photo"
                                  style="background-image: url(<%=require('./src/assets/img/services2-custom.png').default%>)"></div>
@@ -177,13 +190,12 @@
                                 Автоэлектроника</h3>
                             <div class="services-block-row-container-item-mini services-block-row-container-item-mini-2"></div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
-
             <div class="services-block-row">
                 <div class="services-block-row-container services-block-row-container-bottom">
-                    <div class="services-block-row-flex">
+                    <a href="./page.html" class="services-block-row-flex">
                         <div class="services-block-row-container-item services-block-row-container-item_dark">
                             <div class="services-block-row-container-item-photo"
                                  style="background-image: url(<%=require('./src/assets/img/services3-custom.png').default%>)"></div>
@@ -193,8 +205,8 @@
                                 автомобилей</h3>
                             <div class="services-block-row-container-item-mini services-block-row-container-item-mini-3"></div>
                         </div>
-                    </div>
-                    <div class="services-block-row-flex">
+                    </a>
+                    <a href="./page.html" class="services-block-row-flex">
                         <div class="services-block-row-container-item services-block-row-container-item_dark">
                             <!--                            <img class="services-block-row-container-item-photo"-->
                             <!--                                 src=<%=require("./src/assets/img/services4-custom.png").default%> alt="Ремонт тюнинг фар">-->
@@ -206,7 +218,7 @@
                                 сигнализаций</h3>
                             <div class="services-block-row-container-item-mini services-block-row-container-item-mini-4"></div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -336,36 +348,29 @@
             <div class="people-container-card-container">
                 <div class="people-container-card">
                     <div class="people-container-card-image people-container-card-image-1"></div>
-                    <div class="people-container-card-title">Андрей</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
-                </div>
-            </div>
-            <div class="people-container-card-container">
-                <div class="people-container-card">
-                    <div class="people-container-card-image people-container-card-image-1"></div>
-                    <div class="people-container-card-title">Андрей</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                    <div class="people-container-card-title">Дмитрий Шитов</div>
+                    <div class="people-container-card-text">Микроэлектроника, ремонт и программирование ЭБУ и электрических систем, установка дополнительного электронного оборудования</div>
                 </div>
             </div>
             <div class="people-container-card-container">
                 <div class="people-container-card">
                     <div class="people-container-card-image people-container-card-image-2"></div>
-                    <div class="people-container-card-title">Сергей</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                    <div class="people-container-card-title">Руслан Миронов</div>
+                    <div class="people-container-card-text">Ремонт и модернизации авто оптики, установка дополнительного электронного оборудования</div>
                 </div>
             </div>
             <div class="people-container-card-container">
                 <div class="people-container-card">
                     <div class="people-container-card-image people-container-card-image-3"></div>
-                    <div class="people-container-card-title">Станислав</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                    <div class="people-container-card-title">Максим Люльчев</div>
+                    <div class="people-container-card-text">Ремонт электрических систем, арматурные работы</div>
                 </div>
             </div>
             <div class="people-container-card-container">
                 <div class="people-container-card">
                     <div class="people-container-card-image people-container-card-image-4"></div>
-                    <div class="people-container-card-title">Максим</div>
-                    <div class="people-container-card-text"><span>Опыт работы</span><span>3 года</span></div>
+                    <div class="people-container-card-title">Александр Любич</div>
+                    <div class="people-container-card-text">Технический директор. Опыт работы в сфере обслуживания автомобилей – более 15 лет.</div>
                 </div>
             </div>
         </div>
@@ -417,11 +422,7 @@
                              style="background-image: url(<%=require('./src/assets/img/works1.png').default%>)"></div>
                         <h3 class="dropdown-app-container-preview-title works-container-content-preview-title">Ремонт
                             Тюнинг фар</h3>
-                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">
-                            Установлен
-                            мультимедийный навигационный блок на
-                            базе Android 8.1. и подключены экраны для задних
-                            пассажиров</p>
+                        <p class="dropdown-app-container-preview-text works-container-content-preview-text">Рефрижиратор на шасси Hyndai HD 78. Установка ОС Pandora DX 5200, системы видеонаблюдения, видеорегистратора и накопителя, оборудования ГЛОНАСС с датчиками контроля движения.</p>
                     </div>
                     <div class="dropdown-app-container-photos works-container-content-photos">
                         <!--         slider            -->
@@ -744,8 +745,7 @@
             </div>
         </div>
         <div id="map">
-            <script type="text/javascript" charset="utf-8" async
-                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad8c1332490e3ce011279d297c7e0be3d3864aa210f581fbc2372fd2bd34905f3&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad8c1332490e3ce011279d297c7e0be3d3864aa210f581fbc2372fd2bd34905f3&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </div>
     <!--  КАРТА -->
@@ -754,7 +754,7 @@
 <footer>
     <div class="footer">
         <div class="footer-row footer-row-hd">
-            <div class="logo footer-logo"></div>
+            <a href="/" class="logo footer-logo"></a>
             <div class="footer-contacts">
                 <a href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
                 <a href="mailto:fantom.service@yandex.ru"><span>fantom.service@yandex.ru</span></a>
@@ -1455,7 +1455,23 @@
     </div>
 </div>
 
-
 <script id="libs" src="./js/libraries.min.js"></script>
+
+<script>
+	// ymaps.ready(init);
+	// function init(){
+	// 	// Создание карты.
+	// 	var myMap = new ymaps.Map("map", {
+	// 		center: [56.152079, 40.407116],
+	// 		zoom: 17
+	// 	});
+    //
+	// 	myMap.geoObjects.add(new ymaps.Placemark([56.152079, 40.407116], {
+	// 		balloonContent: 'Прямо здесь'
+	// 	}, {
+	// 		preset: 'islands#blueAutoIcon'
+	// 	}))
+	// }
+</script>
 </body>
 </html>

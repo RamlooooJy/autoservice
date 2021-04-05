@@ -6,7 +6,7 @@ export function typesInit () {
 	const scrollContainer = $('.types-app-box-container')
 	const blockText = $('.types-app .types-app-block')
 	if (!nav.length || !scrollContainer.length) return
-	checkBlock(blockText[0])
+	// checkBlock(blockText[0])
 
 	const items = Array.from(nav.children())
 
@@ -27,11 +27,9 @@ function setScrollItemMenu (elements, scrollContainer, blockText) {
 		const item = elements[p]
 		const nextItem = elements[p + 1]
 		if (nextItem && nextItem.offsetTop >= scrolled && item.offsetTop <= scrolled) {
-			console.log(`item-${ p }`)
 			setItem(p, item, blockText)
 			break;
 		} else if (!nextItem && p === elements.length - 1) {
-			console.log('last')
 			setItem(p, item, blockText)
 			break
 		}
@@ -44,18 +42,18 @@ function setItem (id, item, blockText) {
 		state.typesApp.enabledId = id
 		const newContent = $(`#typesScrollStack [data-scroll-item=${ id + 1 }]`)
 		blockText.html(newContent.html())
-		window.requestAnimationFrame(()=>{
-			checkBlock(blockText[0])
-		})
+		// window.requestAnimationFrame(()=>{
+			// checkBlock(blockText[0])
+		// })
 	}
 }
 
-function checkBlock (block) {
-	if (!block) return
-	if (block.scrollHeight > block.offsetHeight) {
-		block.classList.remove('pointer_off')
-	} else {
-		block.classList.add('pointer_off')
-	}
-}
-
+// function checkBlock (block) {
+// 	if (!block) return
+// 	if (block.scrollHeight > block.offsetHeight) {
+// 		block.classList.remove('pointer_off')
+// 	} else {
+// 		block.classList.add('pointer_off')
+// 	}
+// }
+//
