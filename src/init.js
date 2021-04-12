@@ -1,4 +1,4 @@
-import { setSlick, setSlickToTab } from "./functions";
+import { setSlick, setSlickToTab, state } from "./functions";
 import { worksInit } from "./worksClick";
 import { typesInit } from "./typesScrollBehavior";
 
@@ -8,11 +8,11 @@ export function initAll () {
 	window.requestAnimationFrame(()=>{
 		document.body.style.opacity = ''
 	})
-	$('.input-datepicker input').datepicker()
 
-	$('.input-phone input').mask('8 (000) 000-00-00');
+	const banner = $('.js-banner-slide')
+	banner.on('init', ()=>$('body').addClass('body_vissible'))
 
-	setSlick($('.js-banner-slide'), {
+	setSlick(banner, {
 		responsive: [],
 		slidesToShow: 1,
 		dots: true,
@@ -21,8 +21,10 @@ export function initAll () {
 		autoplay: true,
 		autoplaySpeed: 5000,
 		infinite: true,
-		pauseOnHover: false,
+		pauseOnHover: false
 	})
+
+	$('.input-phone input').mask('8 (000) 000-00-00');
 
 	setSlick($('.people-container'), {
 		appendArrows: $('.people .slick-arrows-container'),
@@ -32,7 +34,13 @@ export function initAll () {
 		prevArrow: '<span class="slick-arrows-arrow slick-arrows-arrow-prev"></span>',
 	})
 
-	setSlickToTab(1)
+	const item = $(`.works .works-container-content-box[data-box]:first-child`)
+	if(item.length) {
+		state.worksState.selectedMenuItem = item.data().box || 1
+		setSlickToTab(state.worksState.selectedMenuItem)
+	}
+
+	$('.input-datepicker input').datepicker()
 
 	typesInit()
 

@@ -1,19 +1,14 @@
-import './js/ui.min.js'
-import './js/mask.min.js'
 import './js/slick.min.js'
+import './js/mask.min.js'
+import './js/arcticmodal.min.js'
+import './js/ui.min.js'
 import './worksClick.js'
-const minDate = Date.now();
+const minDate = new Date();
 
-	/* Russian (UTF-8) initialisation for the jQuery UI date picker plugin. */
-/* Written by Andrew Stromnov (stromnov@gmail.com). */
 (function (factory) {
 	if (typeof define === "function" && define.amd) {
-
-		// AMD. Register as an anonymous module.
 		define(["../widgets/datepicker"], factory);
 	} else {
-
-		// Browser globals
 		factory($.datepicker);
 	}
 }(function (datepicker) {

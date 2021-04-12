@@ -4,8 +4,15 @@ const wokrsStack = document.querySelector('#workStack');
 
 export function worksInit () {
 	window.requestAnimationFrame(() => {
+		if(!wokrsStack) {
+			console.error('Ошибка: нет блока для работ');
+			return;
+		}
 		const items = Array.from(wokrsStack.querySelectorAll('.works-container-content-preview'))
-		if (!items.length) return
+		if (!items.length) {
+			console.error('Ошибка: нет работ');
+			return;
+		}
 
 		state.worksState.works = items.reduce((worksArray, work) => {
 			const [ menuId, activeItemId ] = work.dataset.workItem.split('.')

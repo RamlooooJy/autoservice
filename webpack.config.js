@@ -4,6 +4,8 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebPackPlugin = require("copy-webpack-plugin");
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 const webpack = require('webpack')
 
 const arguments = process.argv.slice(2).reduce((obj, item) => {
@@ -14,7 +16,7 @@ const arguments = process.argv.slice(2).reduce((obj, item) => {
 const mode = arguments['--mode'] || 'development'
 
 console.log(mode)
-console.log(mode === "development" ? "source-map": false)
+console.log(mode === "development" ? "source-map" : false)
 
 const imgPath = {}
 if (mode === 'production') {
@@ -24,12 +26,15 @@ if (mode === 'production') {
 module.exports = {
 	context: path.join(__dirname, 'src'),
 	mode,
-	devtool:  mode === "development" ? "source-map": false, // for debug with file names
+	devtool: mode === "development" ? "source-map" : false, // for debug with file names
 	watchOptions: {
 		aggregateTimeout: 200,
 		poll: 1000,
 	},
-	entry: './index.js',
+	entry: {
+		'main': './index.js',
+		'main.min': './index.js',
+	},
 	output: {
 		filename: 'index.js',
 		path: path.resolve(__dirname, 'dist'),
@@ -58,7 +63,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							outputPath: 'img/',
+							outputPath: 'assets/img/',
 							...imgPath,
 						},
 					},
@@ -78,7 +83,11 @@ module.exports = {
 	},
 	optimization: {
 		minimize: mode === 'production',
-		minimizer: [ new CssMinimizerPlugin() ],
+		minimizer: [
+			new CssMinimizerPlugin(),
+			new UglifyJsPlugin({
+				include: /\.min\.js$/,
+			}) ],
 	},
 	plugins: [
 		//<link href="assets/css/style.css?ver=1.1"
@@ -91,6 +100,7 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",
+			jquery: "jquery",
 			'window.$': "jquery",
 			'window.jQuery': "jquery",
 		}),

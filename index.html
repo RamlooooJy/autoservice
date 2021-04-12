@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=45b5f40f-53bc-4532-82ee-2b691cb380d1&lang=ru_RU" type="text/javascript"></script>
     <title>AUTOSERVICE</title>
+    <meta property="og:image" content="<%=require('./src/assets/img/fav.png').default%>" />
 </head>
-<body>
+<body class="closed">
 <header>
     <div class="header">
         <a class="logo-link" href="/">
@@ -754,7 +755,7 @@
 <footer>
     <div class="footer">
         <div class="footer-row footer-row-hd">
-            <a href="/" class="logo footer-logo"></a>
+            <a href="/" class="logo logo-link footer-logo simple-link"></a>
             <div class="footer-contacts">
                 <a href="tel:+7 (4922) 66-65-04">+7 (4922) 66-65-04</a>
                 <a href="mailto:fantom.service@yandex.ru"><span>fantom.service@yandex.ru</span></a>
@@ -927,6 +928,20 @@
                 </div>
             </div>
         </form>
+    </div>
+    <div class="box-modal" id="good_request">
+        <div class="box-modal_close arcticmodal-close"></div>
+        <div class="modal-container modal-container-response">
+            <h3>Спасибо за обращение!</h3>
+            <p>Мы свяжемся с Вами в самое ближайшее время.</p>
+        </div>
+    </div>
+    <div class="box-modal" id="bad_request">
+        <div class="box-modal_close arcticmodal-close"></div>
+        <div class="modal-container modal-container-response">
+            <h3>Oops!</h3>
+            <p style="color: #b70202">Заявка не отправлена</p>
+        </div>
     </div>
 </div>
 <div id="workStack" style="display: none">
@@ -1455,7 +1470,7 @@
     </div>
 </div>
 
-<script id="libs" src="./js/libraries.min.js"></script>
+<script id="libs" src="./js/jquery-3.6.0.min.js"></script>
 
 <script>
 	// ymaps.ready(init);

@@ -17,7 +17,7 @@ export const state = {
 		allPhotosActive: false,
 		selectedMenuItem: 1,
 		mountedIds: [],
-		selectedWork: '1.1',
+		selectedWork: '9.9',
 	},
 	typesApp: {
 		enabledId: 0
@@ -25,26 +25,6 @@ export const state = {
 }
 
 
-// +  Form banner
-export function sendAnyForm (e) {
-	e.preventDefault()
-	const inputs = Array.from(this.elements).filter(a => a.tagName.toLowerCase() !== 'button')
-	const fields = inputs.reduce((acc, a) => {
-		acc[a.name] = a.value;
-		return acc
-	}, {})
-
-	console.log(fields)
-
-	inputs.forEach(a => {
-		if (a.type.toLowerCase() !== 'checkbox') a.value = ''
-	})
-	document.body.classList.add('alert')
-	setTimeout(()=>{
-		document.body.classList.remove('alert')
-	}, 2000)
-	$.arcticmodal('close')
-}
 // +  toggle menu
 export function burgerToggle () {
 	document.body.classList.toggle('stop-scroll')
@@ -121,13 +101,6 @@ function onScroll (e) {
 	state.headerHide.lastScroll = container.scrollTop
 }
 
-// header.addEventListener('mouseenter', () => {
-// 	if (state.headerHide.isHidden) {
-// 		state.headerHide.isHidden = false
-// 		header.classList.remove('navigation-transparent')
-// 	}
-// })
-
 onScroll()
 
 
@@ -168,6 +141,7 @@ function setActiveWorksBox (index) {
 		setSlickToTab(index)
 	});
 }
+
 export function setSlickToTab (index) {
 	if (!state.worksState.mountedIds.includes(index)) {
 		// const tabContent = $(`.works-container-content-box[data-box=${ index }]`)
